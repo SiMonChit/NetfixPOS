@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_EventLogs" targetNamespace="http://tempuri.org/ds_EventLogs.xsd" xmlns:mstns="http://tempuri.org/ds_EventLogs.xsd" xmlns="http://tempuri.org/ds_EventLogs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NetfixPOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NetfixPOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NetfixPOS.Models.Properties.Settings.GlobalReference.Default.NetfixPOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_EventLogs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_EventLogs" msprop:Generator_UserDSName="ds_EventLogs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EventLogs" msprop:Generator_TableClassName="EventLogsDataTable" msprop:Generator_TableVarName="tableEventLogs" msprop:Generator_TablePropName="EventLogs" msprop:Generator_RowDeletingName="EventLogsRowDeleting" msprop:Generator_RowChangingName="EventLogsRowChanging" msprop:Generator_RowEvHandlerName="EventLogsRowChangeEventHandler" msprop:Generator_RowDeletedName="EventLogsRowDeleted" msprop:Generator_UserTableName="EventLogs" msprop:Generator_RowChangedName="EventLogsRowChanged" msprop:Generator_RowEvArgName="EventLogsRowChangeEvent" msprop:Generator_RowClassName="EventLogsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LogType" msprop:Generator_ColumnVarNameInTable="columnLogType" msprop:Generator_ColumnPropNameInRow="LogType" msprop:Generator_ColumnPropNameInTable="LogTypeColumn" msprop:Generator_UserColumnName="LogType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LogDateTime" msprop:Generator_ColumnVarNameInTable="columnLogDateTime" msprop:Generator_ColumnPropNameInRow="LogDateTime" msprop:Generator_ColumnPropNameInTable="LogDateTimeColumn" msprop:Generator_UserColumnName="LogDateTime" type="xs:dateTime" />
+              <xs:element name="Source" msprop:Generator_ColumnVarNameInTable="columnSource" msprop:Generator_ColumnPropNameInRow="Source" msprop:Generator_ColumnPropNameInTable="SourceColumn" msprop:Generator_UserColumnName="Source" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LogMessage" msprop:Generator_ColumnVarNameInTable="columnLogMessage" msprop:Generator_ColumnPropNameInRow="LogMessage" msprop:Generator_ColumnPropNameInTable="LogMessageColumn" msprop:Generator_UserColumnName="LogMessage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ErrMessage" msprop:Generator_ColumnVarNameInTable="columnErrMessage" msprop:Generator_ColumnPropNameInRow="ErrMessage" msprop:Generator_ColumnPropNameInTable="ErrMessageColumn" msprop:Generator_UserColumnName="ErrMessage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocalIP" msprop:Generator_ColumnVarNameInTable="columnLocalIP" msprop:Generator_ColumnPropNameInRow="LocalIP" msprop:Generator_ColumnPropNameInTable="LocalIPColumn" msprop:Generator_UserColumnName="LocalIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

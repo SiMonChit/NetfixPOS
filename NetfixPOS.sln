@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS", "NetfixPOS\NetfixPOS.csproj", "{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS.DataAccess", "NetfixPOS.DataAccess\NetfixPOS.DataAccess.csproj", "{711CFB26-F22E-483A-A877-42515E0389D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS.Models", "NetfixPOS.Models\NetfixPOS.Models.csproj", "{F737AFFB-E02D-4E08-BE13-3AD00D3B5682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS.Controller", "NetfixPOS.Controller\NetfixPOS.Controller.csproj", "{611D42B1-C015-421B-888F-9246EB03C2BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS.Web", "NetfixPOS.Web\NetfixPOS.Web.csproj", "{5882755E-1258-416D-9B12-FA08C23AF076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfixPOS.Query", "NetfixPOS.Query\NetfixPOS.Query.csproj", "{4900EE35-A004-43E2-AB12-13D0993B6C3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711CFB26-F22E-483A-A877-42515E0389D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711CFB26-F22E-483A-A877-42515E0389D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711CFB26-F22E-483A-A877-42515E0389D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711CFB26-F22E-483A-A877-42515E0389D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F737AFFB-E02D-4E08-BE13-3AD00D3B5682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F737AFFB-E02D-4E08-BE13-3AD00D3B5682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F737AFFB-E02D-4E08-BE13-3AD00D3B5682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F737AFFB-E02D-4E08-BE13-3AD00D3B5682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611D42B1-C015-421B-888F-9246EB03C2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611D42B1-C015-421B-888F-9246EB03C2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611D42B1-C015-421B-888F-9246EB03C2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611D42B1-C015-421B-888F-9246EB03C2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5882755E-1258-416D-9B12-FA08C23AF076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5882755E-1258-416D-9B12-FA08C23AF076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5882755E-1258-416D-9B12-FA08C23AF076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5882755E-1258-416D-9B12-FA08C23AF076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4900EE35-A004-43E2-AB12-13D0993B6C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4900EE35-A004-43E2-AB12-13D0993B6C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4900EE35-A004-43E2-AB12-13D0993B6C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4900EE35-A004-43E2-AB12-13D0993B6C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10D708B7-DFFD-4DA6-8BD9-F1B49C4CA825}
+	EndGlobalSection
+EndGlobal

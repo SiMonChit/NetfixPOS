@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_Permission" targetNamespace="http://tempuri.org/ds_Permission.xsd" xmlns:mstns="http://tempuri.org/ds_Permission.xsd" xmlns="http://tempuri.org/ds_Permission.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NetfixPOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NetfixPOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NetfixPOS.Models.Properties.Settings.GlobalReference.Default.NetfixPOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_Permission" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_Permission" msprop:Generator_UserDSName="ds_Permission">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserPermission" msprop:Generator_TableClassName="UserPermissionDataTable" msprop:Generator_TableVarName="tableUserPermission" msprop:Generator_RowChangedName="UserPermissionRowChanged" msprop:Generator_TablePropName="UserPermission" msprop:Generator_RowDeletingName="UserPermissionRowDeleting" msprop:Generator_RowChangingName="UserPermissionRowChanging" msprop:Generator_RowEvHandlerName="UserPermissionRowChangeEventHandler" msprop:Generator_RowDeletedName="UserPermissionRowDeleted" msprop:Generator_RowClassName="UserPermissionRow" msprop:Generator_UserTableName="UserPermission" msprop:Generator_RowEvArgName="UserPermissionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ControlId" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnControlId" msprop:Generator_ColumnPropNameInRow="ControlId" msprop:Generator_ColumnPropNameInTable="ControlIdColumn" msprop:Generator_UserColumnName="ControlId" type="xs:int" minOccurs="0" />
+              <xs:element name="ControlForm" msprop:Generator_ColumnVarNameInTable="columnControlForm" msprop:Generator_ColumnPropNameInRow="ControlForm" msprop:Generator_ColumnPropNameInTable="ControlFormColumn" msprop:Generator_UserColumnName="ControlForm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsSave" msprop:Generator_ColumnVarNameInTable="columnIsSave" msprop:Generator_ColumnPropNameInRow="IsSave" msprop:Generator_ColumnPropNameInTable="IsSaveColumn" msprop:Generator_UserColumnName="IsSave" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsUpdate" msprop:Generator_ColumnVarNameInTable="columnIsUpdate" msprop:Generator_ColumnPropNameInRow="IsUpdate" msprop:Generator_ColumnPropNameInTable="IsUpdateColumn" msprop:Generator_UserColumnName="IsUpdate" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsDelete" msprop:Generator_ColumnVarNameInTable="columnIsDelete" msprop:Generator_ColumnPropNameInRow="IsDelete" msprop:Generator_ColumnPropNameInTable="IsDeleteColumn" msprop:Generator_UserColumnName="IsDelete" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsView" msprop:Generator_ColumnVarNameInTable="columnIsView" msprop:Generator_ColumnPropNameInRow="IsView" msprop:Generator_ColumnPropNameInTable="IsViewColumn" msprop:Generator_UserColumnName="IsView" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PermissionID" msprop:Generator_ColumnVarNameInTable="columnPermissionID" msprop:Generator_ColumnPropNameInRow="PermissionID" msprop:Generator_ColumnPropNameInTable="PermissionIDColumn" msprop:Generator_UserColumnName="PermissionID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

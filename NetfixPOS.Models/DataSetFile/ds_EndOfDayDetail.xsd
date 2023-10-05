@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_EndOfDayDetail" targetNamespace="http://tempuri.org/ds_EndOfDayDetail.xsd" xmlns:mstns="http://tempuri.org/ds_EndOfDayDetail.xsd" xmlns="http://tempuri.org/ds_EndOfDayDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NetfixPOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NetfixPOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NetfixPOS.Models.Properties.Settings.GlobalReference.Default.NetfixPOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_EndOfDayDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_EndOfDayDetail" msprop:Generator_UserDSName="ds_EndOfDayDetail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EOD_Detail" msprop:Generator_TableClassName="EOD_DetailDataTable" msprop:Generator_TableVarName="tableEOD_Detail" msprop:Generator_TablePropName="EOD_Detail" msprop:Generator_RowDeletingName="EOD_DetailRowDeleting" msprop:Generator_RowChangingName="EOD_DetailRowChanging" msprop:Generator_RowEvHandlerName="EOD_DetailRowChangeEventHandler" msprop:Generator_RowDeletedName="EOD_DetailRowDeleted" msprop:Generator_UserTableName="EOD_Detail" msprop:Generator_RowChangedName="EOD_DetailRowChanged" msprop:Generator_RowEvArgName="EOD_DetailRowChangeEvent" msprop:Generator_RowClassName="EOD_DetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvNo" msprop:Generator_ColumnPropNameInRow="InvNo" msprop:Generator_ColumnPropNameInTable="InvNoColumn" msprop:Generator_UserColumnName="InvNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NetAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" msprop:Generator_UserColumnName="NetAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaySlipNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPaySlipNo" msprop:Generator_ColumnPropNameInRow="PaySlipNo" msprop:Generator_ColumnPropNameInTable="PaySlipNoColumn" msprop:Generator_UserColumnName="PaySlipNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPaymentAmount" msprop:Generator_ColumnPropNameInRow="PaymentAmount" msprop:Generator_ColumnPropNameInTable="PaymentAmountColumn" msprop:Generator_UserColumnName="PaymentAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="eoddate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columneoddate" msprop:Generator_ColumnPropNameInRow="eoddate" msprop:Generator_ColumnPropNameInTable="eoddateColumn" msprop:Generator_UserColumnName="eoddate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

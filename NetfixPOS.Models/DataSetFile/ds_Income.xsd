@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_Income" targetNamespace="http://tempuri.org/ds_Income.xsd" xmlns:mstns="http://tempuri.org/ds_Income.xsd" xmlns="http://tempuri.org/ds_Income.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NetfixPOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NetfixPOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NetfixPOS.Models.Properties.Settings.GlobalReference.Default.NetfixPOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_Income" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_Income" msprop:Generator_UserDSName="ds_Income">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_Income" msprop:Generator_TableClassName="tbl_IncomeDataTable" msprop:Generator_TableVarName="tabletbl_Income" msprop:Generator_TablePropName="tbl_Income" msprop:Generator_RowDeletingName="tbl_IncomeRowDeleting" msprop:Generator_RowChangingName="tbl_IncomeRowChanging" msprop:Generator_RowEvHandlerName="tbl_IncomeRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_IncomeRowDeleted" msprop:Generator_UserTableName="tbl_Income" msprop:Generator_RowChangedName="tbl_IncomeRowChanged" msprop:Generator_RowEvArgName="tbl_IncomeRowChangeEvent" msprop:Generator_RowClassName="tbl_IncomeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IncomeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIncomeId" msprop:Generator_ColumnPropNameInRow="IncomeId" msprop:Generator_ColumnPropNameInTable="IncomeIdColumn" msprop:Generator_UserColumnName="IncomeId" type="xs:int" />
+              <xs:element name="In_Description" msprop:Generator_ColumnVarNameInTable="columnIn_Description" msprop:Generator_ColumnPropNameInRow="In_Description" msprop:Generator_ColumnPropNameInTable="In_DescriptionColumn" msprop:Generator_UserColumnName="In_Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="In_Date" msprop:Generator_ColumnVarNameInTable="columnIn_Date" msprop:Generator_ColumnPropNameInRow="In_Date" msprop:Generator_ColumnPropNameInTable="In_DateColumn" msprop:Generator_UserColumnName="In_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="In_Amount" msprop:Generator_ColumnVarNameInTable="columnIn_Amount" msprop:Generator_ColumnPropNameInRow="In_Amount" msprop:Generator_ColumnPropNameInTable="In_AmountColumn" msprop:Generator_UserColumnName="In_Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Income" />
+      <xs:field xpath="mstns:IncomeId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

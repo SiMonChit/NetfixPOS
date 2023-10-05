@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03165D99-4EB7-4CBE-9A0C-8E84294D98FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NetfixPOS</RootNamespace>
+    <AssemblyName>NetfixPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>AttendanceHR</ProductName>
+    <PublisherName>Netfix</PublisherName>
+    <SuiteName>Netfix</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pos_logo_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NetfixPOS.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\Component.Krypton\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\Component.Krypton\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\Component.Krypton\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\Component.Krypton\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\Component.Krypton\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.VSDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enums.NET.4.0.1\lib\net45\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.2.10.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.10\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.4.15.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.2.3.2\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.4\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.6.0.1\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abouts\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abouts\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AutoGenerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AutoGenerate.Designer.cs">
+      <DependentUpon>AutoGenerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EventLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EventLogs.Designer.cs">
+      <DependentUpon>EventLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frm_EndOfDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frm_EndOfDay.Designer.cs">
+      <DependentUpon>frm_EndOfDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frm_Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frm_Printer.Designer.cs">
+      <DependentUpon>frm_Printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShopInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ShopInfo.Designer.cs">
+      <DependentUpon>ShopInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserPermission.Designer.cs">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\App_Information_Check.cs" />
+    <Compile Include="Common\GlobalFunction.cs" />
+    <Compile Include="Common\GlobalPrinter.cs" />
+    <Compile Include="IFormBase.cs" />
+    <Compile Include="Income_Expense\ExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Income_Expense\ExpenseForm.Designer.cs">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Income_Expense\IncomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Income_Expense\IncomeForm.Designer.cs">
+      <DependentUpon>IncomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\ConfitUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\ConfitUnit.Designer.cs">
+      <DependentUpon>ConfitUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Currency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Currency.Designer.cs">
+      <DependentUpon>Currency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\DamageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\DamageForm.Designer.cs">
+      <DependentUpon>DamageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\frm_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\frm_Supplier.Designer.cs">
+      <DependentUpon>frm_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Room.Designer.cs">
+      <DependentUpon>Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\SaleType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\SaleType.Designer.cs">
+      <DependentUpon>SaleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\StockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\StockItem.Designer.cs">
+      <DependentUpon>StockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\StockMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\StockMaster.Designer.cs">
+      <DependentUpon>StockMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSetup\Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\Unit.Designer.cs">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\InvoicePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\InvoicePayment.Designer.cs">
+      <DependentUpon>InvoicePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS_MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_MainForm.Designer.cs">
+      <DependentUpon>POS_MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\frm_ImportPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\frm_ImportPurchase.Designer.cs">
+      <DependentUpon>frm_ImportPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\frm_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\frm_Purchase.Designer.cs">
+      <DependentUpon>frm_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDailyAuditReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmDailyAuditReport.Designer.cs">
+      <DependentUpon>frmDailyAuditReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_DamageReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_DamageReport.Designer.cs">
+      <DependentUpon>frm_DamageReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_ExpenseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_ExpenseReport.Designer.cs">
+      <DependentUpon>frm_ExpenseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_IncomeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_IncomeReport.Designer.cs">
+      <DependentUpon>frm_IncomeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_SaleHeaderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_SaleHeaderReport.Designer.cs">
+      <DependentUpon>frm_SaleHeaderReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_SaleItemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_SaleItemReport.Designer.cs">
+      <DependentUpon>frm_SaleItemReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_SlipVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_SlipVoucher.Designer.cs">
+      <DependentUpon>frm_SlipVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rtp_File\rtp_EndOfDay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtp_EndOfDay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleDashboard.Designer.cs">
+      <DependentUpon>SaleDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Sale_POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Sale_POS.Designer.cs">
+      <DependentUpon>Sale_POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Sale_Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Sale_Store.Designer.cs">
+      <DependentUpon>Sale_Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Sale_Transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Sale_Transaction.Designer.cs">
+      <DependentUpon>Sale_Transaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\TouchPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\TouchPOS.Designer.cs">
+      <DependentUpon>TouchPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Abouts\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AutoGenerate.resx">
+      <DependentUpon>AutoGenerate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Department.resx">
+      <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EventLogs.resx">
+      <DependentUpon>EventLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frm_EndOfDay.resx">
+      <DependentUpon>frm_EndOfDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frm_Printer.resx">
+      <DependentUpon>frm_Printer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ShopInfo.resx">
+      <DependentUpon>ShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserPermission.resx">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Income_Expense\ExpenseForm.resx">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Income_Expense\IncomeForm.resx">
+      <DependentUpon>IncomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\ConfitUnit.resx">
+      <DependentUpon>ConfitUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Currency.resx">
+      <DependentUpon>Currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\DamageForm.resx">
+      <DependentUpon>DamageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\frm_Supplier.resx">
+      <DependentUpon>frm_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Room.resx">
+      <DependentUpon>Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\SaleType.resx">
+      <DependentUpon>SaleType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\StockItem.resx">
+      <DependentUpon>StockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\StockMaster.resx">
+      <DependentUpon>StockMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\Unit.resx">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\InvoicePayment.resx">
+      <DependentUpon>InvoicePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_MainForm.resx">
+      <DependentUpon>POS_MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Purchase\frm_ImportPurchase.resx">
+      <DependentUpon>frm_ImportPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\frm_Purchase.resx">
+      <DependentUpon>frm_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rdlc_File\A5_SaleInvoice.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_dailyAudit.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_EndOfDay.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_EventLogs.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_Expense.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_Income.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_SaleHeader.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_SaleItem.rdlc" />
+    <EmbeddedResource Include="rdlc_File\Slip_SaleVoucher.rdlc" />
+    <EmbeddedResource Include="Report\frmDailyAuditReport.resx">
+      <DependentUpon>frmDailyAuditReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_ExpenseReport.resx">
+      <DependentUpon>frm_ExpenseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_IncomeReport.resx">
+      <DependentUpon>frm_IncomeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_SaleHeaderReport.resx">
+      <DependentUpon>frm_SaleHeaderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_SaleItemReport.resx">
+      <DependentUpon>frm_SaleItemReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_SlipVoucher.resx">
+      <DependentUpon>frm_SlipVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rtp_File\rtp_EndOfDay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtp_EndOfDay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Sale_POS.resx">
+      <DependentUpon>Sale_POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Sale_Store.resx">
+      <DependentUpon>Sale_Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Sale_Transaction.resx">
+      <DependentUpon>Sale_Transaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\TouchPOS.resx">
+      <DependentUpon>TouchPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EndOfDayDetail.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EventLogs.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Expense.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Income.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleInvoice.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleItem.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleSlip.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetfixPOS.Controller\NetfixPOS.Controller.csproj">
+      <Project>{611d42b1-c015-421b-888f-9246eb03c2bf}</Project>
+      <Name>NetfixPOS.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetfixPOS.Models\NetfixPOS.Models.csproj">
+      <Project>{f737affb-e02d-4e08-be13-3ad00d3b5682}</Project>
+      <Name>NetfixPOS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconFile\sale_pos_icon.ico" />
+    <Content Include="ImageFile\category.ico" />
+    <Content Include="ImageFile\currency.ico" />
+    <Content Include="ImageFile\customer.ico" />
+    <Content Include="ImageFile\damage_icon.png" />
+    <Content Include="ImageFile\eventLog.ico" />
+    <Content Include="ImageFile\expense.ico" />
+    <Content Include="ImageFile\income.ico" />
+    <Content Include="ImageFile\login.ico" />
+    <Content Include="ImageFile\permission.ico" />
+    <Content Include="ImageFile\permission_row.ico" />
+    <Content Include="ImageFile\pos_bgImage_2.png" />
+    <Content Include="ImageFile\pos_logo.png" />
+    <Content Include="ImageFile\pos_logo_icon.ico" />
+    <Content Include="ImageFile\product.ico" />
+    <Content Include="ImageFile\purchase.ico" />
+    <Content Include="ImageFile\report.ico" />
+    <Content Include="ImageFile\room.ico" />
+    <Content Include="ImageFile\sale.ico" />
+    <Content Include="ImageFile\table.ico" />
+    <Content Include="ImageFile\touch.ico" />
+    <Content Include="ImageFile\unit.ico" />
+    <Content Include="ImageFile\user.ico" />
+    <Content Include="KeyFile\NetfixKeyFile.txt" />
+    <Content Include="pos_logo_icon.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cryFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
