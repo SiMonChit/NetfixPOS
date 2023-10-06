@@ -30,8 +30,6 @@ namespace NetfixPOS.Sales
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboWaiter = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtServiceAmt = new System.Windows.Forms.TextBox();
             this.txtSerPercent = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,25 +82,24 @@ namespace NetfixPOS.Sales
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsFOC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvTempInvoice = new System.Windows.Forms.DataGridView();
-            this.colTableId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboWaiter = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cboSinger = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dtp_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtp_EndTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTempInvoice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cboWaiter);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.txtServiceAmt);
             this.panel1.Controls.Add(this.txtSerPercent);
             this.panel1.Controls.Add(this.label11);
@@ -129,76 +126,51 @@ namespace NetfixPOS.Sales
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1174, 107);
+            this.panel1.Size = new System.Drawing.Size(1761, 164);
             this.panel1.TabIndex = 0;
-            // 
-            // cboWaiter
-            // 
-            this.cboWaiter.FormattingEnabled = true;
-            this.cboWaiter.Location = new System.Drawing.Point(557, 80);
-            this.cboWaiter.Margin = new System.Windows.Forms.Padding(2);
-            this.cboWaiter.Name = "cboWaiter";
-            this.cboWaiter.Size = new System.Drawing.Size(159, 21);
-            this.cboWaiter.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(503, 83);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 13);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Waiter";
             // 
             // txtServiceAmt
             // 
-            this.txtServiceAmt.Location = new System.Drawing.Point(873, 58);
-            this.txtServiceAmt.Margin = new System.Windows.Forms.Padding(2);
+            this.txtServiceAmt.Location = new System.Drawing.Point(1310, 89);
             this.txtServiceAmt.Name = "txtServiceAmt";
             this.txtServiceAmt.ReadOnly = true;
-            this.txtServiceAmt.Size = new System.Drawing.Size(82, 20);
+            this.txtServiceAmt.Size = new System.Drawing.Size(121, 26);
             this.txtServiceAmt.TabIndex = 29;
             this.txtServiceAmt.Text = "0";
             // 
             // txtSerPercent
             // 
-            this.txtSerPercent.Location = new System.Drawing.Point(831, 58);
-            this.txtSerPercent.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSerPercent.Location = new System.Drawing.Point(1246, 89);
             this.txtSerPercent.Name = "txtSerPercent";
             this.txtSerPercent.ReadOnly = true;
-            this.txtSerPercent.Size = new System.Drawing.Size(39, 20);
+            this.txtSerPercent.Size = new System.Drawing.Size(56, 26);
             this.txtSerPercent.TabIndex = 28;
             this.txtSerPercent.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(769, 60);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(1154, 92);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.Size = new System.Drawing.Size(86, 20);
             this.label11.TabIndex = 27;
             this.label11.Text = "ServiceTax";
             // 
             // cboCustomer
             // 
             this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(115, 82);
-            this.cboCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCustomer.Location = new System.Drawing.Point(172, 126);
             this.cboCustomer.Name = "cboCustomer";
-            this.cboCustomer.Size = new System.Drawing.Size(159, 21);
+            this.cboCustomer.Size = new System.Drawing.Size(236, 28);
             this.cboCustomer.TabIndex = 26;
             // 
             // btnPendding
             // 
             this.btnPendding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnPendding.Location = new System.Drawing.Point(1106, 9);
-            this.btnPendding.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPendding.Location = new System.Drawing.Point(1659, 14);
             this.btnPendding.Name = "btnPendding";
-            this.btnPendding.Size = new System.Drawing.Size(59, 27);
+            this.btnPendding.Size = new System.Drawing.Size(88, 42);
             this.btnPendding.TabIndex = 25;
             this.btnPendding.Text = "Pending";
             this.btnPendding.UseVisualStyleBackColor = false;
@@ -206,10 +178,9 @@ namespace NetfixPOS.Sales
             // 
             // txtDeliveryFee
             // 
-            this.txtDeliveryFee.Location = new System.Drawing.Point(831, 32);
-            this.txtDeliveryFee.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeliveryFee.Location = new System.Drawing.Point(1246, 49);
             this.txtDeliveryFee.Name = "txtDeliveryFee";
-            this.txtDeliveryFee.Size = new System.Drawing.Size(124, 20);
+            this.txtDeliveryFee.Size = new System.Drawing.Size(184, 26);
             this.txtDeliveryFee.TabIndex = 24;
             this.txtDeliveryFee.Text = "0";
             this.txtDeliveryFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -218,19 +189,17 @@ namespace NetfixPOS.Sales
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(769, 34);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(1154, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.Size = new System.Drawing.Size(92, 20);
             this.label7.TabIndex = 23;
             this.label7.Text = "DeliveryFee";
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(1106, 73);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrint.Location = new System.Drawing.Point(1659, 112);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(59, 27);
+            this.btnPrint.Size = new System.Drawing.Size(88, 42);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -238,10 +207,9 @@ namespace NetfixPOS.Sales
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1106, 42);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(1659, 65);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(59, 27);
+            this.btnSave.Size = new System.Drawing.Size(88, 42);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -250,10 +218,9 @@ namespace NetfixPOS.Sales
             // chkFOC
             // 
             this.chkFOC.AutoSize = true;
-            this.chkFOC.Location = new System.Drawing.Point(986, 9);
-            this.chkFOC.Margin = new System.Windows.Forms.Padding(2);
+            this.chkFOC.Location = new System.Drawing.Point(1479, 14);
             this.chkFOC.Name = "chkFOC";
-            this.chkFOC.Size = new System.Drawing.Size(47, 17);
+            this.chkFOC.Size = new System.Drawing.Size(68, 24);
             this.chkFOC.TabIndex = 22;
             this.chkFOC.Text = "FOC";
             this.chkFOC.UseVisualStyleBackColor = true;
@@ -261,29 +228,26 @@ namespace NetfixPOS.Sales
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(307, 62);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(460, 95);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.Size = new System.Drawing.Size(127, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "Table / Room No";
             // 
             // txtTableOrRoom
             // 
-            this.txtTableOrRoom.Location = new System.Drawing.Point(309, 80);
-            this.txtTableOrRoom.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTableOrRoom.Location = new System.Drawing.Point(464, 123);
             this.txtTableOrRoom.Name = "txtTableOrRoom";
             this.txtTableOrRoom.ReadOnly = true;
-            this.txtTableOrRoom.Size = new System.Drawing.Size(157, 20);
+            this.txtTableOrRoom.Size = new System.Drawing.Size(234, 26);
             this.txtTableOrRoom.TabIndex = 20;
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(831, 9);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscount.Location = new System.Drawing.Point(1246, 14);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.ReadOnly = true;
-            this.txtDiscount.Size = new System.Drawing.Size(124, 20);
+            this.txtDiscount.Size = new System.Drawing.Size(184, 26);
             this.txtDiscount.TabIndex = 13;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -292,50 +256,44 @@ namespace NetfixPOS.Sales
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(769, 11);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(1154, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Discount";
             // 
             // cboSalePerson
             // 
             this.cboSalePerson.FormattingEnabled = true;
-            this.cboSalePerson.Location = new System.Drawing.Point(115, 58);
-            this.cboSalePerson.Margin = new System.Windows.Forms.Padding(2);
+            this.cboSalePerson.Location = new System.Drawing.Point(172, 89);
             this.cboSalePerson.Name = "cboSalePerson";
-            this.cboSalePerson.Size = new System.Drawing.Size(159, 21);
+            this.cboSalePerson.Size = new System.Drawing.Size(236, 28);
             this.cboSalePerson.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(503, 13);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(754, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Remark";
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(557, 9);
-            this.txtRemark.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRemark.Location = new System.Drawing.Point(836, 14);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(187, 65);
+            this.txtRemark.Size = new System.Drawing.Size(278, 98);
             this.txtRemark.TabIndex = 9;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboSaleType);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(292, 9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(438, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(185, 47);
+            this.groupBox1.Size = new System.Drawing.Size(278, 72);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sale Type";
@@ -343,109 +301,98 @@ namespace NetfixPOS.Sales
             // cboSaleType
             // 
             this.cboSaleType.FormattingEnabled = true;
-            this.cboSaleType.Location = new System.Drawing.Point(17, 18);
-            this.cboSaleType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboSaleType.Location = new System.Drawing.Point(26, 28);
             this.cboSaleType.Name = "cboSaleType";
-            this.cboSaleType.Size = new System.Drawing.Size(157, 21);
+            this.cboSaleType.Size = new System.Drawing.Size(234, 28);
             this.cboSaleType.TabIndex = 0;
             // 
             // dtpInvoiceDate
             // 
             this.dtpInvoiceDate.Enabled = false;
             this.dtpInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInvoiceDate.Location = new System.Drawing.Point(115, 33);
-            this.dtpInvoiceDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpInvoiceDate.Location = new System.Drawing.Point(172, 51);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
-            this.dtpInvoiceDate.Size = new System.Drawing.Size(159, 20);
+            this.dtpInvoiceDate.Size = new System.Drawing.Size(236, 26);
             this.dtpInvoiceDate.TabIndex = 7;
             // 
             // txtInvoiceNo
             // 
-            this.txtInvoiceNo.Location = new System.Drawing.Point(115, 9);
-            this.txtInvoiceNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvoiceNo.Location = new System.Drawing.Point(172, 14);
             this.txtInvoiceNo.Name = "txtInvoiceNo";
             this.txtInvoiceNo.ReadOnly = true;
-            this.txtInvoiceNo.Size = new System.Drawing.Size(159, 20);
+            this.txtInvoiceNo.Size = new System.Drawing.Size(236, 26);
             this.txtInvoiceNo.TabIndex = 4;
             this.txtInvoiceNo.Text = "Auto generate";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 84);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(33, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Customer";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 60);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(33, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Sale Person";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(33, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Invoice Date";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(33, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Invoice No";
             // 
             // txtTotalAmount
             // 
             this.txtTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmount.Location = new System.Drawing.Point(89, 14);
-            this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalAmount.Location = new System.Drawing.Point(134, 22);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
-            this.txtTotalAmount.Size = new System.Drawing.Size(106, 20);
+            this.txtTotalAmount.Size = new System.Drawing.Size(157, 26);
             this.txtTotalAmount.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 16);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(14, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.Size = new System.Drawing.Size(104, 20);
             this.label9.TabIndex = 18;
             this.label9.Text = "Total Amount";
             // 
             // txtNetAmount
             // 
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetAmount.Location = new System.Drawing.Point(273, 14);
-            this.txtNetAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNetAmount.Location = new System.Drawing.Point(410, 22);
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.ReadOnly = true;
-            this.txtNetAmount.Size = new System.Drawing.Size(106, 20);
+            this.txtNetAmount.Size = new System.Drawing.Size(157, 26);
             this.txtNetAmount.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(207, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(310, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.Size = new System.Drawing.Size(94, 20);
             this.label8.TabIndex = 16;
             this.label8.Text = "Net Amount";
             // 
@@ -453,10 +400,9 @@ namespace NetfixPOS.Sales
             // 
             this.trvCategory.BackColor = System.Drawing.Color.Aquamarine;
             this.trvCategory.Dock = System.Windows.Forms.DockStyle.Left;
-            this.trvCategory.Location = new System.Drawing.Point(0, 107);
-            this.trvCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.trvCategory.Location = new System.Drawing.Point(0, 164);
             this.trvCategory.Name = "trvCategory";
-            this.trvCategory.Size = new System.Drawing.Size(137, 407);
+            this.trvCategory.Size = new System.Drawing.Size(204, 627);
             this.trvCategory.TabIndex = 1;
             this.trvCategory.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvCategory_AfterSelect);
             // 
@@ -470,13 +416,12 @@ namespace NetfixPOS.Sales
             this.colStockName,
             this.colSellingPrice});
             this.dgvStock.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvStock.Location = new System.Drawing.Point(137, 107);
-            this.dgvStock.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvStock.Location = new System.Drawing.Point(204, 164);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 40;
             this.dgvStock.RowTemplate.Height = 28;
             this.dgvStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStock.Size = new System.Drawing.Size(269, 407);
+            this.dgvStock.Size = new System.Drawing.Size(404, 627);
             this.dgvStock.TabIndex = 2;
             this.dgvStock.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStock_CellDoubleClick);
             // 
@@ -521,39 +466,35 @@ namespace NetfixPOS.Sales
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtTotalAmount);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(406, 468);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(608, 721);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(768, 46);
+            this.panel2.Size = new System.Drawing.Size(1153, 70);
             this.panel2.TabIndex = 3;
             // 
             // txtBalanceAmount
             // 
             this.txtBalanceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceAmount.Location = new System.Drawing.Point(657, 14);
-            this.txtBalanceAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBalanceAmount.Location = new System.Drawing.Point(986, 22);
             this.txtBalanceAmount.Name = "txtBalanceAmount";
             this.txtBalanceAmount.ReadOnly = true;
-            this.txtBalanceAmount.Size = new System.Drawing.Size(106, 20);
+            this.txtBalanceAmount.Size = new System.Drawing.Size(157, 26);
             this.txtBalanceAmount.TabIndex = 23;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(568, 17);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(852, 26);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 13);
+            this.label14.Size = new System.Drawing.Size(127, 20);
             this.label14.TabIndex = 22;
             this.label14.Text = "Balance Amount";
             // 
             // txtPaidAmount
             // 
             this.txtPaidAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaidAmount.Location = new System.Drawing.Point(454, 14);
-            this.txtPaidAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPaidAmount.Location = new System.Drawing.Point(681, 22);
             this.txtPaidAmount.Name = "txtPaidAmount";
-            this.txtPaidAmount.Size = new System.Drawing.Size(106, 20);
+            this.txtPaidAmount.Size = new System.Drawing.Size(157, 26);
             this.txtPaidAmount.TabIndex = 21;
             this.txtPaidAmount.Text = "0";
             this.txtPaidAmount.Leave += new System.EventHandler(this.txtPaidAmount_Leave);
@@ -561,10 +502,9 @@ namespace NetfixPOS.Sales
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(385, 17);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(578, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.Size = new System.Drawing.Size(100, 20);
             this.label12.TabIndex = 20;
             this.label12.Text = "Paid Amount";
             // 
@@ -587,13 +527,12 @@ namespace NetfixPOS.Sales
             this.colIsFOC,
             this.colRemove});
             this.dgvSaleItem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvSaleItem.Location = new System.Drawing.Point(406, 107);
-            this.dgvSaleItem.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvSaleItem.Location = new System.Drawing.Point(608, 164);
             this.dgvSaleItem.Name = "dgvSaleItem";
             this.dgvSaleItem.RowHeadersWidth = 45;
             this.dgvSaleItem.RowTemplate.Height = 28;
             this.dgvSaleItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSaleItem.Size = new System.Drawing.Size(510, 361);
+            this.dgvSaleItem.Size = new System.Drawing.Size(765, 557);
             this.dgvSaleItem.TabIndex = 4;
             this.dgvSaleItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellContentClick);
             this.dgvSaleItem.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellValidated);
@@ -712,81 +651,92 @@ namespace NetfixPOS.Sales
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
-            // dgvTempInvoice
+            // cboWaiter
             // 
-            this.dgvTempInvoice.AllowUserToAddRows = false;
-            this.dgvTempInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTempInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTableId,
-            this.colInvoiceId,
-            this.colInvoiceNo,
-            this.colTableNo,
-            this.colTotalAmount});
-            this.dgvTempInvoice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTempInvoice.Location = new System.Drawing.Point(916, 107);
-            this.dgvTempInvoice.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvTempInvoice.Name = "dgvTempInvoice";
-            this.dgvTempInvoice.RowHeadersVisible = false;
-            this.dgvTempInvoice.RowHeadersWidth = 62;
-            this.dgvTempInvoice.RowTemplate.Height = 28;
-            this.dgvTempInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTempInvoice.Size = new System.Drawing.Size(258, 361);
-            this.dgvTempInvoice.TabIndex = 5;
+            this.cboWaiter.FormattingEnabled = true;
+            this.cboWaiter.Location = new System.Drawing.Point(1480, 181);
+            this.cboWaiter.Name = "cboWaiter";
+            this.cboWaiter.Size = new System.Drawing.Size(236, 28);
+            this.cboWaiter.TabIndex = 33;
             // 
-            // colTableId
+            // label15
             // 
-            this.colTableId.DataPropertyName = "TableId";
-            this.colTableId.HeaderText = "TableId";
-            this.colTableId.MinimumWidth = 8;
-            this.colTableId.Name = "colTableId";
-            this.colTableId.Visible = false;
-            this.colTableId.Width = 150;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1406, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 20);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Waiter";
             // 
-            // colInvoiceId
+            // cboSinger
             // 
-            this.colInvoiceId.HeaderText = "InvoiceId";
-            this.colInvoiceId.MinimumWidth = 8;
-            this.colInvoiceId.Name = "colInvoiceId";
-            this.colInvoiceId.Visible = false;
-            this.colInvoiceId.Width = 150;
+            this.cboSinger.FormattingEnabled = true;
+            this.cboSinger.Location = new System.Drawing.Point(1480, 219);
+            this.cboSinger.Name = "cboSinger";
+            this.cboSinger.Size = new System.Drawing.Size(236, 28);
+            this.cboSinger.TabIndex = 35;
             // 
-            // colInvoiceNo
+            // label16
             // 
-            this.colInvoiceNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colInvoiceNo.DataPropertyName = "InvoiceNo";
-            this.colInvoiceNo.HeaderText = "Invoice No";
-            this.colInvoiceNo.MinimumWidth = 8;
-            this.colInvoiceNo.Name = "colInvoiceNo";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1406, 223);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 20);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Singer";
             // 
-            // colTableNo
+            // dtp_StartTime
             // 
-            this.colTableNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTableNo.DataPropertyName = "TableOrRoom";
-            this.colTableNo.HeaderText = "Table / Room";
-            this.colTableNo.MinimumWidth = 8;
-            this.colTableNo.Name = "colTableNo";
-            this.colTableNo.ReadOnly = true;
+            this.dtp_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_StartTime.Location = new System.Drawing.Point(1480, 267);
+            this.dtp_StartTime.Name = "dtp_StartTime";
+            this.dtp_StartTime.Size = new System.Drawing.Size(146, 30);
+            this.dtp_StartTime.TabIndex = 36;
             // 
-            // colTotalAmount
+            // dtp_EndTime
             // 
-            this.colTotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTotalAmount.HeaderText = "TotalAmount";
-            this.colTotalAmount.MinimumWidth = 8;
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.ReadOnly = true;
+            this.dtp_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_EndTime.Location = new System.Drawing.Point(1480, 308);
+            this.dtp_EndTime.Name = "dtp_EndTime";
+            this.dtp_EndTime.Size = new System.Drawing.Size(146, 30);
+            this.dtp_EndTime.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1379, 275);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 20);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Start Time";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1385, 314);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(76, 20);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "End Time";
             // 
             // Sale_Transaction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 514);
-            this.Controls.Add(this.dgvTempInvoice);
+            this.ClientSize = new System.Drawing.Size(1761, 791);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dtp_EndTime);
+            this.Controls.Add(this.dtp_StartTime);
+            this.Controls.Add(this.cboSinger);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.cboWaiter);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvSaleItem);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvStock);
             this.Controls.Add(this.trvCategory);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Sale_Transaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sale Transaction";
@@ -798,8 +748,8 @@ namespace NetfixPOS.Sales
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTempInvoice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -835,12 +785,6 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.CheckBox chkFOC;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.DataGridView dgvTempInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTableId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTableNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
         private System.Windows.Forms.TextBox txtDeliveryFee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPendding;
@@ -850,8 +794,6 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.TextBox txtServiceAmt;
         private System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cboWaiter;
         private System.Windows.Forms.TextBox txtBalanceAmount;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDetailId;
@@ -866,5 +808,13 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colIsFOC;
         private System.Windows.Forms.DataGridViewButtonColumn colRemove;
+        private System.Windows.Forms.ComboBox cboWaiter;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cboSinger;
+        private System.Windows.Forms.Label label16;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtp_StartTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtp_EndTime;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
     }
 }

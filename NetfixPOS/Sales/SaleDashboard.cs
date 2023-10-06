@@ -166,5 +166,15 @@ namespace NetfixPOS.Sales
         {
 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

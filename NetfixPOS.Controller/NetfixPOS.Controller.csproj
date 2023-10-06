@@ -85,6 +85,7 @@
     <Compile Include="SaleController.cs" />
     <Compile Include="SaleTypeController.cs" />
     <Compile Include="ShopController.cs" />
+    <Compile Include="SingerController.cs" />
     <Compile Include="StockMasterController.cs" />
     <Compile Include="SupplierController.cs" />
     <Compile Include="TableController.cs" />

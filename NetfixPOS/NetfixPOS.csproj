@@ -339,6 +339,12 @@
     <Compile Include="NewSetup\DamageForm.Designer.cs">
       <DependentUpon>DamageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewSetup\frm_Singer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSetup\frm_Singer.Designer.cs">
+      <DependentUpon>frm_Singer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewSetup\frm_Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -545,6 +551,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewSetup\DamageForm.resx">
       <DependentUpon>DamageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSetup\frm_Singer.resx">
+      <DependentUpon>frm_Singer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewSetup\frm_Supplier.resx">
       <DependentUpon>frm_Supplier.cs</DependentUpon>

@@ -135,6 +135,7 @@
     <Compile Include="RoomModel.cs" />
     <Compile Include="SaleTypeModel.cs" />
     <Compile Include="ShopModel.cs" />
+    <Compile Include="SingerModel.cs" />
     <Compile Include="StockModel.cs" />
     <Compile Include="SupplierModel.cs" />
     <Compile Include="TableModel.cs" />

@@ -97,6 +97,10 @@ namespace NetfixPOS.Main
             this.kryptonRibbonGroupButton15 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kt_panelChildForm = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.rbo_Dashboard = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupTriple14 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.rbo_Singer = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton3 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kto_botton_panel)).BeginInit();
             this.kto_botton_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
@@ -160,7 +164,7 @@ namespace NetfixPOS.Main
             this.rbo_Report,
             this.rbo_System_utilities,
             this.rbo_Help});
-            this.kryptonRibbon1.SelectedTab = this.rbo_Transaction;
+            this.kryptonRibbon1.SelectedTab = this.rbo_Newsetup;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1344, 156);
             this.kryptonRibbon1.TabIndex = 2;
             // 
@@ -174,7 +178,8 @@ namespace NetfixPOS.Main
             // 
             this.kryptonRibbonGroup1.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple1,
-            this.kryptonRibbonGroupTriple6});
+            this.kryptonRibbonGroupTriple6,
+            this.kryptonRibbonGroupTriple14});
             this.kryptonRibbonGroup1.TextLine1 = "New Setup Action";
             // 
             // kryptonRibbonGroupTriple1
@@ -506,6 +511,17 @@ namespace NetfixPOS.Main
             this.rbo_Dashboard.TextLine1 = "Dashboard";
             this.rbo_Dashboard.Click += new System.EventHandler(this.rbo_Dashboard_Click);
             // 
+            // kryptonRibbonGroupTriple14
+            // 
+            this.kryptonRibbonGroupTriple14.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.rbo_Singer,
+            this.kryptonRibbonGroupButton2,
+            this.kryptonRibbonGroupButton3});
+            // 
+            // rbo_Singer
+            // 
+            this.rbo_Singer.TextLine1 = "Singer";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -599,5 +615,9 @@ namespace NetfixPOS.Main
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_eod_report;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btnEndOfDay;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Dashboard;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple14;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Singer;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
     }
 }
