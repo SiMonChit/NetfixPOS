@@ -11,7 +11,7 @@ namespace NetfixPOS.Query
         string query = "";
         public string Insert()
         {
-            query = "INSERT tbl_Room VALUES(@RoomNo, @RoomName, @CompanyId, @ModifiedDate, 0, 1, @IsDefault)";
+            query = "INSERT tbl_Room VALUES(@RoomNo, @RoomName, @CompanyId, @ModifiedDate, 0, 1, @IsDefault, null, null)";
             return query;
         }
         public string Update()

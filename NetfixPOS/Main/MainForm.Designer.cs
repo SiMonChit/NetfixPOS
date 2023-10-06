@@ -96,6 +96,7 @@ namespace NetfixPOS.Main
             this.kryptonRibbonGroupButton14 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupButton15 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kt_panelChildForm = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.rbo_Dashboard = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kto_botton_panel)).BeginInit();
             this.kto_botton_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
@@ -109,47 +110,42 @@ namespace NetfixPOS.Main
             this.kto_botton_panel.Controls.Add(this.lblLoginUser);
             this.kto_botton_panel.Controls.Add(this.kryptonLabel1);
             this.kto_botton_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kto_botton_panel.Location = new System.Drawing.Point(0, 371);
-            this.kto_botton_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kto_botton_panel.Location = new System.Drawing.Point(0, 570);
             this.kto_botton_panel.Name = "kto_botton_panel";
-            this.kto_botton_panel.Size = new System.Drawing.Size(896, 27);
+            this.kto_botton_panel.Size = new System.Drawing.Size(1344, 42);
             this.kto_botton_panel.StateCommon.Color1 = System.Drawing.Color.PaleGoldenrod;
             this.kto_botton_panel.StateCommon.ColorAngle = 10F;
             this.kto_botton_panel.TabIndex = 1;
             // 
             // lblSaleDate
             // 
-            this.lblSaleDate.Location = new System.Drawing.Point(490, 4);
-            this.lblSaleDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblSaleDate.Location = new System.Drawing.Point(735, 6);
             this.lblSaleDate.Name = "lblSaleDate";
-            this.lblSaleDate.Size = new System.Drawing.Size(36, 20);
+            this.lblSaleDate.Size = new System.Drawing.Size(51, 29);
             this.lblSaleDate.TabIndex = 3;
             this.lblSaleDate.Values.Text = "Date";
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(420, 4);
-            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel3.Location = new System.Drawing.Point(630, 6);
             this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(68, 20);
+            this.kryptonLabel3.Size = new System.Drawing.Size(99, 29);
             this.kryptonLabel3.TabIndex = 2;
             this.kryptonLabel3.Values.Text = "Sale Date :";
             // 
             // lblLoginUser
             // 
-            this.lblLoginUser.Location = new System.Drawing.Point(72, 4);
-            this.lblLoginUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblLoginUser.Location = new System.Drawing.Point(108, 6);
             this.lblLoginUser.Name = "lblLoginUser";
-            this.lblLoginUser.Size = new System.Drawing.Size(35, 20);
+            this.lblLoginUser.Size = new System.Drawing.Size(49, 29);
             this.lblLoginUser.TabIndex = 1;
             this.lblLoginUser.Values.Text = "User";
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(2, 4);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel1.Location = new System.Drawing.Point(3, 6);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(75, 20);
+            this.kryptonLabel1.Size = new System.Drawing.Size(109, 29);
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Login User :";
             // 
@@ -164,9 +160,8 @@ namespace NetfixPOS.Main
             this.rbo_Report,
             this.rbo_System_utilities,
             this.rbo_Help});
-            this.kryptonRibbon1.SelectedContext = null;
             this.kryptonRibbon1.SelectedTab = this.rbo_Transaction;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(896, 115);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(1344, 156);
             this.kryptonRibbon1.TabIndex = 2;
             // 
             // rbo_Newsetup
@@ -244,7 +239,8 @@ namespace NetfixPOS.Main
             // 
             this.kryptonRibbonGroupTriple2.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
             this.rbo_SalePos,
-            this.rbo_SaleInvoice});
+            this.rbo_SaleInvoice,
+            this.rbo_Dashboard});
             // 
             // rbo_SalePos
             // 
@@ -498,25 +494,27 @@ namespace NetfixPOS.Main
             // kt_panelChildForm
             // 
             this.kt_panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kt_panelChildForm.Location = new System.Drawing.Point(0, 115);
-            this.kt_panelChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kt_panelChildForm.Location = new System.Drawing.Point(0, 156);
             this.kt_panelChildForm.Name = "kt_panelChildForm";
-            this.kt_panelChildForm.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.kt_panelChildForm.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.kt_panelChildForm.Size = new System.Drawing.Size(896, 256);
+            this.kt_panelChildForm.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.kt_panelChildForm.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderCustom1;
+            this.kt_panelChildForm.Size = new System.Drawing.Size(1344, 414);
             this.kt_panelChildForm.TabIndex = 3;
+            // 
+            // rbo_Dashboard
+            // 
+            this.rbo_Dashboard.TextLine1 = "Dashboard";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 398);
+            this.ClientSize = new System.Drawing.Size(1344, 612);
             this.Controls.Add(this.kt_panelChildForm);
             this.Controls.Add(this.kryptonRibbon1);
             this.Controls.Add(this.kto_botton_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StateActive.Header.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
             this.Text = "Netfix POS";
@@ -599,5 +597,6 @@ namespace NetfixPOS.Main
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Eventlogs;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_eod_report;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btnEndOfDay;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Dashboard;
     }
 }
