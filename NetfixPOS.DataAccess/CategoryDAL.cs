@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,11 @@ namespace NetfixPOS.DataAccess
 {
     public class CategoryDAL : DataControllerBase, ICategory
     {
+        CategoryQuery query;
+        public CategoryDAL()
+        {
+            query = new CategoryQuery();
+        }
         public void Delete(int id)
         {
             string query = "UPDATE Category SET IsActive = 0 WHERE CategoryId = @CategoryId";
@@ -38,14 +44,14 @@ namespace NetfixPOS.DataAccess
 
         public void Insert(CategoryModel category)
         {
-            string query = "INSERT Category VALUES(@CategoryName, 1,0)";
+            string query = "INSERT Category VALUES(@CategoryName, 1,0, @CategoryType)";
             Command = new SqlCommand(query, Connection);
             Command.CommandType = CommandType.Text;
             
             try
             {
                 Command.Parameters.AddWithValue("CategoryName", category.CategoryName);
-
+                Command.Parameters.AddWithValue("CategoryType", category.CategoryType);
                 Connection.Open();
                 Command.ExecuteNonQuery();
             }
@@ -62,7 +68,7 @@ namespace NetfixPOS.DataAccess
 
         public void Update(CategoryModel category)
         {
-            string query = "UPDATE Category SET CategoryName = @CategoryName WHERE CategoryId = @CategoryId";
+            string query = "UPDATE Category SET CategoryName = @CategoryName, CategoryType = @CategoryType WHERE CategoryId = @CategoryId";
             Command = new SqlCommand(query, Connection);
             Command.CommandType = CommandType.Text;
 
@@ -70,7 +76,7 @@ namespace NetfixPOS.DataAccess
             {
                 Command.Parameters.AddWithValue("CategoryId", category.CategoryId);
                 Command.Parameters.AddWithValue("CategoryName", category.CategoryName);
-
+                Command.Parameters.AddWithValue("CategoryType", category.CategoryType);
                 Connection.Open();
                 Command.ExecuteNonQuery();
             }
@@ -87,8 +93,8 @@ namespace NetfixPOS.DataAccess
 
         public DataTable GetCategory(int id)
         {
-            Command = new SqlCommand("Category_Select", Connection);
-            Command.CommandType = CommandType.StoredProcedure;
+            Command = new SqlCommand(query.Select(id), Connection);
+            Command.CommandType = CommandType.Text;
             DataTable dt = new DataTable();
             try
             {

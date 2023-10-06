@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace NetfixPOS.Sales
 {
-    public partial class SaleDashboard : Form
+    public partial class SaleDashboard : KryptonForm
     {
         public SaleDashboard()
         {

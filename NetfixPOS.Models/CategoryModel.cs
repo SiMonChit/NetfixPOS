@@ -12,5 +12,6 @@ namespace NetfixPOS.Models
         public int ParentId { get; set; }
         public string CategoryName { get; set; }
         public bool IsActive { get; set; }
+        public string CategoryType { get; set; }
     }
 }

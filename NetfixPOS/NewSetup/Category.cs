@@ -30,6 +30,8 @@ namespace NetfixPOS.NewSetup
         {
             category.CategoryId = id;
             category.CategoryName = txtCategoryName.Text;
+            category.CategoryType = txtCategoryType.Text;
+
             if (string.IsNullOrEmpty(txtCategoryName.Text)) return;
 
             switch (btnSave.Text)
@@ -73,6 +75,7 @@ namespace NetfixPOS.NewSetup
             {
                 id = Convert.ToInt32(dgvCategory.Rows[e.RowIndex].Cells["colCategoryId"].Value);
                 txtCategoryName.Text = dgvCategory.Rows[e.RowIndex].Cells["colCategoryName"].Value.ToString();
+                txtCategoryType.Text = dgvCategory.Rows[e.RowIndex].Cells["colCategoryType"].Value.ToString();
                 btnSave.Text = "Update";
             }
             else if (colName == "colDel")

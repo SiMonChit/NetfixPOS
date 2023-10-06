@@ -16,5 +16,7 @@ namespace NetfixPOS.Models
         public bool IsDeleted { get; set; }
         public bool IsAvailable { get; set; }
         public bool IsDefault { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

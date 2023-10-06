@@ -30,16 +30,19 @@ namespace NetfixPOS.NewSetup
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNew = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.txtCategoryType = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.colCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoryType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +51,8 @@ namespace NetfixPOS.NewSetup
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtCategoryType);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Controls.Add(this.txtCategoryName);
             this.panel1.Controls.Add(this.label1);
@@ -59,27 +64,38 @@ namespace NetfixPOS.NewSetup
             this.panel1.Size = new System.Drawing.Size(757, 93);
             this.panel1.TabIndex = 0;
             // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(590, 26);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(100, 37);
+            this.btnNew.TabIndex = 3;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(180, 36);
+            this.txtCategoryName.Location = new System.Drawing.Point(123, 12);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(273, 30);
+            this.txtCategoryName.Size = new System.Drawing.Size(273, 23);
             this.txtCategoryName.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(9, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 25);
+            this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Category Name";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(492, 35);
+            this.btnSave.Location = new System.Drawing.Point(482, 25);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 37);
@@ -95,6 +111,7 @@ namespace NetfixPOS.NewSetup
             this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCategoryId,
             this.colCategoryName,
+            this.colCategoryType,
             this.colIsActive,
             this.colEdit,
             this.colDel});
@@ -108,6 +125,24 @@ namespace NetfixPOS.NewSetup
             this.dgvCategory.TabIndex = 1;
             this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
             this.dgvCategory.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCategory_DataBindingComplete);
+            // 
+            // txtCategoryType
+            // 
+            this.txtCategoryType.Location = new System.Drawing.Point(123, 43);
+            this.txtCategoryType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCategoryType.Name = "txtCategoryType";
+            this.txtCategoryType.Size = new System.Drawing.Size(273, 23);
+            this.txtCategoryType.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Category Type";
             // 
             // colCategoryId
             // 
@@ -125,6 +160,15 @@ namespace NetfixPOS.NewSetup
             this.colCategoryName.HeaderText = "CategoryName";
             this.colCategoryName.MinimumWidth = 8;
             this.colCategoryName.Name = "colCategoryName";
+            // 
+            // colCategoryType
+            // 
+            this.colCategoryType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCategoryType.DataPropertyName = "CategoryType";
+            this.colCategoryType.FillWeight = 80F;
+            this.colCategoryType.HeaderText = "CategoryType";
+            this.colCategoryType.Name = "colCategoryType";
+            this.colCategoryType.ReadOnly = true;
             // 
             // colIsActive
             // 
@@ -155,20 +199,9 @@ namespace NetfixPOS.NewSetup
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(600, 36);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(100, 37);
-            this.btnNew.TabIndex = 3;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
             // Category
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 638);
             this.Controls.Add(this.dgvCategory);
@@ -193,11 +226,14 @@ namespace NetfixPOS.NewSetup
         private System.Windows.Forms.DataGridView dgvCategory;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.TextBox txtCategoryType;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
-        private System.Windows.Forms.Button btnNew;
     }
 }

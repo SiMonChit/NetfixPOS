@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryQuery.cs" />
     <Compile Include="ConversionQuery.cs" />
     <Compile Include="ExpenseQuery.cs" />
     <Compile Include="IncomeQuery.cs" />

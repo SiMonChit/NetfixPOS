@@ -620,6 +620,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rtp_EndOfDay.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SaleDashboard.resx">
+      <DependentUpon>SaleDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales\Sale_POS.resx">
       <DependentUpon>Sale_POS.cs</DependentUpon>
     </EmbeddedResource>
