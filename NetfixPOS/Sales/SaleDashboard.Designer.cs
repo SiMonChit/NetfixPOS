@@ -29,7 +29,11 @@ namespace NetfixPOS.Sales
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.lblShopName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblTimer = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblUser = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -46,26 +50,30 @@ namespace NetfixPOS.Sales
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnNewVoucher = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dtpSaleDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnPaidConfirm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPayment = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnJoin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonDockableNavigator1 = new ComponentFactory.Krypton.Docking.KryptonDockableNavigator();
-            this.PanelTable = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.page_Table = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.dgvTable = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.dgvRoom = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.colTableId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltableJoin = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
             this.colTableNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblShopName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.colEdit = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.page_Room = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.dgvRoom = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.colRoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroomJoin = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
             this.colRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RoomSaleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_InvNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +82,8 @@ namespace NetfixPOS.Sales
             this.colSinger = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_InvoiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUpdate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.countdownTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel6)).BeginInit();
@@ -88,11 +98,11 @@ namespace NetfixPOS.Sales
             this.kryptonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDockableNavigator1)).BeginInit();
             this.kryptonDockableNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelTable)).BeginInit();
-            this.PanelTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.page_Table)).BeginInit();
+            this.page_Table.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
-            this.kryptonPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.page_Room)).BeginInit();
+            this.page_Room.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +123,15 @@ namespace NetfixPOS.Sales
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
             this.kryptonPanel1.Size = new System.Drawing.Size(1689, 110);
             this.kryptonPanel1.TabIndex = 0;
+            // 
+            // lblShopName
+            // 
+            this.lblShopName.Location = new System.Drawing.Point(21, 32);
+            this.lblShopName.Name = "lblShopName";
+            this.lblShopName.Size = new System.Drawing.Size(172, 34);
+            this.lblShopName.StateNormal.ShortText.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShopName.TabIndex = 6;
+            this.lblShopName.Values.Text = "ShopName";
             // 
             // lblTimer
             // 
@@ -267,6 +286,7 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel2
             // 
+            this.kryptonPanel2.Controls.Add(this.btnNewVoucher);
             this.kryptonPanel2.Controls.Add(this.dtpSaleDate);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel10);
             this.kryptonPanel2.Controls.Add(this.btnPaidConfirm);
@@ -280,8 +300,20 @@ namespace NetfixPOS.Sales
             this.kryptonPanel2.Size = new System.Drawing.Size(1689, 70);
             this.kryptonPanel2.TabIndex = 2;
             // 
+            // btnNewVoucher
+            // 
+            this.btnNewVoucher.Location = new System.Drawing.Point(813, 8);
+            this.btnNewVoucher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNewVoucher.Name = "btnNewVoucher";
+            this.btnNewVoucher.Size = new System.Drawing.Size(156, 56);
+            this.btnNewVoucher.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewVoucher.TabIndex = 14;
+            this.btnNewVoucher.Values.Text = "New Voucher";
+            this.btnNewVoucher.Click += new System.EventHandler(this.btnNewVoucher_Click);
+            // 
             // dtpSaleDate
             // 
+            this.dtpSaleDate.CalendarTodayDate = new System.DateTime(2023, 10, 6, 0, 0, 0, 0);
             this.dtpSaleDate.Enabled = false;
             this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpSaleDate.Location = new System.Drawing.Point(127, 20);
@@ -300,7 +332,7 @@ namespace NetfixPOS.Sales
             // 
             // btnPaidConfirm
             // 
-            this.btnPaidConfirm.Location = new System.Drawing.Point(949, 9);
+            this.btnPaidConfirm.Location = new System.Drawing.Point(1356, 8);
             this.btnPaidConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPaidConfirm.Name = "btnPaidConfirm";
             this.btnPaidConfirm.Size = new System.Drawing.Size(156, 56);
@@ -310,7 +342,7 @@ namespace NetfixPOS.Sales
             // 
             // btnPayment
             // 
-            this.btnPayment.Location = new System.Drawing.Point(772, 9);
+            this.btnPayment.Location = new System.Drawing.Point(1179, 8);
             this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(156, 56);
@@ -320,13 +352,14 @@ namespace NetfixPOS.Sales
             // 
             // btnJoin
             // 
-            this.btnJoin.Location = new System.Drawing.Point(593, 9);
+            this.btnJoin.Location = new System.Drawing.Point(1000, 8);
             this.btnJoin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnJoin.Name = "btnJoin";
             this.btnJoin.Size = new System.Drawing.Size(156, 56);
             this.btnJoin.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJoin.TabIndex = 13;
             this.btnJoin.Values.Text = "Join Table";
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // kryptonDockableNavigator1
             // 
@@ -335,80 +368,50 @@ namespace NetfixPOS.Sales
             this.kryptonDockableNavigator1.Name = "kryptonDockableNavigator1";
             this.kryptonDockableNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCalendarDay;
             this.kryptonDockableNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
-            this.PanelTable,
-            this.kryptonPage2});
+            this.page_Table,
+            this.page_Room});
             this.kryptonDockableNavigator1.SelectedIndex = 1;
             this.kryptonDockableNavigator1.Size = new System.Drawing.Size(1689, 475);
             this.kryptonDockableNavigator1.TabIndex = 3;
             this.kryptonDockableNavigator1.Text = "kryptonDockableNavigator1";
             this.kryptonDockableNavigator1.UseMnemonic = false;
+            this.kryptonDockableNavigator1.ContextAction += new System.EventHandler<ComponentFactory.Krypton.Navigator.ContextActionEventArgs>(this.kryptonDockableNavigator1_ContextAction);
             // 
-            // PanelTable
+            // page_Table
             // 
-            this.PanelTable.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.PanelTable.Controls.Add(this.dgvTable);
-            this.PanelTable.Flags = 65534;
-            this.PanelTable.LastVisibleSet = true;
-            this.PanelTable.MinimumSize = new System.Drawing.Size(50, 50);
-            this.PanelTable.Name = "PanelTable";
-            this.PanelTable.Size = new System.Drawing.Size(1288, 439);
-            this.PanelTable.Text = "Table";
-            this.PanelTable.ToolTipTitle = "Page ToolTip";
-            this.PanelTable.UniqueName = "DBB0A11C817047FB09B719F92C88BBB6";
+            this.page_Table.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.page_Table.Controls.Add(this.dgvTable);
+            this.page_Table.Flags = 65534;
+            this.page_Table.LastVisibleSet = true;
+            this.page_Table.MinimumSize = new System.Drawing.Size(50, 50);
+            this.page_Table.Name = "page_Table";
+            this.page_Table.Size = new System.Drawing.Size(1687, 439);
+            this.page_Table.Text = "Table";
+            this.page_Table.ToolTipTitle = "Page ToolTip";
+            this.page_Table.UniqueName = "DBB0A11C817047FB09B719F92C88BBB6";
             // 
             // dgvTable
             // 
+            this.dgvTable.AllowUserToAddRows = false;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTableId,
+            this.coltableJoin,
             this.colTableNo,
             this.colTableName,
             this.colSaleId,
             this.colInvNo,
             this.colTotalAmount,
-            this.colInvoiceStatus});
+            this.colInvoiceStatus,
+            this.colEdit});
             this.dgvTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTable.Location = new System.Drawing.Point(0, 0);
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.RowHeadersWidth = 50;
             this.dgvTable.RowTemplate.Height = 40;
-            this.dgvTable.Size = new System.Drawing.Size(1288, 439);
+            this.dgvTable.Size = new System.Drawing.Size(1687, 439);
             this.dgvTable.TabIndex = 0;
-            // 
-            // kryptonPage2
-            // 
-            this.kryptonPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage2.Controls.Add(this.dgvRoom);
-            this.kryptonPage2.Flags = 65534;
-            this.kryptonPage2.LastVisibleSet = true;
-            this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(1687, 439);
-            this.kryptonPage2.Text = "Room";
-            this.kryptonPage2.ToolTipTitle = "Page ToolTip";
-            this.kryptonPage2.UniqueName = "8E642AB97984464DFEAB1D2CFE07348E";
-            // 
-            // dgvRoom
-            // 
-            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRoomId,
-            this.colRoomNo,
-            this.col_RoomSaleId,
-            this.col_InvNo,
-            this.colStartTime,
-            this.colEndTime,
-            this.colIsAvailable,
-            this.colSinger,
-            this.col_TotalAmount,
-            this.col_InvoiceStatus});
-            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoom.Location = new System.Drawing.Point(0, 0);
-            this.dgvRoom.Name = "dgvRoom";
-            this.dgvRoom.RowHeadersWidth = 50;
-            this.dgvRoom.RowTemplate.Height = 40;
-            this.dgvRoom.Size = new System.Drawing.Size(1687, 439);
-            this.dgvRoom.TabIndex = 1;
+            this.dgvTable.Click += new System.EventHandler(this.dgvTable_Click);
             // 
             // colTableId
             // 
@@ -418,9 +421,24 @@ namespace NetfixPOS.Sales
             this.colTableId.Visible = false;
             this.colTableId.Width = 150;
             // 
+            // coltableJoin
+            // 
+            this.coltableJoin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = false;
+            this.coltableJoin.DefaultCellStyle = dataGridViewCellStyle4;
+            this.coltableJoin.FalseValue = null;
+            this.coltableJoin.FillWeight = 30F;
+            this.coltableJoin.HeaderText = "Join";
+            this.coltableJoin.IndeterminateValue = null;
+            this.coltableJoin.MinimumWidth = 8;
+            this.coltableJoin.Name = "coltableJoin";
+            this.coltableJoin.TrueValue = null;
+            // 
             // colTableNo
             // 
             this.colTableNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTableNo.DataPropertyName = "TableNo";
             this.colTableNo.HeaderText = "Table No";
             this.colTableNo.MinimumWidth = 8;
             this.colTableNo.Name = "colTableNo";
@@ -428,6 +446,7 @@ namespace NetfixPOS.Sales
             // colTableName
             // 
             this.colTableName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTableName.DataPropertyName = "TableName";
             this.colTableName.HeaderText = "TableName";
             this.colTableName.MinimumWidth = 8;
             this.colTableName.Name = "colTableName";
@@ -435,6 +454,7 @@ namespace NetfixPOS.Sales
             // 
             // colSaleId
             // 
+            this.colSaleId.DataPropertyName = "SaleId";
             this.colSaleId.HeaderText = "SaleId";
             this.colSaleId.MinimumWidth = 8;
             this.colSaleId.Name = "colSaleId";
@@ -445,6 +465,7 @@ namespace NetfixPOS.Sales
             // colInvNo
             // 
             this.colInvNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colInvNo.DataPropertyName = "InvNo";
             this.colInvNo.HeaderText = "InvNo";
             this.colInvNo.MinimumWidth = 8;
             this.colInvNo.Name = "colInvNo";
@@ -453,6 +474,7 @@ namespace NetfixPOS.Sales
             // colTotalAmount
             // 
             this.colTotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalAmount.DataPropertyName = "TotalAmount";
             this.colTotalAmount.HeaderText = "TotalAmount";
             this.colTotalAmount.MinimumWidth = 8;
             this.colTotalAmount.Name = "colTotalAmount";
@@ -461,19 +483,62 @@ namespace NetfixPOS.Sales
             // colInvoiceStatus
             // 
             this.colInvoiceStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colInvoiceStatus.DataPropertyName = "InvoiceStatus";
             this.colInvoiceStatus.HeaderText = "InvoiceStatus";
             this.colInvoiceStatus.MinimumWidth = 8;
             this.colInvoiceStatus.Name = "colInvoiceStatus";
             this.colInvoiceStatus.ReadOnly = true;
             // 
-            // lblShopName
+            // colEdit
             // 
-            this.lblShopName.Location = new System.Drawing.Point(21, 32);
-            this.lblShopName.Name = "lblShopName";
-            this.lblShopName.Size = new System.Drawing.Size(167, 39);
-            this.lblShopName.StateNormal.ShortText.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShopName.TabIndex = 6;
-            this.lblShopName.Values.Text = "ShopName";
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEdit.FillWeight = 50F;
+            this.colEdit.HeaderText = "Update";
+            this.colEdit.MinimumWidth = 8;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.Text = "Update";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            // 
+            // page_Room
+            // 
+            this.page_Room.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.page_Room.Controls.Add(this.dgvRoom);
+            this.page_Room.Flags = 65534;
+            this.page_Room.LastVisibleSet = true;
+            this.page_Room.MinimumSize = new System.Drawing.Size(50, 50);
+            this.page_Room.Name = "page_Room";
+            this.page_Room.Size = new System.Drawing.Size(1687, 439);
+            this.page_Room.Text = "Room";
+            this.page_Room.ToolTipTitle = "Page ToolTip";
+            this.page_Room.UniqueName = "8E642AB97984464DFEAB1D2CFE07348E";
+            // 
+            // dgvRoom
+            // 
+            this.dgvRoom.AllowUserToAddRows = false;
+            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colRoomId,
+            this.colroomJoin,
+            this.colRoomNo,
+            this.colRoomName,
+            this.col_RoomSaleId,
+            this.col_InvNo,
+            this.colStartTime,
+            this.colEndTime,
+            this.colIsAvailable,
+            this.colSinger,
+            this.col_TotalAmount,
+            this.col_InvoiceStatus,
+            this.colUpdate});
+            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoom.Name = "dgvRoom";
+            this.dgvRoom.RowHeadersWidth = 50;
+            this.dgvRoom.RowTemplate.Height = 40;
+            this.dgvRoom.Size = new System.Drawing.Size(1687, 439);
+            this.dgvRoom.TabIndex = 1;
+            this.dgvRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellContentClick);
+            this.dgvRoom.Click += new System.EventHandler(this.dgvRoom_Click);
             // 
             // colRoomId
             // 
@@ -483,16 +548,44 @@ namespace NetfixPOS.Sales
             this.colRoomId.Visible = false;
             this.colRoomId.Width = 150;
             // 
+            // colroomJoin
+            // 
+            this.colroomJoin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = false;
+            this.colroomJoin.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colroomJoin.FalseValue = null;
+            this.colroomJoin.FillWeight = 30F;
+            this.colroomJoin.HeaderText = "Join";
+            this.colroomJoin.IndeterminateValue = null;
+            this.colroomJoin.MinimumWidth = 8;
+            this.colroomJoin.Name = "colroomJoin";
+            this.colroomJoin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colroomJoin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colroomJoin.TrueValue = null;
+            // 
             // colRoomNo
             // 
             this.colRoomNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomNo.DataPropertyName = "RoomNo";
             this.colRoomNo.HeaderText = "Room No";
             this.colRoomNo.MinimumWidth = 8;
             this.colRoomNo.Name = "colRoomNo";
             this.colRoomNo.ReadOnly = true;
             // 
+            // colRoomName
+            // 
+            this.colRoomName.DataPropertyName = "RoomName";
+            this.colRoomName.HeaderText = "RoomName";
+            this.colRoomName.MinimumWidth = 8;
+            this.colRoomName.Name = "colRoomName";
+            this.colRoomName.ReadOnly = true;
+            this.colRoomName.Visible = false;
+            this.colRoomName.Width = 150;
+            // 
             // col_RoomSaleId
             // 
+            this.col_RoomSaleId.DataPropertyName = "SaleId";
             this.col_RoomSaleId.HeaderText = "SaleId";
             this.col_RoomSaleId.MinimumWidth = 8;
             this.col_RoomSaleId.Name = "col_RoomSaleId";
@@ -503,6 +596,7 @@ namespace NetfixPOS.Sales
             // col_InvNo
             // 
             this.col_InvNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_InvNo.DataPropertyName = "InvNo";
             this.col_InvNo.HeaderText = "InvNo";
             this.col_InvNo.MinimumWidth = 8;
             this.col_InvNo.Name = "col_InvNo";
@@ -511,6 +605,7 @@ namespace NetfixPOS.Sales
             // colStartTime
             // 
             this.colStartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStartTime.DataPropertyName = "StartTime";
             this.colStartTime.HeaderText = "Start Time";
             this.colStartTime.MinimumWidth = 8;
             this.colStartTime.Name = "colStartTime";
@@ -519,6 +614,7 @@ namespace NetfixPOS.Sales
             // colEndTime
             // 
             this.colEndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEndTime.DataPropertyName = "EndTime";
             this.colEndTime.HeaderText = "End Time";
             this.colEndTime.MinimumWidth = 8;
             this.colEndTime.Name = "colEndTime";
@@ -527,6 +623,7 @@ namespace NetfixPOS.Sales
             // colIsAvailable
             // 
             this.colIsAvailable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIsAvailable.DataPropertyName = "IsAvailable";
             this.colIsAvailable.FillWeight = 60F;
             this.colIsAvailable.HeaderText = "IsAvailable";
             this.colIsAvailable.MinimumWidth = 8;
@@ -536,6 +633,7 @@ namespace NetfixPOS.Sales
             // colSinger
             // 
             this.colSinger.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSinger.DataPropertyName = "Singer";
             this.colSinger.HeaderText = "Singer";
             this.colSinger.MinimumWidth = 8;
             this.colSinger.Name = "colSinger";
@@ -544,6 +642,7 @@ namespace NetfixPOS.Sales
             // col_TotalAmount
             // 
             this.col_TotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_TotalAmount.DataPropertyName = "TotalAmount";
             this.col_TotalAmount.HeaderText = "TotalAmount";
             this.col_TotalAmount.MinimumWidth = 8;
             this.col_TotalAmount.Name = "col_TotalAmount";
@@ -552,11 +651,28 @@ namespace NetfixPOS.Sales
             // col_InvoiceStatus
             // 
             this.col_InvoiceStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_InvoiceStatus.DataPropertyName = "InvoiceStatus";
             this.col_InvoiceStatus.FillWeight = 80F;
             this.col_InvoiceStatus.HeaderText = "Status";
             this.col_InvoiceStatus.MinimumWidth = 8;
             this.col_InvoiceStatus.Name = "col_InvoiceStatus";
             this.col_InvoiceStatus.ReadOnly = true;
+            // 
+            // colUpdate
+            // 
+            this.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUpdate.FillWeight = 50F;
+            this.colUpdate.HeaderText = "Update";
+            this.colUpdate.MinimumWidth = 8;
+            this.colUpdate.Name = "colUpdate";
+            this.colUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUpdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colUpdate.Text = "Update";
+            this.colUpdate.UseColumnTextForButtonValue = true;
+            // 
+            // countdownTimer
+            // 
+            this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
             // 
             // SaleDashboard
             // 
@@ -570,6 +686,7 @@ namespace NetfixPOS.Sales
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.SaleDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
@@ -590,11 +707,11 @@ namespace NetfixPOS.Sales
             this.kryptonPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDockableNavigator1)).EndInit();
             this.kryptonDockableNavigator1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PanelTable)).EndInit();
-            this.PanelTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.page_Table)).EndInit();
+            this.page_Table.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
-            this.kryptonPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.page_Room)).EndInit();
+            this.page_Room.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.ResumeLayout(false);
 
@@ -605,8 +722,8 @@ namespace NetfixPOS.Sales
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
         private ComponentFactory.Krypton.Docking.KryptonDockableNavigator kryptonDockableNavigator1;
-        private ComponentFactory.Krypton.Navigator.KryptonPage PanelTable;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage2;
+        private ComponentFactory.Krypton.Navigator.KryptonPage page_Table;
+        private ComponentFactory.Krypton.Navigator.KryptonPage page_Room;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvTable;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel6;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel5;
@@ -629,16 +746,22 @@ namespace NetfixPOS.Sales
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTimer;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpSaleDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblShopName;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNewVoucher;
+        private System.Windows.Forms.Timer countdownTimer;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTableId;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn coltableJoin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTableNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTableName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceStatus;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblShopName;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomId;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn colroomJoin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_RoomSaleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_InvNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStartTime;
@@ -647,5 +770,6 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn colSinger;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_InvoiceStatus;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colUpdate;
     }
 }

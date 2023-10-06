@@ -221,5 +221,10 @@ namespace NetfixPOS.Main
         {
             openChildForm(new frm_EndOfDay());
         }
+
+        private void rbo_Dashboard_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SaleDashboard());
+        }
     }
 }

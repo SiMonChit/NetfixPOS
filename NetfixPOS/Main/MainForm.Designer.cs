@@ -504,6 +504,7 @@ namespace NetfixPOS.Main
             // rbo_Dashboard
             // 
             this.rbo_Dashboard.TextLine1 = "Dashboard";
+            this.rbo_Dashboard.Click += new System.EventHandler(this.rbo_Dashboard_Click);
             // 
             // MainForm
             // 
