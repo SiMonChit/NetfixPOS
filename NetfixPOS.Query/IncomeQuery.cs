@@ -27,13 +27,13 @@ namespace NetfixPOS.Query
         }
         public string Select()
         {
-            query = "SELECT tbl_Income.*, Users.UserName FROM tbl_Income INNER JOIN Users ON tbl_Income.UserID = Users.UserID";
+            query = "SELECT tbl_Income.*, Users.UserName FROM tbl_Income INNER JOIN Users ON tbl_Income.UserID = Users.UserID ";
             query += "WHERE MONTH(In_Date) = MONTH(@In_Date) AND YEAR(In_Date) = YEAR(@In_Date) AND tbl_Income.IsActive = 1";
             return query;
         }
         public string SelectByDate()
         {
-            query = "SELECT tbl_Income.*, Users.UserName FROM   tbl_Income INNER JOIN Users ON tbl_Income.UserID = Users.UserID";
+            query = "SELECT tbl_Income.*, Users.UserName FROM   tbl_Income INNER JOIN Users ON tbl_Income.UserID = Users.UserID ";
             query += "WHERE In_Date BETWEEN CAST(@fromDate AS NVARCHAR(20)) AND CAST(@toDate AS NVARCHAR(20)) AND tbl_Income.IsActive = 1";
             return query;
         }

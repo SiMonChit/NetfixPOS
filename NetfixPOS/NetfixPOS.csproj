@@ -467,6 +467,12 @@
     <Compile Include="Sales\SaleDashboard.Designer.cs">
       <DependentUpon>SaleDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\SaleVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleVoucher.Designer.cs">
+      <DependentUpon>SaleVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\Sale_POS.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -61,6 +61,7 @@ namespace NetfixPOS.Sales
             WaiterDataBind();
             txtTableOrRoom.Text = TableOrRoomNo;
             this.IsTable = IsTable;
+            ShowForRoomSession(IsTable);
         }
         bool IsTable = false;
         SaleTypeController _saletype;
@@ -74,6 +75,20 @@ namespace NetfixPOS.Sales
         dsSaleSetup.SaleHeaderDataTable sale_header;
         decimal TotalAmount = 0;
 
+        private void ShowForRoomSession(bool IsTable)
+        {
+            if (IsTable)
+            {
+                lblSinger.Visible = false;
+                cboSinger.Visible = false;
+                lblSession.Visible = false;
+                lblStartTime.Visible = false;
+                lblEndTime.Visible = false;
+                cboSession.Visible = false;
+                dtp_StartTime.Visible = false;
+                dtp_EndTime.Visible = false;
+            }
+        }
         private void SaleTypedataBind()
         {
             cboSaleType.DataSource = _saletype.GetSaleType();
@@ -198,6 +213,7 @@ namespace NetfixPOS.Sales
 
                 headerRow.WaiterName = cboWaiter.Text;
                 headerRow.PrintDate = DateTime.Now;
+                headerRow.Singer = cboSinger.Text;
                 headerRow.BalanceAmount = Convert.ToDecimal(Convert.ToDecimal(txtTotalAmount.Text) - Convert.ToDecimal(txtPaidAmount.Text));
                 headerRow.C_tax = Convert.ToDecimal(txtSerPercent.Text);
                 headerRow.AdvanceAmount = Convert.ToDecimal(txtPaidAmount.Text);

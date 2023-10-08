@@ -47,6 +47,7 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("InvoiceStatus", headerRow.InvoiceStatus);
             Command.Parameters.AddWithValue("WaiterName", headerRow.WaiterName);
             Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
+            Command.Parameters.AddWithValue("Singer", headerRow.Singer);
 
             try
             {

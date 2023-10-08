@@ -37,5 +37,17 @@ namespace NetfixPOS.Query
             }
             return query;
         }
+        public string RoomSessionStart()
+        {
+            query = "UPDATE tbl_Room SET IsAvailable = @IsAvailable, StartTime = @StartTime, EndTime = @EndTime " +
+               " WHERE RoomId = @RoomId";
+            return query;
+        }
+        public string RoomSessionEnd()
+        {
+            query = "UPDATE tbl_Room SET IsAvailable = @IsAvailable, StartTime = null, EndTime = null " +
+               " WHERE RoomId = @RoomId";
+            return query;
+        }
     }
 }

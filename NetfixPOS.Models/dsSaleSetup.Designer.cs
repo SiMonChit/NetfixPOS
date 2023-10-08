@@ -393,6 +393,8 @@ namespace NetfixPOS.Models {
             
             private global::System.Data.DataColumn columnPrintDate;
             
+            private global::System.Data.DataColumn columnSinger;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SaleHeaderDataTable() {
@@ -604,6 +606,14 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SingerColumn {
+                get {
+                    return this.columnSinger;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -661,7 +671,8 @@ namespace NetfixPOS.Models {
                         bool IsActive, 
                         string InvoiceStatus, 
                         string WaiterName, 
-                        System.DateTime PrintDate) {
+                        System.DateTime PrintDate, 
+                        string Singer) {
                 SaleHeaderRow rowSaleHeaderRow = ((SaleHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SaleId,
@@ -685,7 +696,8 @@ namespace NetfixPOS.Models {
                         IsActive,
                         InvoiceStatus,
                         WaiterName,
-                        PrintDate};
+                        PrintDate,
+                        Singer};
                 rowSaleHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaleHeaderRow);
                 return rowSaleHeaderRow;
@@ -737,6 +749,7 @@ namespace NetfixPOS.Models {
                 this.columnInvoiceStatus = base.Columns["InvoiceStatus"];
                 this.columnWaiterName = base.Columns["WaiterName"];
                 this.columnPrintDate = base.Columns["PrintDate"];
+                this.columnSinger = base.Columns["Singer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -786,6 +799,8 @@ namespace NetfixPOS.Models {
                 base.Columns.Add(this.columnWaiterName);
                 this.columnPrintDate = new global::System.Data.DataColumn("PrintDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrintDate);
+                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSinger);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSaleId}, true));
                 this.columnSaleId.AllowDBNull = false;
@@ -1400,6 +1415,8 @@ namespace NetfixPOS.Models {
             
             private global::System.Data.DataColumn columnUserName;
             
+            private global::System.Data.DataColumn columnSinger;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SaleHeaderSlipDataTable() {
@@ -1627,6 +1644,14 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SingerColumn {
+                get {
+                    return this.columnSinger;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1686,7 +1711,8 @@ namespace NetfixPOS.Models {
                         string WaiterName, 
                         System.DateTime PrintDate, 
                         string CustomerName, 
-                        string UserName) {
+                        string UserName, 
+                        string Singer) {
                 SaleHeaderSlipRow rowSaleHeaderSlipRow = ((SaleHeaderSlipRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SaleId,
@@ -1712,7 +1738,8 @@ namespace NetfixPOS.Models {
                         WaiterName,
                         PrintDate,
                         CustomerName,
-                        UserName};
+                        UserName,
+                        Singer};
                 rowSaleHeaderSlipRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaleHeaderSlipRow);
                 return rowSaleHeaderSlipRow;
@@ -1759,6 +1786,7 @@ namespace NetfixPOS.Models {
                 this.columnPrintDate = base.Columns["PrintDate"];
                 this.columnCustomerName = base.Columns["CustomerName"];
                 this.columnUserName = base.Columns["UserName"];
+                this.columnSinger = base.Columns["Singer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1812,6 +1840,8 @@ namespace NetfixPOS.Models {
                 base.Columns.Add(this.columnCustomerName);
                 this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserName);
+                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSinger);
                 this.columnSaleId.AllowDBNull = false;
                 this.columnSaleId.MaxLength = 36;
                 this.columnTableNo.MaxLength = 10;
@@ -2284,6 +2314,22 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Singer {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleHeader.SingerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'SaleHeader\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleHeader.SingerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTableNoNull() {
                 return this.IsNull(this.tableSaleHeader.TableNoColumn);
             }
@@ -2448,6 +2494,18 @@ namespace NetfixPOS.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrintDateNull() {
                 this[this.tableSaleHeader.PrintDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSingerNull() {
+                return this.IsNull(this.tableSaleHeader.SingerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSingerNull() {
+                this[this.tableSaleHeader.SingerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3168,6 +3226,22 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Singer {
+                get {
+                    try {
+                        return ((string)(this[this.tableSaleHeaderSlip.SingerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'SaleHeaderSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaleHeaderSlip.SingerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTableNoNull() {
                 return this.IsNull(this.tableSaleHeaderSlip.TableNoColumn);
             }
@@ -3344,6 +3418,18 @@ namespace NetfixPOS.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetUserNameNull() {
                 this[this.tableSaleHeaderSlip.UserNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSingerNull() {
+                return this.IsNull(this.tableSaleHeaderSlip.SingerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSingerNull() {
+                this[this.tableSaleHeaderSlip.SingerColumn] = global::System.Convert.DBNull;
             }
         }
         

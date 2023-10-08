@@ -85,16 +85,19 @@ namespace NetfixPOS.Sales
             this.cboWaiter = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cboSinger = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblSinger = new System.Windows.Forms.Label();
             this.dtp_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtp_EndTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.lblEndTime = new System.Windows.Forms.Label();
+            this.cboSession = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.lblSession = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSession)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,7 +249,6 @@ namespace NetfixPOS.Sales
             // 
             this.txtDiscount.Location = new System.Drawing.Point(1246, 14);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.ReadOnly = true;
             this.txtDiscount.Size = new System.Drawing.Size(184, 26);
             this.txtDiscount.TabIndex = 13;
             this.txtDiscount.Text = "0";
@@ -532,7 +534,7 @@ namespace NetfixPOS.Sales
             this.dgvSaleItem.RowHeadersWidth = 45;
             this.dgvSaleItem.RowTemplate.Height = 28;
             this.dgvSaleItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSaleItem.Size = new System.Drawing.Size(765, 557);
+            this.dgvSaleItem.Size = new System.Drawing.Size(807, 557);
             this.dgvSaleItem.TabIndex = 4;
             this.dgvSaleItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellContentClick);
             this.dgvSaleItem.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellValidated);
@@ -653,16 +655,18 @@ namespace NetfixPOS.Sales
             // 
             // cboWaiter
             // 
+            this.cboWaiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboWaiter.FormattingEnabled = true;
-            this.cboWaiter.Location = new System.Drawing.Point(1480, 181);
+            this.cboWaiter.Location = new System.Drawing.Point(1516, 181);
             this.cboWaiter.Name = "cboWaiter";
             this.cboWaiter.Size = new System.Drawing.Size(236, 28);
             this.cboWaiter.TabIndex = 33;
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1406, 186);
+            this.label15.Location = new System.Drawing.Point(1446, 186);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 20);
             this.label15.TabIndex = 32;
@@ -670,66 +674,98 @@ namespace NetfixPOS.Sales
             // 
             // cboSinger
             // 
+            this.cboSinger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSinger.FormattingEnabled = true;
-            this.cboSinger.Location = new System.Drawing.Point(1480, 219);
+            this.cboSinger.Location = new System.Drawing.Point(1516, 219);
             this.cboSinger.Name = "cboSinger";
             this.cboSinger.Size = new System.Drawing.Size(236, 28);
             this.cboSinger.TabIndex = 35;
             // 
-            // label16
+            // lblSinger
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(1406, 223);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 20);
-            this.label16.TabIndex = 34;
-            this.label16.Text = "Singer";
+            this.lblSinger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSinger.AutoSize = true;
+            this.lblSinger.Location = new System.Drawing.Point(1446, 223);
+            this.lblSinger.Name = "lblSinger";
+            this.lblSinger.Size = new System.Drawing.Size(55, 20);
+            this.lblSinger.TabIndex = 34;
+            this.lblSinger.Text = "Singer";
             // 
             // dtp_StartTime
             // 
+            this.dtp_StartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_StartTime.Location = new System.Drawing.Point(1480, 267);
+            this.dtp_StartTime.Location = new System.Drawing.Point(1516, 334);
             this.dtp_StartTime.Name = "dtp_StartTime";
             this.dtp_StartTime.Size = new System.Drawing.Size(146, 30);
             this.dtp_StartTime.TabIndex = 36;
             // 
             // dtp_EndTime
             // 
+            this.dtp_EndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_EndTime.Location = new System.Drawing.Point(1480, 308);
+            this.dtp_EndTime.Location = new System.Drawing.Point(1516, 375);
             this.dtp_EndTime.Name = "dtp_EndTime";
             this.dtp_EndTime.Size = new System.Drawing.Size(146, 30);
             this.dtp_EndTime.TabIndex = 37;
             // 
-            // label13
+            // lblStartTime
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1379, 275);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 20);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Start Time";
+            this.lblStartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(1419, 342);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(82, 20);
+            this.lblStartTime.TabIndex = 38;
+            this.lblStartTime.Text = "Start Time";
             // 
-            // label17
+            // lblEndTime
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1385, 314);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 20);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "End Time";
+            this.lblEndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Location = new System.Drawing.Point(1425, 381);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(76, 20);
+            this.lblEndTime.TabIndex = 39;
+            this.lblEndTime.Text = "End Time";
+            // 
+            // cboSession
+            // 
+            this.cboSession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSession.DropDownWidth = 232;
+            this.cboSession.Items.AddRange(new object[] {
+            "1 Session",
+            "2 Session",
+            "3 Session",
+            "4 Session"});
+            this.cboSession.Location = new System.Drawing.Point(1516, 292);
+            this.cboSession.Name = "cboSession";
+            this.cboSession.Size = new System.Drawing.Size(232, 29);
+            this.cboSession.TabIndex = 40;
+            // 
+            // lblSession
+            // 
+            this.lblSession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSession.AutoSize = true;
+            this.lblSession.Location = new System.Drawing.Point(1435, 298);
+            this.lblSession.Name = "lblSession";
+            this.lblSession.Size = new System.Drawing.Size(66, 20);
+            this.lblSession.TabIndex = 41;
+            this.lblSession.Text = "Session";
             // 
             // Sale_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1761, 791);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblSession);
+            this.Controls.Add(this.cboSession);
+            this.Controls.Add(this.lblEndTime);
+            this.Controls.Add(this.lblStartTime);
             this.Controls.Add(this.dtp_EndTime);
             this.Controls.Add(this.dtp_StartTime);
             this.Controls.Add(this.cboSinger);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblSinger);
             this.Controls.Add(this.cboWaiter);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvSaleItem);
@@ -748,6 +784,7 @@ namespace NetfixPOS.Sales
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSession)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -811,10 +848,12 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.ComboBox cboWaiter;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cboSinger;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblSinger;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtp_StartTime;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtp_EndTime;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblStartTime;
+        private System.Windows.Forms.Label lblEndTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboSession;
+        private System.Windows.Forms.Label lblSession;
     }
 }
