@@ -31,7 +31,7 @@ namespace NetfixPOS.Report
         }
         private void SlipDataBind(string saleId)
         {
-            DataTable dt = _sale.SaleDetailsSlip_SelectById(saleId);
+            DataTable dt = _sale.GetSaleSlip(saleId);
             ReportDataSource rds = new ReportDataSource("dt_saleslip", dt);
             rpv_SlipVoucher.LocalReport.DataSources.Clear();
             rpv_SlipVoucher.LocalReport.DataSources.Add(rds);

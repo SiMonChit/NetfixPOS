@@ -31,7 +31,7 @@ namespace NetfixPOS.Common
         {
             this.cboPrinter = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnPrint = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cboTemplate = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.btnClose = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -55,13 +55,14 @@ namespace NetfixPOS.Common
             this.kryptonLabel1.TabIndex = 1;
             this.kryptonLabel1.Values.Text = "Printer";
             // 
-            // kryptonButton1
+            // btnPrint
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(422, 132);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 40);
-            this.kryptonButton1.TabIndex = 2;
-            this.kryptonButton1.Values.Text = "Print";
+            this.btnPrint.Location = new System.Drawing.Point(422, 132);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(90, 40);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Values.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // kryptonLabel2
             // 
@@ -96,7 +97,7 @@ namespace NetfixPOS.Common
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cboTemplate);
             this.Controls.Add(this.kryptonLabel2);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.cboPrinter);
             this.Name = "frm_Print";
@@ -113,7 +114,7 @@ namespace NetfixPOS.Common
 
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboPrinter;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnPrint;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboTemplate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnClose;

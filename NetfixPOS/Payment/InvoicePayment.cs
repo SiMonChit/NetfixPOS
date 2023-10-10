@@ -71,20 +71,6 @@ namespace NetfixPOS.Payment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            payment.SaleId = saleid;
-            payment.PaySlipDate = DateTime.Now;
-            payment.PaySlipNo = txtPaymentNo.Text;
-            payment.SaleTypeId = Convert.ToInt32(cboSaleType.SelectedValue);
-            payment.InvAmount = Convert.ToDecimal(txtTotalAmount.Text);
-            payment.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text);
-            payment.PaidFrom = txtPaidFrom.Text;
-            payment.UserID = 1;
-            isSuccess = _payment.Insert(payment);
-            if(isSuccess != 0)
-            {
-                MessageBox.Show("Payment save successful", "Payment", MessageBoxButtons.OK);
-            }
-
         }
 
         private void txtPaidAmount_Leave(object sender, EventArgs e)
@@ -108,15 +94,11 @@ namespace NetfixPOS.Payment
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            payment.SaleId = saleid;
             payment.PaySlipDate = DateTime.Now;
             payment.PaySlipNo = txtPaymentNo.Text;
-            payment.SaleTypeId = Convert.ToInt32(cboSaleType.SelectedValue);
-            payment.InvAmount = Convert.ToDecimal(txtTotalAmount.Text);
             payment.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text);
-            payment.PaidFrom = txtPaidFrom.Text;
             payment.UserID = 1;
-            isSuccess = _payment.Insert(payment);
+            isSuccess = _payment.Insert(payment,"");
             if (isSuccess != 0)
             {
                 //frm_SlipVoucher frm_Slip = new frm_SlipVoucher(saleid);

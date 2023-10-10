@@ -344,13 +344,13 @@ namespace NetfixPOS.DataAccess
             return dt;
         }
 
-        public ds_SaleSlip.tbl_SaleSlipDataTable SaleDetailsSlip_SelectById(string saleid)
+        public ds_SaleSlip.tbl_SaleSlipDataTable GetSaleSlip(string saleid)
         {
             ds_SaleSlip.tbl_SaleSlipDataTable dt = new ds_SaleSlip.tbl_SaleSlipDataTable();
             try
             {
-                Command = new SqlCommand("SaleDetailsSelectById", Connection);
-                Command.CommandType = CommandType.StoredProcedure;
+                Command = new SqlCommand(query.GetListForSaleSlip(), Connection);
+                Command.CommandType = CommandType.Text;
                 Command.Parameters.AddWithValue("SaleId", saleid);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(Command);
@@ -369,6 +369,7 @@ namespace NetfixPOS.DataAccess
             return dt;
         }
 
+        
         #endregion
         #region JoinTable
 

@@ -46,11 +46,16 @@ namespace NetfixPOS.Main
             this.rbo_supplier = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_Table = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_Room = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupTriple14 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.rbo_Singer = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton3 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_Transaction = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.rbo_SalePos = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_SaleInvoice = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.rbo_Dashboard = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupTriple7 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.rbo_Purchase = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_Income = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
@@ -96,11 +101,7 @@ namespace NetfixPOS.Main
             this.kryptonRibbonGroupButton14 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupButton15 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kt_panelChildForm = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.rbo_Dashboard = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupTriple14 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.rbo_Singer = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupButton2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupButton3 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btn_SaleList = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.kto_botton_panel)).BeginInit();
             this.kto_botton_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
@@ -164,7 +165,8 @@ namespace NetfixPOS.Main
             this.rbo_Report,
             this.rbo_System_utilities,
             this.rbo_Help});
-            this.kryptonRibbon1.SelectedTab = this.rbo_Newsetup;
+            this.kryptonRibbon1.SelectedContext = null;
+            this.kryptonRibbon1.SelectedTab = this.rbo_Transaction;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1344, 156);
             this.kryptonRibbon1.TabIndex = 2;
             // 
@@ -226,6 +228,17 @@ namespace NetfixPOS.Main
             this.rbo_Room.TextLine1 = "Room";
             this.rbo_Room.Click += new System.EventHandler(this.rbo_Room_Click);
             // 
+            // kryptonRibbonGroupTriple14
+            // 
+            this.kryptonRibbonGroupTriple14.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.rbo_Singer,
+            this.kryptonRibbonGroupButton2,
+            this.kryptonRibbonGroupButton3});
+            // 
+            // rbo_Singer
+            // 
+            this.rbo_Singer.TextLine1 = "Singer";
+            // 
             // rbo_Transaction
             // 
             this.rbo_Transaction.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
@@ -257,6 +270,11 @@ namespace NetfixPOS.Main
             this.rbo_SaleInvoice.TextLine1 = "Sale Invoice";
             this.rbo_SaleInvoice.Click += new System.EventHandler(this.rbo_SaleInvoice_Click);
             // 
+            // rbo_Dashboard
+            // 
+            this.rbo_Dashboard.TextLine1 = "Dashboard";
+            this.rbo_Dashboard.Click += new System.EventHandler(this.rbo_Dashboard_Click);
+            // 
             // kryptonRibbonGroupTriple7
             // 
             this.kryptonRibbonGroupTriple7.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
@@ -283,7 +301,8 @@ namespace NetfixPOS.Main
             // 
             this.kryptonRibbonGroupTriple8.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
             this.rbo_Damage,
-            this.btnEndOfDay});
+            this.btnEndOfDay,
+            this.btn_SaleList});
             // 
             // rbo_Damage
             // 
@@ -506,21 +525,10 @@ namespace NetfixPOS.Main
             this.kt_panelChildForm.Size = new System.Drawing.Size(1344, 414);
             this.kt_panelChildForm.TabIndex = 3;
             // 
-            // rbo_Dashboard
+            // btn_SaleList
             // 
-            this.rbo_Dashboard.TextLine1 = "Dashboard";
-            this.rbo_Dashboard.Click += new System.EventHandler(this.rbo_Dashboard_Click);
-            // 
-            // kryptonRibbonGroupTriple14
-            // 
-            this.kryptonRibbonGroupTriple14.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.rbo_Singer,
-            this.kryptonRibbonGroupButton2,
-            this.kryptonRibbonGroupButton3});
-            // 
-            // rbo_Singer
-            // 
-            this.rbo_Singer.TextLine1 = "Singer";
+            this.btn_SaleList.TextLine1 = "SaleList";
+            this.btn_SaleList.Click += new System.EventHandler(this.btn_SaleList_Click);
             // 
             // MainForm
             // 
@@ -619,5 +627,6 @@ namespace NetfixPOS.Main
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Singer;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btn_SaleList;
     }
 }

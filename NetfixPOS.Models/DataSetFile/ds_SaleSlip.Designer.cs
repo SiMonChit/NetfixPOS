@@ -279,7 +279,17 @@ namespace NetfixPOS.Models.DataSetFile {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tbl_SaleSlipDataTable : global::System.Data.TypedTableBase<tbl_SaleSlipRow> {
             
-            private global::System.Data.DataColumn columnTR;
+            private global::System.Data.DataColumn columnSaleId;
+            
+            private global::System.Data.DataColumn columnTableNo;
+            
+            private global::System.Data.DataColumn columnRoomNo;
+            
+            private global::System.Data.DataColumn columnCustomerId;
+            
+            private global::System.Data.DataColumn columnUserID;
+            
+            private global::System.Data.DataColumn columnSaleTypeId;
             
             private global::System.Data.DataColumn columnInvNo;
             
@@ -305,25 +315,41 @@ namespace NetfixPOS.Models.DataSetFile {
             
             private global::System.Data.DataColumn columnIsFOC;
             
+            private global::System.Data.DataColumn columnIsActive;
+            
+            private global::System.Data.DataColumn columnInvoiceStatus;
+            
             private global::System.Data.DataColumn columnWaiterName;
             
             private global::System.Data.DataColumn columnPrintDate;
             
+            private global::System.Data.DataColumn columnSinger;
+            
+            private global::System.Data.DataColumn columnSaleDetailId;
+            
+            private global::System.Data.DataColumn columnStockId;
+            
             private global::System.Data.DataColumn columnStockName;
+            
+            private global::System.Data.DataColumn columnCategoryID;
+            
+            private global::System.Data.DataColumn columnConvensionId;
+            
+            private global::System.Data.DataColumn columnSerial;
             
             private global::System.Data.DataColumn columnQty;
             
             private global::System.Data.DataColumn columnSalePrice;
             
-            private global::System.Data.DataColumn columnAmount;
-            
-            private global::System.Data.DataColumn columnDetail_IsFOC;
-            
             private global::System.Data.DataColumn columnDiscount;
             
-            private global::System.Data.DataColumn columnShopName;
+            private global::System.Data.DataColumn columnAmount;
+            
+            private global::System.Data.DataColumn columnIsFOCDetail;
             
             private global::System.Data.DataColumn columnShopImage;
+            
+            private global::System.Data.DataColumn columnShopName;
             
             private global::System.Data.DataColumn columnCurrentAddress;
             
@@ -364,9 +390,49 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TRColumn {
+            public global::System.Data.DataColumn SaleIdColumn {
                 get {
-                    return this.columnTR;
+                    return this.columnSaleId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TableNoColumn {
+                get {
+                    return this.columnTableNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RoomNoColumn {
+                get {
+                    return this.columnRoomNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CustomerIdColumn {
+                get {
+                    return this.columnCustomerId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SaleTypeIdColumn {
+                get {
+                    return this.columnSaleTypeId;
                 }
             }
             
@@ -468,6 +534,22 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IsActiveColumn {
+                get {
+                    return this.columnIsActive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn InvoiceStatusColumn {
+                get {
+                    return this.columnInvoiceStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn WaiterNameColumn {
                 get {
                     return this.columnWaiterName;
@@ -484,9 +566,57 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SingerColumn {
+                get {
+                    return this.columnSinger;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SaleDetailIdColumn {
+                get {
+                    return this.columnSaleDetailId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StockIdColumn {
+                get {
+                    return this.columnStockId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn StockNameColumn {
                 get {
                     return this.columnStockName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CategoryIDColumn {
+                get {
+                    return this.columnCategoryID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ConvensionIdColumn {
+                get {
+                    return this.columnConvensionId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SerialColumn {
+                get {
+                    return this.columnSerial;
                 }
             }
             
@@ -508,22 +638,6 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AmountColumn {
-                get {
-                    return this.columnAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Detail_IsFOCColumn {
-                get {
-                    return this.columnDetail_IsFOC;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn DiscountColumn {
                 get {
                     return this.columnDiscount;
@@ -532,9 +646,17 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ShopNameColumn {
+            public global::System.Data.DataColumn AmountColumn {
                 get {
-                    return this.columnShopName;
+                    return this.columnAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IsFOCDetailColumn {
+                get {
+                    return this.columnIsFOCDetail;
                 }
             }
             
@@ -543,6 +665,14 @@ namespace NetfixPOS.Models.DataSetFile {
             public global::System.Data.DataColumn ShopImageColumn {
                 get {
                     return this.columnShopImage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ShopNameColumn {
+                get {
+                    return this.columnShopName;
                 }
             }
             
@@ -600,7 +730,12 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbl_SaleSlipRow Addtbl_SaleSlipRow(
-                        string TR, 
+                        string SaleId, 
+                        string TableNo, 
+                        string RoomNo, 
+                        int CustomerId, 
+                        int UserID, 
+                        int SaleTypeId, 
                         string InvNo, 
                         System.DateTime InvDate, 
                         string Remark, 
@@ -613,21 +748,33 @@ namespace NetfixPOS.Models.DataSetFile {
                         decimal DeliveryFee, 
                         decimal C_tax, 
                         bool IsFOC, 
+                        bool IsActive, 
+                        string InvoiceStatus, 
                         string WaiterName, 
                         System.DateTime PrintDate, 
+                        string Singer, 
+                        string StockId, 
                         string StockName, 
+                        int CategoryID, 
+                        string ConvensionId, 
+                        short Serial, 
                         decimal Qty, 
                         decimal SalePrice, 
-                        decimal Amount, 
-                        bool Detail_IsFOC, 
                         decimal Discount, 
-                        string ShopName, 
+                        decimal Amount, 
+                        bool IsFOCDetail, 
                         byte[] ShopImage, 
+                        string ShopName, 
                         string CurrentAddress, 
                         string PhoneNo) {
                 tbl_SaleSlipRow rowtbl_SaleSlipRow = ((tbl_SaleSlipRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        TR,
+                        SaleId,
+                        TableNo,
+                        RoomNo,
+                        CustomerId,
+                        UserID,
+                        SaleTypeId,
                         InvNo,
                         InvDate,
                         Remark,
@@ -640,21 +787,37 @@ namespace NetfixPOS.Models.DataSetFile {
                         DeliveryFee,
                         C_tax,
                         IsFOC,
+                        IsActive,
+                        InvoiceStatus,
                         WaiterName,
                         PrintDate,
+                        Singer,
+                        null,
+                        StockId,
                         StockName,
+                        CategoryID,
+                        ConvensionId,
+                        Serial,
                         Qty,
                         SalePrice,
-                        Amount,
-                        Detail_IsFOC,
                         Discount,
-                        ShopName,
+                        Amount,
+                        IsFOCDetail,
                         ShopImage,
+                        ShopName,
                         CurrentAddress,
                         PhoneNo};
                 rowtbl_SaleSlipRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbl_SaleSlipRow);
                 return rowtbl_SaleSlipRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public tbl_SaleSlipRow FindBySaleIdSaleDetailId(string SaleId, int SaleDetailId) {
+                return ((tbl_SaleSlipRow)(this.Rows.Find(new object[] {
+                            SaleId,
+                            SaleDetailId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -674,7 +837,12 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnTR = base.Columns["TR"];
+                this.columnSaleId = base.Columns["SaleId"];
+                this.columnTableNo = base.Columns["TableNo"];
+                this.columnRoomNo = base.Columns["RoomNo"];
+                this.columnCustomerId = base.Columns["CustomerId"];
+                this.columnUserID = base.Columns["UserID"];
+                this.columnSaleTypeId = base.Columns["SaleTypeId"];
                 this.columnInvNo = base.Columns["InvNo"];
                 this.columnInvDate = base.Columns["InvDate"];
                 this.columnRemark = base.Columns["Remark"];
@@ -687,16 +855,24 @@ namespace NetfixPOS.Models.DataSetFile {
                 this.columnDeliveryFee = base.Columns["DeliveryFee"];
                 this.columnC_tax = base.Columns["C_tax"];
                 this.columnIsFOC = base.Columns["IsFOC"];
+                this.columnIsActive = base.Columns["IsActive"];
+                this.columnInvoiceStatus = base.Columns["InvoiceStatus"];
                 this.columnWaiterName = base.Columns["WaiterName"];
                 this.columnPrintDate = base.Columns["PrintDate"];
+                this.columnSinger = base.Columns["Singer"];
+                this.columnSaleDetailId = base.Columns["SaleDetailId"];
+                this.columnStockId = base.Columns["StockId"];
                 this.columnStockName = base.Columns["StockName"];
+                this.columnCategoryID = base.Columns["CategoryID"];
+                this.columnConvensionId = base.Columns["ConvensionId"];
+                this.columnSerial = base.Columns["Serial"];
                 this.columnQty = base.Columns["Qty"];
                 this.columnSalePrice = base.Columns["SalePrice"];
-                this.columnAmount = base.Columns["Amount"];
-                this.columnDetail_IsFOC = base.Columns["Detail_IsFOC"];
                 this.columnDiscount = base.Columns["Discount"];
-                this.columnShopName = base.Columns["ShopName"];
+                this.columnAmount = base.Columns["Amount"];
+                this.columnIsFOCDetail = base.Columns["IsFOCDetail"];
                 this.columnShopImage = base.Columns["ShopImage"];
+                this.columnShopName = base.Columns["ShopName"];
                 this.columnCurrentAddress = base.Columns["CurrentAddress"];
                 this.columnPhoneNo = base.Columns["PhoneNo"];
             }
@@ -704,8 +880,18 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnTR = new global::System.Data.DataColumn("TR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTR);
+                this.columnSaleId = new global::System.Data.DataColumn("SaleId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaleId);
+                this.columnTableNo = new global::System.Data.DataColumn("TableNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTableNo);
+                this.columnRoomNo = new global::System.Data.DataColumn("RoomNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoomNo);
+                this.columnCustomerId = new global::System.Data.DataColumn("CustomerId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomerId);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
+                this.columnSaleTypeId = new global::System.Data.DataColumn("SaleTypeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaleTypeId);
                 this.columnInvNo = new global::System.Data.DataColumn("InvNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInvNo);
                 this.columnInvDate = new global::System.Data.DataColumn("InvDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -730,63 +916,76 @@ namespace NetfixPOS.Models.DataSetFile {
                 base.Columns.Add(this.columnC_tax);
                 this.columnIsFOC = new global::System.Data.DataColumn("IsFOC", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsFOC);
+                this.columnIsActive = new global::System.Data.DataColumn("IsActive", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsActive);
+                this.columnInvoiceStatus = new global::System.Data.DataColumn("InvoiceStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvoiceStatus);
                 this.columnWaiterName = new global::System.Data.DataColumn("WaiterName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWaiterName);
                 this.columnPrintDate = new global::System.Data.DataColumn("PrintDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrintDate);
+                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSinger);
+                this.columnSaleDetailId = new global::System.Data.DataColumn("SaleDetailId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaleDetailId);
+                this.columnStockId = new global::System.Data.DataColumn("StockId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockId);
                 this.columnStockName = new global::System.Data.DataColumn("StockName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStockName);
+                this.columnCategoryID = new global::System.Data.DataColumn("CategoryID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryID);
+                this.columnConvensionId = new global::System.Data.DataColumn("ConvensionId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConvensionId);
+                this.columnSerial = new global::System.Data.DataColumn("Serial", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerial);
                 this.columnQty = new global::System.Data.DataColumn("Qty", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQty);
                 this.columnSalePrice = new global::System.Data.DataColumn("SalePrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalePrice);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAmount);
-                this.columnDetail_IsFOC = new global::System.Data.DataColumn("Detail_IsFOC", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDetail_IsFOC);
                 this.columnDiscount = new global::System.Data.DataColumn("Discount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscount);
-                this.columnShopName = new global::System.Data.DataColumn("ShopName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShopName);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
+                this.columnIsFOCDetail = new global::System.Data.DataColumn("IsFOCDetail", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsFOCDetail);
                 this.columnShopImage = new global::System.Data.DataColumn("ShopImage", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopImage);
+                this.columnShopName = new global::System.Data.DataColumn("ShopName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShopName);
                 this.columnCurrentAddress = new global::System.Data.DataColumn("CurrentAddress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCurrentAddress);
                 this.columnPhoneNo = new global::System.Data.DataColumn("PhoneNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhoneNo);
-                this.columnTR.ReadOnly = true;
-                this.columnTR.MaxLength = 10;
-                this.columnInvNo.ReadOnly = true;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSaleId,
+                                this.columnSaleDetailId}, true));
+                this.columnSaleId.AllowDBNull = false;
+                this.columnSaleId.MaxLength = 36;
+                this.columnTableNo.MaxLength = 10;
+                this.columnRoomNo.MaxLength = 10;
+                this.columnCustomerId.AllowDBNull = false;
+                this.columnUserID.AllowDBNull = false;
+                this.columnSaleTypeId.AllowDBNull = false;
+                this.columnInvNo.AllowDBNull = false;
                 this.columnInvNo.MaxLength = 50;
-                this.columnInvDate.ReadOnly = true;
-                this.columnRemark.ReadOnly = true;
+                this.columnInvDate.AllowDBNull = false;
                 this.columnRemark.MaxLength = 500;
-                this.columnNetAmount.ReadOnly = true;
-                this.columnTotalAmount.ReadOnly = true;
-                this.columnDiscountAmount.ReadOnly = true;
-                this.columnAdvanceAmount.ReadOnly = true;
-                this.columnBalanceAmount.ReadOnly = true;
-                this.columnDueAmount.ReadOnly = true;
-                this.columnDeliveryFee.ReadOnly = true;
-                this.columnC_tax.ReadOnly = true;
-                this.columnIsFOC.ReadOnly = true;
-                this.columnWaiterName.ReadOnly = true;
+                this.columnTotalAmount.AllowDBNull = false;
+                this.columnC_tax.AllowDBNull = false;
+                this.columnIsFOC.AllowDBNull = false;
+                this.columnInvoiceStatus.MaxLength = 10;
                 this.columnWaiterName.MaxLength = 50;
-                this.columnPrintDate.ReadOnly = true;
-                this.columnStockName.ReadOnly = true;
-                this.columnStockName.MaxLength = 50;
-                this.columnQty.ReadOnly = true;
-                this.columnSalePrice.ReadOnly = true;
-                this.columnAmount.ReadOnly = true;
-                this.columnDetail_IsFOC.ReadOnly = true;
-                this.columnDiscount.ReadOnly = true;
-                this.columnShopName.ReadOnly = true;
-                this.columnShopName.MaxLength = 100;
-                this.columnShopImage.ReadOnly = true;
-                this.columnCurrentAddress.ReadOnly = true;
-                this.columnCurrentAddress.MaxLength = 1073741823;
-                this.columnPhoneNo.ReadOnly = true;
-                this.columnPhoneNo.MaxLength = 100;
+                this.columnSinger.MaxLength = 50;
+                this.columnSaleDetailId.AutoIncrement = true;
+                this.columnSaleDetailId.AutoIncrementSeed = -1;
+                this.columnSaleDetailId.AutoIncrementStep = -1;
+                this.columnSaleDetailId.AllowDBNull = false;
+                this.columnSaleDetailId.ReadOnly = true;
+                this.columnStockId.MaxLength = 36;
+                this.columnStockName.MaxLength = 100;
+                this.columnConvensionId.MaxLength = 36;
+                this.columnQty.AllowDBNull = false;
+                this.columnIsFOCDetail.Caption = "IsFOC1";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -929,17 +1128,77 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TR {
+            public string SaleId {
+                get {
+                    return ((string)(this[this.tabletbl_SaleSlip.SaleIdColumn]));
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.SaleIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TableNo {
                 get {
                     try {
-                        return ((string)(this[this.tabletbl_SaleSlip.TRColumn]));
+                        return ((string)(this[this.tabletbl_SaleSlip.TableNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TR\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TableNo\' in table \'tbl_SaleSlip\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbl_SaleSlip.TRColumn] = value;
+                    this[this.tabletbl_SaleSlip.TableNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RoomNo {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.RoomNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RoomNo\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.RoomNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CustomerId {
+                get {
+                    return ((int)(this[this.tabletbl_SaleSlip.CustomerIdColumn]));
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.CustomerIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserID {
+                get {
+                    return ((int)(this[this.tabletbl_SaleSlip.UserIDColumn]));
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SaleTypeId {
+                get {
+                    return ((int)(this[this.tabletbl_SaleSlip.SaleTypeIdColumn]));
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.SaleTypeIdColumn] = value;
                 }
             }
             
@@ -947,12 +1206,7 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string InvNo {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbl_SaleSlip.InvNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'InvNo\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tabletbl_SaleSlip.InvNoColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.InvNoColumn] = value;
@@ -963,12 +1217,7 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime InvDate {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletbl_SaleSlip.InvDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'InvDate\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tabletbl_SaleSlip.InvDateColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.InvDateColumn] = value;
@@ -1011,12 +1260,7 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal TotalAmount {
                 get {
-                    try {
-                        return ((decimal)(this[this.tabletbl_SaleSlip.TotalAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalAmount\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tabletbl_SaleSlip.TotalAmountColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.TotalAmountColumn] = value;
@@ -1107,12 +1351,7 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal C_tax {
                 get {
-                    try {
-                        return ((decimal)(this[this.tabletbl_SaleSlip.C_taxColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'C_tax\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tabletbl_SaleSlip.C_taxColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.C_taxColumn] = value;
@@ -1123,15 +1362,42 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFOC {
                 get {
-                    try {
-                        return ((bool)(this[this.tabletbl_SaleSlip.IsFOCColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsFOC\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
+                    return ((bool)(this[this.tabletbl_SaleSlip.IsFOCColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.IsFOCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsActive {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletbl_SaleSlip.IsActiveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsActive\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.IsActiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string InvoiceStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.InvoiceStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InvoiceStatus\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.InvoiceStatusColumn] = value;
                 }
             }
             
@@ -1169,6 +1435,49 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Singer {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.SingerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.SingerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SaleDetailId {
+                get {
+                    return ((int)(this[this.tabletbl_SaleSlip.SaleDetailIdColumn]));
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.SaleDetailIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string StockId {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.StockIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StockId\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.StockIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string StockName {
                 get {
                     try {
@@ -1185,14 +1494,57 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Qty {
+            public int CategoryID {
                 get {
                     try {
-                        return ((decimal)(this[this.tabletbl_SaleSlip.QtyColumn]));
+                        return ((int)(this[this.tabletbl_SaleSlip.CategoryIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Qty\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CategoryID\' in table \'tbl_SaleSlip\' is DBNull.", e);
                     }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.CategoryIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ConvensionId {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.ConvensionIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ConvensionId\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.ConvensionIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short Serial {
+                get {
+                    try {
+                        return ((short)(this[this.tabletbl_SaleSlip.SerialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Serial\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.SerialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Qty {
+                get {
+                    return ((decimal)(this[this.tabletbl_SaleSlip.QtyColumn]));
                 }
                 set {
                     this[this.tabletbl_SaleSlip.QtyColumn] = value;
@@ -1217,38 +1569,6 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Amount {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabletbl_SaleSlip.AmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbl_SaleSlip.AmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Detail_IsFOC {
-                get {
-                    try {
-                        return ((bool)(this[this.tabletbl_SaleSlip.Detail_IsFOCColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Detail_IsFOC\' in table \'tbl_SaleSlip\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbl_SaleSlip.Detail_IsFOCColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal Discount {
                 get {
                     try {
@@ -1265,17 +1585,33 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ShopName {
+            public decimal Amount {
                 get {
                     try {
-                        return ((string)(this[this.tabletbl_SaleSlip.ShopNameColumn]));
+                        return ((decimal)(this[this.tabletbl_SaleSlip.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShopName\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'tbl_SaleSlip\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbl_SaleSlip.ShopNameColumn] = value;
+                    this[this.tabletbl_SaleSlip.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFOCDetail {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletbl_SaleSlip.IsFOCDetailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsFOCDetail\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.IsFOCDetailColumn] = value;
                 }
             }
             
@@ -1292,6 +1628,22 @@ namespace NetfixPOS.Models.DataSetFile {
                 }
                 set {
                     this[this.tabletbl_SaleSlip.ShopImageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ShopName {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_SaleSlip.ShopNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ShopName\' in table \'tbl_SaleSlip\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_SaleSlip.ShopNameColumn] = value;
                 }
             }
             
@@ -1329,38 +1681,26 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTRNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.TRColumn);
+            public bool IsTableNoNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.TableNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTRNull() {
-                this[this.tabletbl_SaleSlip.TRColumn] = global::System.Convert.DBNull;
+            public void SetTableNoNull() {
+                this[this.tabletbl_SaleSlip.TableNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInvNoNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.InvNoColumn);
+            public bool IsRoomNoNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.RoomNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInvNoNull() {
-                this[this.tabletbl_SaleSlip.InvNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInvDateNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.InvDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInvDateNull() {
-                this[this.tabletbl_SaleSlip.InvDateColumn] = global::System.Convert.DBNull;
+            public void SetRoomNoNull() {
+                this[this.tabletbl_SaleSlip.RoomNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1385,18 +1725,6 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNetAmountNull() {
                 this[this.tabletbl_SaleSlip.NetAmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTotalAmountNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.TotalAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTotalAmountNull() {
-                this[this.tabletbl_SaleSlip.TotalAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1461,26 +1789,26 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsC_taxNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.C_taxColumn);
+            public bool IsIsActiveNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.IsActiveColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetC_taxNull() {
-                this[this.tabletbl_SaleSlip.C_taxColumn] = global::System.Convert.DBNull;
+            public void SetIsActiveNull() {
+                this[this.tabletbl_SaleSlip.IsActiveColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsIsFOCNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.IsFOCColumn);
+            public bool IsInvoiceStatusNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.InvoiceStatusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetIsFOCNull() {
-                this[this.tabletbl_SaleSlip.IsFOCColumn] = global::System.Convert.DBNull;
+            public void SetInvoiceStatusNull() {
+                this[this.tabletbl_SaleSlip.InvoiceStatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1509,6 +1837,30 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSingerNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.SingerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSingerNull() {
+                this[this.tabletbl_SaleSlip.SingerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStockIdNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.StockIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStockIdNull() {
+                this[this.tabletbl_SaleSlip.StockIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsStockNameNull() {
                 return this.IsNull(this.tabletbl_SaleSlip.StockNameColumn);
             }
@@ -1521,14 +1873,38 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsQtyNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.QtyColumn);
+            public bool IsCategoryIDNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.CategoryIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetQtyNull() {
-                this[this.tabletbl_SaleSlip.QtyColumn] = global::System.Convert.DBNull;
+            public void SetCategoryIDNull() {
+                this[this.tabletbl_SaleSlip.CategoryIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsConvensionIdNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.ConvensionIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetConvensionIdNull() {
+                this[this.tabletbl_SaleSlip.ConvensionIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSerialNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.SerialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSerialNull() {
+                this[this.tabletbl_SaleSlip.SerialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1545,30 +1921,6 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAmountNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.AmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAmountNull() {
-                this[this.tabletbl_SaleSlip.AmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDetail_IsFOCNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.Detail_IsFOCColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDetail_IsFOCNull() {
-                this[this.tabletbl_SaleSlip.Detail_IsFOCColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDiscountNull() {
                 return this.IsNull(this.tabletbl_SaleSlip.DiscountColumn);
             }
@@ -1581,14 +1933,26 @@ namespace NetfixPOS.Models.DataSetFile {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsShopNameNull() {
-                return this.IsNull(this.tabletbl_SaleSlip.ShopNameColumn);
+            public bool IsAmountNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.AmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetShopNameNull() {
-                this[this.tabletbl_SaleSlip.ShopNameColumn] = global::System.Convert.DBNull;
+            public void SetAmountNull() {
+                this[this.tabletbl_SaleSlip.AmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIsFOCDetailNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.IsFOCDetailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIsFOCDetailNull() {
+                this[this.tabletbl_SaleSlip.IsFOCDetailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1601,6 +1965,18 @@ namespace NetfixPOS.Models.DataSetFile {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetShopImageNull() {
                 this[this.tabletbl_SaleSlip.ShopImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsShopNameNull() {
+                return this.IsNull(this.tabletbl_SaleSlip.ShopNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetShopNameNull() {
+                this[this.tabletbl_SaleSlip.ShopNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

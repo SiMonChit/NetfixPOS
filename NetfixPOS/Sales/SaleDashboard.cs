@@ -179,17 +179,17 @@ namespace NetfixPOS.Sales
         private void btnPayment_Click(object sender, EventArgs e)
         {
             int columnIndex = 4;
-            string TableOrRoomNo = "";
+            string SaleId = "";
             if (isTable)
             {
-                TableOrRoomNo = dgvTable.CurrentRow.Cells[columnIndex].Value.ToString();
+                SaleId = dgvTable.CurrentRow.Cells[columnIndex].Value.ToString();
             }
             else
             {
-                TableOrRoomNo = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
+                SaleId = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
             }
-            GlobalFunction.WriteLog("Sale POS : Payment Click " + TableOrRoomNo + " Payment Voucher");
-            frm_Payment payment = new frm_Payment();
+            GlobalFunction.WriteLog("Sale POS : Payment Click " + SaleId + " Payment Voucher");
+            frm_Payment payment = new frm_Payment(SaleId);
             payment.ShowDialog();
         }
 

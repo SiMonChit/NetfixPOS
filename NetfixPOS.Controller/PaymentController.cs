@@ -24,12 +24,12 @@ namespace NetfixPOS.Controller
             return _payment.GetPaymentList(SaleId);
         }
 
-        public int Insert(PaymentModel payment)
+        public int Insert(PaymentModel payment, string SaleId)
         {
             int isSuccess = 0;
             try
             {
-                isSuccess= _payment.Insert(payment);
+                isSuccess= _payment.Insert(payment, SaleId);
                 _eventLogs.AddLog("Insert", DateTime.Now, "Payment Form", "Insert " + payment.PaySlipNo + " " + payment.PaidAmount.ToString() +" "+"User :"+payment.UserID, "Insert Success");
                 return isSuccess;
             }

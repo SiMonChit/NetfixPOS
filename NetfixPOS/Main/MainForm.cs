@@ -226,5 +226,10 @@ namespace NetfixPOS.Main
         {
             openChildForm(new SaleDashboard());
         }
+
+        private void btn_SaleList_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_SaleList());
+        }
     }
 }

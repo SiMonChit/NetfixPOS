@@ -21,8 +21,6 @@ namespace NetfixPOS.Common
         /// <summary>
         ///  Use for Slip Printer (width 3 in ),Need update for other printer
         /// </summary>
-
-
         private int m_currentPageIndex;
         private IList<Stream> m_streams;
         string InvId = null;
@@ -120,7 +118,7 @@ namespace NetfixPOS.Common
                 //string receiptno = G_controller.GetGenerateNo("Receipt");
                 dsSaleSetup.SaleHeaderSlipRow InvRow = s_contol.SaleHeaderSlipSelectById(InvId);
 
-                dt = s_contol.SaleDetailsSlip_SelectById(InvId);
+                dt = s_contol.GetSaleSlip(InvId);
 
                 //   xsdSaleReport.Invoice_ReportRow invrow= s_contol.InvoiceSelectById("");
                 ReportParameter[] param = new ReportParameter[5];

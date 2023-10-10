@@ -30,6 +30,9 @@ namespace NetfixPOS.Payment
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
@@ -37,9 +40,6 @@ namespace NetfixPOS.Payment
             this.cboSaleType = new System.Windows.Forms.ComboBox();
             this.txtPaymentNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPaidAmount = new System.Windows.Forms.TextBox();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnClose = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
@@ -63,6 +63,30 @@ namespace NetfixPOS.Payment
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(970, 251);
             this.panel2.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(447, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Remark";
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(451, 45);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(484, 108);
+            this.txtRemark.TabIndex = 28;
+            // 
+            // txtPaidAmount
+            // 
+            this.txtPaidAmount.Location = new System.Drawing.Point(161, 188);
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.Size = new System.Drawing.Size(239, 26);
+            this.txtPaidAmount.TabIndex = 27;
             // 
             // label3
             // 
@@ -133,30 +157,6 @@ namespace NetfixPOS.Payment
             this.label1.TabIndex = 5;
             this.label1.Text = "Payment No";
             // 
-            // txtPaidAmount
-            // 
-            this.txtPaidAmount.Location = new System.Drawing.Point(161, 188);
-            this.txtPaidAmount.Name = "txtPaidAmount";
-            this.txtPaidAmount.Size = new System.Drawing.Size(239, 26);
-            this.txtPaidAmount.TabIndex = 27;
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(451, 45);
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(484, 108);
-            this.txtRemark.TabIndex = 28;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(447, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Remark";
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(719, 283);
@@ -187,6 +187,7 @@ namespace NetfixPOS.Payment
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Payment";
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Silver;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

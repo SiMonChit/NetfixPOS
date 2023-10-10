@@ -473,6 +473,12 @@
       <DependentUpon>rtp_EndOfDay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Sales\frm_SaleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frm_SaleList.Designer.cs">
+      <DependentUpon>frm_SaleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\SaleDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -606,6 +612,9 @@
     <EmbeddedResource Include="POS_MainForm.resx">
       <DependentUpon>POS_MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintTemplate\A4Voucher.rdlc" />
+    <EmbeddedResource Include="PrintTemplate\A5Voucher.rdlc" />
+    <EmbeddedResource Include="PrintTemplate\SlipTemplate.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -652,6 +661,9 @@
     <EmbeddedResource Include="rtp_File\rtp_EndOfDay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rtp_EndOfDay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frm_SaleList.resx">
+      <DependentUpon>frm_SaleList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\SaleDashboard.resx">
       <DependentUpon>SaleDashboard.cs</DependentUpon>

@@ -106,9 +106,9 @@ namespace NetfixPOS.Controller
         /// </summary>
         /// <param name="saleid"></param>
         /// <returns></returns>
-        public ds_SaleSlip.tbl_SaleSlipDataTable SaleDetailsSlip_SelectById(string saleid)
+        public ds_SaleSlip.tbl_SaleSlipDataTable GetSaleSlip(string saleid)
         {
-            return _sale.SaleDetailsSlip_SelectById(saleid);
+            return _sale.GetSaleSlip(saleid);
         }
 
         public dsSaleSetup.SaleHeaderRow SelectHeaderRow(string saleid)
