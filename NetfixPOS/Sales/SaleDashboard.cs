@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using NetfixPOS.Common;
 using NetfixPOS.Controller;
+using NetfixPOS.Payment;
 
 namespace NetfixPOS.Sales
 {
@@ -188,7 +189,8 @@ namespace NetfixPOS.Sales
                 TableOrRoomNo = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
             }
             GlobalFunction.WriteLog("Sale POS : Payment Click " + TableOrRoomNo + " Payment Voucher");
-            
+            frm_Payment payment = new frm_Payment();
+            payment.ShowDialog();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

@@ -282,6 +282,12 @@
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\App_Information_Check.cs" />
+    <Compile Include="Common\frm_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frm_Print.Designer.cs">
+      <DependentUpon>frm_Print.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\GlobalFunction.cs" />
     <Compile Include="Common\GlobalPrinter.cs" />
     <Compile Include="IFormBase.cs" />
@@ -536,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frm_Print.resx">
+      <DependentUpon>frm_Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Income_Expense\ExpenseForm.resx">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
