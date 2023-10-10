@@ -38,6 +38,33 @@ namespace NetfixPOS.Sales
             WaiterDataBind();
         }
 
+        //For Update Voucher
+        public Sale_Transaction(string SaleId)
+        {
+            InitializeComponent();
+            _saletype = new SaleTypeController();
+            _users = new UsersController();
+            _category = new CategoryController();
+            _stock = new StockMasterController();
+            _generate = new AutoGenerateController();
+            _employee = new EmployeeController();
+            _sale = new SaleController();
+
+            sale_detail = new dsSaleSetup.SaleDetailDataTable();
+            sale_header = new dsSaleSetup.SaleHeaderDataTable();
+
+            trvCategory.AfterSelect += trvCategory_AfterSelect;
+
+            PopulateCategoryTreeView();
+            SaleTypedataBind();
+            UserdataBind();
+            //GetSaleInformation();
+            WaiterDataBind();
+            HeaderDataBind(SaleId);
+            btnSave.Text = "Update";
+        }
+
+        //For New voucher from table or room
         public Sale_Transaction(string TableOrRoomNo, bool IsTable)
         {
             InitializeComponent();
@@ -63,6 +90,8 @@ namespace NetfixPOS.Sales
             this.IsTable = IsTable;
             ShowForRoomSession(IsTable);
         }
+
+        string sale_id="";
         bool IsTable = false;
         SaleTypeController _saletype;
         SaleController _sale;
@@ -124,10 +153,12 @@ namespace NetfixPOS.Sales
             cboWaiter.DisplayMember = "EmpName";
             cboWaiter.ValueMember = "EmpId";
         }
+        private void SingerDataBind()
+        {
 
+        }
         private void PopulateCategoryTreeView()
         {
-            // Clear existing nodes
             trvCategory.Nodes.Clear();
             DataTable categories = new DataTable();
             categories = _category.GetCategory(0);
@@ -167,9 +198,7 @@ namespace NetfixPOS.Sales
 
         private void dgvStock_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //sale_detail = new dsSaleSetup.SaleDetailDataTable();
             dsSaleSetup.SaleDetailRow tempItemRow = sale_detail.NewSaleDetailRow();
-
             tempItemRow.SaleDetailId = 0;
             tempItemRow.StockId = dgvStock.CurrentRow.Cells["colStockId"].Value.ToString();
             tempItemRow.StockName = dgvStock.CurrentRow.Cells["colStockName"].Value.ToString();
@@ -246,6 +275,7 @@ namespace NetfixPOS.Sales
                     }
                     detail_row.SaleDetailId = Convert.ToInt32(row.Cells["colSaleDetailId"].Value);
                     detail_row.StockId = Convert.ToString(row.Cells["colSaleStockId"].Value);
+                    detail_row.StockName = row.Cells["colSaleStockName"].Value.ToString();
                     detail_row.SalePrice = Convert.ToDecimal(row.Cells["colSalePrice"].Value);
                     detail_row.Qty = Convert.ToInt32(row.Cells["colQty"].Value);
                     detail_row.Amount = Convert.ToInt32(row.Cells["colAmount"].Value);
@@ -382,7 +412,11 @@ namespace NetfixPOS.Sales
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveHeaderDetail("Save");
+            if (btnSave.Text == "Update")
+            {
+
+            }
+            else SaveHeaderDetail("Save");
         }
 
         private void btnPendding_Click(object sender, EventArgs e)
@@ -446,11 +480,67 @@ namespace NetfixPOS.Sales
         {
             throw new NotImplementedException();
         }
-
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void HeaderDataBind(string SaleId)
         {
-            //need invoice id to Print
-            GlobalPrinter printer = new GlobalPrinter("254F6AD0-24E3-4443-9BF7-809F11F2A8CE", "");
+            dsSaleSetup.SaleHeaderRow headerRow = _sale.SelectHeaderRow(SaleId);
+            sale_id = headerRow.SaleId;
+            txtInvoiceNo.Text = headerRow.InvNo;
+            dtpInvoiceDate.Value = headerRow.InvDate;
+            cboSalePerson.SelectedValue = headerRow.UserID;
+            cboCustomer.SelectedValue = headerRow.CustomerId;
+            cboSaleType.SelectedValue = headerRow.SaleTypeId;
+            if(headerRow.TableNo!=null) txtTableOrRoom.Text = headerRow.TableNo;
+            else txtTableOrRoom.Text = headerRow.RoomNo;
+            txtRemark.Text = headerRow.Remark;
+            txtDiscount.Text = headerRow.DiscountAmount.ToString();
+            txtDeliveryFee.Text = headerRow.DeliveryFee.ToString();
+            txtSerPercent.Text = headerRow.C_tax.ToString();
+            txtServiceAmt.Text = ((headerRow.C_tax / 100) * headerRow.TotalAmount).ToString();
+            chkFOC.Checked = headerRow.IsFOC;
+            ItemDataBind(SaleId);
+        }
+        private void ItemDataBind(string SaleId)
+        {
+            sale_detail = new dsSaleSetup.SaleDetailDataTable();
+            sale_detail = _sale.SaleDetailSelectByHeaderId(SaleId);
+            AddToSaleItemView(sale_detail);
+        }
+        private void PrintVoucher(string SaleId)
+        {
+            // need invoice id to Print
+            //GlobalPrinter printer = new GlobalPrinter("254F6AD0-24E3-4443-9BF7-809F11F2A8CE", "");
+            //PrintVoucher();
+
+            GlobalPrinter printer = new GlobalPrinter(SaleId, "Sale");
+        }
+
+        private void cboSession_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if(cboSession.SelectedIndex == 0)
+            {
+                dtp_StartTime.Value = DateTime.Now;
+                dtp_EndTime.Value = DateTime.Now.AddHours(1);
+            }
+            else if(cboSession.SelectedIndex == 1)
+            {
+                dtp_StartTime.Value = DateTime.Now;
+                dtp_EndTime.Value = DateTime.Now.AddHours(2);
+            }
+            else if(cboSession.SelectedIndex == 2)
+            {
+                dtp_StartTime.Value = DateTime.Now;
+                dtp_EndTime.Value = DateTime.Now.AddHours(3);
+            }
+            else if (cboSession.SelectedIndex == 3)
+            {
+                dtp_StartTime.Value = DateTime.Now;
+                dtp_EndTime.Value = DateTime.Now.AddHours(4);
+            }
+            else if (cboSession.SelectedIndex == 4)
+            {
+                dtp_StartTime.Value = DateTime.Now;
+                dtp_EndTime.Value = DateTime.Now.AddHours(5);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace NetfixPOS.DataAccess
 {
     public class PaymentDAL : DataControllerBase, IPayment
     {
-        public int Insert(PaymentModel payment)
+        public int Insert(PaymentModel payment, string SaleId)
         {
             string query = "Payment_Insert";
             Command = new SqlCommand(query, Connection);
@@ -20,15 +20,13 @@ namespace NetfixPOS.DataAccess
             int returnvalue = 0;
             try
             {
-                Command.Parameters.AddWithValue("SaleTypeId", payment.SaleTypeId);
-                Command.Parameters.AddWithValue("SaleId", payment.SaleId);
+                Command.Parameters.AddWithValue("PaymentType", payment.PaymentType);
                 Command.Parameters.AddWithValue("PaySlipDate", payment.PaySlipDate);
                 Command.Parameters.AddWithValue("PaySlipNo", payment.PaySlipNo);
                 Command.Parameters.AddWithValue("PaidAmount", payment.PaidAmount);
-                Command.Parameters.AddWithValue("PaidFrom", payment.PaidFrom);
-                Command.Parameters.AddWithValue("InvAmount", payment.InvAmount);
+                Command.Parameters.AddWithValue("Remark", payment.Remark);
                 Command.Parameters.AddWithValue("UserID", payment.UserID);
-
+                Command.Parameters.AddWithValue("SaleId", SaleId);
                 Connection.Open();
                 returnvalue = Command.ExecuteNonQuery();
             }

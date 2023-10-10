@@ -1,6 +1,7 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
 using NetfixPOS.Models.DataSetFile;
+using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,11 @@ namespace NetfixPOS.DataAccess
 {
     public class SaleDAL : DataControllerBase, ISale
     {
+        SaleQuery query;
+        public SaleDAL()
+        {
+            query = new SaleQuery();
+        }
         public void HeaderDelete(string id)
         {
             throw new NotImplementedException();
@@ -263,11 +269,36 @@ namespace NetfixPOS.DataAccess
             return dt[0];
         }
 
+        public dsSaleSetup.SaleHeaderRow SelectHeaderRow(string saleid)
+        {
+            dsSaleSetup.SaleHeaderDataTable dt = new dsSaleSetup.SaleHeaderDataTable();
+
+            try
+            {
+                Command = new SqlCommand(query.SelectHeaderRow(), Connection);
+                Command.CommandType = CommandType.Text;
+                Command.Parameters.AddWithValue("@SaleId", saleid);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(Command);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open)
+                    Connection.Close();
+            }
+
+            return dt[0];
+        }
 
         public dsSaleSetup.SaleDetailDataTable SaleDetailSelectByHeaderId(string headerId)
         {
-            Command = new SqlCommand("SaleDetail_SelectBySaleId", Connection);
-            Command.CommandType = CommandType.StoredProcedure;
+            Command = new SqlCommand(query.SelectSaleItem(), Connection);
+            Command.CommandType = CommandType.Text;
             dsSaleSetup.SaleDetailDataTable dt = new dsSaleSetup.SaleDetailDataTable();
             try
             {

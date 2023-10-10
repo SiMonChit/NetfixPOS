@@ -30,8 +30,8 @@ namespace NetfixPOS.Sales
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblShopName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblTimer = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -50,6 +50,7 @@ namespace NetfixPOS.Sales
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnRefresh = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNewVoucher = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dtpSaleDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -84,7 +85,6 @@ namespace NetfixPOS.Sales
             this.col_InvoiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.countdownTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel6)).BeginInit();
@@ -287,7 +287,7 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.Controls.Add(this.btnUpdate);
+            this.kryptonPanel2.Controls.Add(this.btnRefresh);
             this.kryptonPanel2.Controls.Add(this.btnNewVoucher);
             this.kryptonPanel2.Controls.Add(this.dtpSaleDate);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel10);
@@ -301,6 +301,17 @@ namespace NetfixPOS.Sales
             this.kryptonPanel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCluster;
             this.kryptonPanel2.Size = new System.Drawing.Size(1689, 70);
             this.kryptonPanel2.TabIndex = 2;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(987, 9);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(156, 56);
+            this.btnRefresh.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Values.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnNewVoucher
             // 
@@ -373,7 +384,7 @@ namespace NetfixPOS.Sales
             this.kryptonDockableNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.page_Table,
             this.page_Room});
-            this.kryptonDockableNavigator1.SelectedIndex = 1;
+            this.kryptonDockableNavigator1.SelectedIndex = 0;
             this.kryptonDockableNavigator1.Size = new System.Drawing.Size(1689, 475);
             this.kryptonDockableNavigator1.TabIndex = 3;
             this.kryptonDockableNavigator1.Text = "kryptonDockableNavigator1";
@@ -427,9 +438,9 @@ namespace NetfixPOS.Sales
             // coltableJoin
             // 
             this.coltableJoin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = false;
-            this.coltableJoin.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            this.coltableJoin.DefaultCellStyle = dataGridViewCellStyle1;
             this.coltableJoin.FalseValue = null;
             this.coltableJoin.FillWeight = 30F;
             this.coltableJoin.HeaderText = "Join";
@@ -554,9 +565,9 @@ namespace NetfixPOS.Sales
             // colroomJoin
             // 
             this.colroomJoin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = false;
-            this.colroomJoin.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = false;
+            this.colroomJoin.DefaultCellStyle = dataGridViewCellStyle2;
             this.colroomJoin.FalseValue = null;
             this.colroomJoin.FillWeight = 30F;
             this.colroomJoin.HeaderText = "Join";
@@ -677,17 +688,6 @@ namespace NetfixPOS.Sales
             // 
             this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(987, 9);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(156, 56);
-            this.btnUpdate.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Values.Text = "Update Voucher";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // SaleDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -785,6 +785,6 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_InvoiceStatus;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colUpdate;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
     }
 }

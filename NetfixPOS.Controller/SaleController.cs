@@ -111,6 +111,11 @@ namespace NetfixPOS.Controller
             return _sale.SaleDetailsSlip_SelectById(saleid);
         }
 
+        public dsSaleSetup.SaleHeaderRow SelectHeaderRow(string saleid)
+        {
+            return _sale.SelectHeaderRow(saleid);
+        }
+
         #endregion
 
         #region SaleItem Select

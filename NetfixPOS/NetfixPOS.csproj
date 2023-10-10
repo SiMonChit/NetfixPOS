@@ -387,6 +387,12 @@
     <Compile Include="NewSetup\Unit.Designer.cs">
       <DependentUpon>Unit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\frm_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frm_Payment.Designer.cs">
+      <DependentUpon>frm_Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment\InvoicePayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -581,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewSetup\Unit.resx">
       <DependentUpon>Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frm_Payment.resx">
+      <DependentUpon>frm_Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment\InvoicePayment.resx">
       <DependentUpon>InvoicePayment.cs</DependentUpon>

@@ -12,6 +12,7 @@ namespace NetfixPOS.Models
 
 		public string SaleId{ get; set; }
 		public string StockId{ get; set; }
+		public string StockName { get; set; }
 		public int CategoryID { get; set; }
 		public string ConvensionId{ get; set; }
 		public int Serial{ get; set; }

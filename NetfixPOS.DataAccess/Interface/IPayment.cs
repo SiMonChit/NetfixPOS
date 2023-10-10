@@ -10,7 +10,7 @@ namespace NetfixPOS.DataAccess.Interface
 {
     interface IPayment
     {
-        int Insert(PaymentModel payment);
+        int Insert(PaymentModel payment, string SaleId);
         void Update(PaymentModel payment);
         DataTable GetPaymentList(string SaleId);
 

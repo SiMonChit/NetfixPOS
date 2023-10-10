@@ -164,17 +164,37 @@ namespace NetfixPOS.Sales
 
         private void dgvRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            string colName = dgvRoom.Columns[dgvRoom.CurrentCell.ColumnIndex].Name;
+            string invid = "";
+            if (colName == "colUpdate")
+            {
+                invid = dgvRoom.Rows[e.RowIndex].Cells["col_RoomSaleId"].Value.ToString();
+                Sale_Transaction sale_Transaction = new Sale_Transaction(invid);
+                sale_Transaction.ShowDialog();
+            }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            int columnIndex = 4;
+            string TableOrRoomNo = "";
+            if (isTable)
+            {
+                TableOrRoomNo = dgvTable.CurrentRow.Cells[columnIndex].Value.ToString();
+            }
+            else
+            {
+                TableOrRoomNo = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
+            }
+            GlobalFunction.WriteLog("Sale POS : Payment Click " + TableOrRoomNo + " Payment Voucher");
+            
+        }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RoomDataBind();
+            TableDataBind();
         }
     }
 }
