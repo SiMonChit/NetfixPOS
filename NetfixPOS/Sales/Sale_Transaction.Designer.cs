@@ -69,6 +69,8 @@ namespace NetfixPOS.Sales
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtRoomService = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnAddSinger = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAddSession = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblEndTime = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -94,8 +96,7 @@ namespace NetfixPOS.Sales
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsFOC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtRoomService = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
@@ -109,7 +110,10 @@ namespace NetfixPOS.Sales
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.kryptonLabel2);
+            this.panel1.Controls.Add(this.kryptonTextBox1);
             this.panel1.Controls.Add(this.txtServiceAmt);
+            this.panel1.Controls.Add(this.txtRoomService);
             this.panel1.Controls.Add(this.txtSerPercent);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cboCustomer);
@@ -159,11 +163,11 @@ namespace NetfixPOS.Sales
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1154, 92);
+            this.label11.Location = new System.Drawing.Point(1206, 92);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 20);
+            this.label11.Size = new System.Drawing.Size(34, 20);
             this.label11.TabIndex = 27;
-            this.label11.Text = "ServiceTax";
+            this.label11.Text = "Tax";
             // 
             // cboCustomer
             // 
@@ -197,7 +201,7 @@ namespace NetfixPOS.Sales
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1154, 52);
+            this.label7.Location = new System.Drawing.Point(1148, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 20);
             this.label7.TabIndex = 23;
@@ -253,7 +257,7 @@ namespace NetfixPOS.Sales
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1154, 17);
+            this.label6.Location = new System.Drawing.Point(1168, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 12;
@@ -507,8 +511,6 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel1.Controls.Add(this.txtRoomService);
             this.kryptonPanel1.Controls.Add(this.btnAddSinger);
             this.kryptonPanel1.Controls.Add(this.btnAddSession);
             this.kryptonPanel1.Controls.Add(this.lblEndTime);
@@ -527,6 +529,22 @@ namespace NetfixPOS.Sales
             this.kryptonPanel1.Size = new System.Drawing.Size(340, 557);
             this.kryptonPanel1.TabIndex = 5;
             // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(1098, 123);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(142, 29);
+            this.kryptonLabel2.TabIndex = 60;
+            this.kryptonLabel2.Values.Text = "Service Charges";
+            // 
+            // txtRoomService
+            // 
+            this.txtRoomService.Location = new System.Drawing.Point(1246, 121);
+            this.txtRoomService.Name = "txtRoomService";
+            this.txtRoomService.ReadOnly = true;
+            this.txtRoomService.Size = new System.Drawing.Size(56, 31);
+            this.txtRoomService.TabIndex = 59;
+            // 
             // btnAddSinger
             // 
             this.btnAddSinger.Location = new System.Drawing.Point(101, 141);
@@ -537,7 +555,7 @@ namespace NetfixPOS.Sales
             // 
             // btnAddSession
             // 
-            this.btnAddSession.Location = new System.Drawing.Point(102, 408);
+            this.btnAddSession.Location = new System.Drawing.Point(101, 316);
             this.btnAddSession.Name = "btnAddSession";
             this.btnAddSession.Size = new System.Drawing.Size(123, 40);
             this.btnAddSession.TabIndex = 57;
@@ -775,21 +793,13 @@ namespace NetfixPOS.Sales
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
-            // txtRoomService
+            // kryptonTextBox1
             // 
-            this.txtRoomService.Location = new System.Drawing.Point(102, 347);
-            this.txtRoomService.Name = "txtRoomService";
-            this.txtRoomService.ReadOnly = true;
-            this.txtRoomService.Size = new System.Drawing.Size(146, 31);
-            this.txtRoomService.TabIndex = 59;
-            // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(101, 316);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(124, 29);
-            this.kryptonLabel2.TabIndex = 60;
-            this.kryptonLabel2.Values.Text = "Room Service";
+            this.kryptonTextBox1.Location = new System.Drawing.Point(1310, 121);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.ReadOnly = true;
+            this.kryptonTextBox1.Size = new System.Drawing.Size(121, 31);
+            this.kryptonTextBox1.TabIndex = 60;
             // 
             // Sale_Transaction
             // 
@@ -890,5 +900,6 @@ namespace NetfixPOS.Sales
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddSinger;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomService;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }

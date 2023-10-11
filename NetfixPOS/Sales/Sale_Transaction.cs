@@ -506,14 +506,6 @@ namespace NetfixPOS.Sales
             sale_detail = _sale.SaleDetailSelectByHeaderId(SaleId);
             AddToSaleItemView(sale_detail);
         }
-        private void PrintVoucher(string SaleId)
-        {
-            // need invoice id to Print
-            //GlobalPrinter printer = new GlobalPrinter("254F6AD0-24E3-4443-9BF7-809F11F2A8CE", "");
-            //PrintVoucher();
-
-            GlobalPrinter printer = new GlobalPrinter(SaleId, "Sale");
-        }
 
         private void cboSession_SelectionChangeCommitted(object sender, EventArgs e)
         {

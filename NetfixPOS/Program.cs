@@ -1,4 +1,5 @@
-﻿using NetfixPOS.Main;
+﻿using NetfixPOS.Database;
+using NetfixPOS.Main;
 using NetfixPOS.Sales;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,9 @@ namespace NetfixPOS
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new POS_MainForm());
             Application.Run(new MainForm());
+
+            //Application.Run(new NetfixSplash());
+
             //Application.Run(new SaleDashboard());
         }
     }

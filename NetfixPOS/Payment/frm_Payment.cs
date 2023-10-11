@@ -62,16 +62,19 @@ namespace NetfixPOS.Payment
                 payment.Remark = txtRemark.Text;
                 payment.UserID = 1;
 
-                int isSuccess = _payment.Insert(payment, saleid);
-                if (isSuccess == 1)
-                {
-                    frm_Print print = new frm_Print(saleid);
-                    print.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Someting worng", "Payment", MessageBoxButtons.OK);
-                }
+                frm_Print print = new frm_Print(saleid);
+                print.ShowDialog();
+
+                //int isSuccess = _payment.Insert(payment, saleid);
+                //if (isSuccess == 1)
+                //{
+                //    frm_Print print = new frm_Print(saleid);
+                //    print.ShowDialog();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Someting worng", "Payment", MessageBoxButtons.OK);
+                //}
                 
             }
             

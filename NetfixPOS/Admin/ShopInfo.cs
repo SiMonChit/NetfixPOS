@@ -131,6 +131,7 @@ namespace NetfixPOS.Admin
             {
                 General_Id = Convert.ToInt32(dgvSoftwareInfo.Rows[e.RowIndex].Cells["colGeneral_Id"].Value);
                 dtpSaleDate.Value = Convert.ToDateTime(dgvSoftwareInfo.Rows[e.RowIndex].Cells["colSaleDate"].Value);
+                txtKey.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colActivateKey"].Value.ToString();
                 txtService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceTax"].Value.ToString();
                 txtDiscount.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colInvDiscount"].Value.ToString();
                 txtRoomService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colRoomService"].Value.ToString();
