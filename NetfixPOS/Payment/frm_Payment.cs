@@ -25,6 +25,7 @@ namespace NetfixPOS.Payment
 
             saleid = SaleId;
             GetSaleTotalAmount(SaleId);
+            txtPaidAmount.Focus();
         }
         SaleController _sale;
         PaymentController _payment;
@@ -33,6 +34,13 @@ namespace NetfixPOS.Payment
         public frm_Payment()
         {
             InitializeComponent();
+        }
+        private void ClearControl()
+        {
+            txtPaidAmount.Clear();
+            txtRemark.Clear();
+            txtTotalAmount.Clear();
+            cboPaymentType.SelectedIndex = 0;
         }
         private void GetSaleTotalAmount(string SaleId)
         {

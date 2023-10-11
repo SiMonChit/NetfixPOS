@@ -13,6 +13,7 @@ namespace NetfixPOS.Models
         public DateTime SaleDate { get; set; }
         public string ActivateKey { get; set; }
         public decimal ServiceTax { get; set; }
+        public decimal RoomService { get; set; }
         public bool IsActive { get; set; }
         public decimal InvDiscount { get; set; }
     }

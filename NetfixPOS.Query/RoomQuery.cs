@@ -11,13 +11,13 @@ namespace NetfixPOS.Query
         string query = "";
         public string Insert()
         {
-            query = "INSERT tbl_Room VALUES(@RoomNo, @RoomName, @CompanyId, @ModifiedDate, 0, 1, @IsDefault, null, null)";
+            query = "INSERT tbl_Room VALUES(@RoomNo, @RoomName, @CompanyId, @ModifiedDate, 0, 1, @IsDefault, null, null, @RoomCharges)";
             return query;
         }
         public string Update()
         {
             query = "UPDATE tbl_Room SET RoomName = @RoomNo, RoomName = @RoomName, CompanyId = @CompanyId," +
-                " ModifiedDate = @ModifiedDate, IsDefault = @IsDefault WHERE RoomId = @RoomId";
+                " ModifiedDate = @ModifiedDate, IsDefault = @IsDefault, RoomCharges = @RoomCharges WHERE RoomId = @RoomId";
             return query;
         }
         public string Delete()

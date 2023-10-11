@@ -31,12 +31,15 @@ namespace NetfixPOS.NewSetup
         {
             this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.chkIsDefault = new System.Windows.Forms.CheckBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRoomNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.chkIsDefault = new System.Windows.Forms.CheckBox();
+            this.txtRoomCharges = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.colRoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +47,10 @@ namespace NetfixPOS.NewSetup
             this.colModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsDefault = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,22 +67,24 @@ namespace NetfixPOS.NewSetup
             this.colModifiedDate,
             this.colIsDeleted,
             this.colIsAvailable,
+            this.colRoomCharges,
             this.colIsDefault,
             this.colEdit,
             this.colDel});
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoom.Location = new System.Drawing.Point(229, 0);
-            this.dgvRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRoom.Location = new System.Drawing.Point(344, 0);
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.RowHeadersWidth = 50;
             this.dgvRoom.RowTemplate.Height = 28;
-            this.dgvRoom.Size = new System.Drawing.Size(521, 353);
+            this.dgvRoom.Size = new System.Drawing.Size(908, 543);
             this.dgvRoom.TabIndex = 3;
             this.dgvRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellContentClick);
             this.dgvRoom.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvRoom_DataBindingComplete);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtRoomCharges);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Controls.Add(this.chkIsDefault);
             this.panel1.Controls.Add(this.txtRoomName);
@@ -89,62 +94,96 @@ namespace NetfixPOS.NewSetup
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(229, 353);
+            this.panel1.Size = new System.Drawing.Size(344, 543);
             this.panel1.TabIndex = 2;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(130, 273);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(100, 37);
+            this.btnNew.TabIndex = 14;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // chkIsDefault
+            // 
+            this.chkIsDefault.AutoSize = true;
+            this.chkIsDefault.Location = new System.Drawing.Point(130, 184);
+            this.chkIsDefault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkIsDefault.Name = "chkIsDefault";
+            this.chkIsDefault.Size = new System.Drawing.Size(87, 24);
+            this.chkIsDefault.TabIndex = 13;
+            this.chkIsDefault.Text = "Default";
+            this.chkIsDefault.UseVisualStyleBackColor = true;
             // 
             // txtRoomName
             // 
-            this.txtRoomName.Location = new System.Drawing.Point(87, 44);
+            this.txtRoomName.Location = new System.Drawing.Point(130, 68);
+            this.txtRoomName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRoomName.Name = "txtRoomName";
-            this.txtRoomName.Size = new System.Drawing.Size(131, 20);
+            this.txtRoomName.Size = new System.Drawing.Size(194, 26);
             this.txtRoomName.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 46);
+            this.label2.Location = new System.Drawing.Point(24, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Room Name";
             // 
             // txtRoomNo
             // 
-            this.txtRoomNo.Location = new System.Drawing.Point(87, 21);
+            this.txtRoomNo.Location = new System.Drawing.Point(130, 32);
+            this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRoomNo.Name = "txtRoomNo";
-            this.txtRoomNo.Size = new System.Drawing.Size(131, 20);
+            this.txtRoomNo.Size = new System.Drawing.Size(194, 26);
             this.txtRoomNo.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 23);
+            this.label1.Location = new System.Drawing.Point(46, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Room No";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(87, 109);
+            this.btnSave.Location = new System.Drawing.Point(130, 227);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(67, 24);
+            this.btnSave.Size = new System.Drawing.Size(100, 37);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // chkIsDefault
+            // txtRoomCharges
             // 
-            this.chkIsDefault.AutoSize = true;
-            this.chkIsDefault.Location = new System.Drawing.Point(87, 81);
-            this.chkIsDefault.Name = "chkIsDefault";
-            this.chkIsDefault.Size = new System.Drawing.Size(60, 17);
-            this.chkIsDefault.TabIndex = 13;
-            this.chkIsDefault.Text = "Default";
-            this.chkIsDefault.UseVisualStyleBackColor = true;
+            this.txtRoomCharges.Location = new System.Drawing.Point(130, 104);
+            this.txtRoomCharges.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomCharges.Name = "txtRoomCharges";
+            this.txtRoomCharges.Size = new System.Drawing.Size(194, 26);
+            this.txtRoomCharges.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Room Charges";
             // 
             // colRoomId
             // 
@@ -159,7 +198,7 @@ namespace NetfixPOS.NewSetup
             // 
             this.colRoomNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colRoomNo.DataPropertyName = "RoomNo";
-            this.colRoomNo.FillWeight = 80F;
+            this.colRoomNo.FillWeight = 60F;
             this.colRoomNo.HeaderText = "Room No";
             this.colRoomNo.MinimumWidth = 8;
             this.colRoomNo.Name = "colRoomNo";
@@ -208,12 +247,23 @@ namespace NetfixPOS.NewSetup
             this.colIsAvailable.MinimumWidth = 8;
             this.colIsAvailable.Name = "colIsAvailable";
             // 
+            // colRoomCharges
+            // 
+            this.colRoomCharges.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomCharges.DataPropertyName = "RoomCharges";
+            this.colRoomCharges.FillWeight = 80F;
+            this.colRoomCharges.HeaderText = "Room Charges";
+            this.colRoomCharges.MinimumWidth = 8;
+            this.colRoomCharges.Name = "colRoomCharges";
+            this.colRoomCharges.ReadOnly = true;
+            // 
             // colIsDefault
             // 
             this.colIsDefault.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colIsDefault.DataPropertyName = "IsDefault";
             this.colIsDefault.FillWeight = 50F;
             this.colIsDefault.HeaderText = "Default";
+            this.colIsDefault.MinimumWidth = 8;
             this.colIsDefault.Name = "colIsDefault";
             // 
             // colEdit
@@ -236,25 +286,14 @@ namespace NetfixPOS.NewSetup
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(87, 139);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(67, 24);
-            this.btnNew.TabIndex = 14;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
             // Room
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 353);
+            this.ClientSize = new System.Drawing.Size(1252, 543);
             this.Controls.Add(this.dgvRoom);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Room";
             this.Text = "Room";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
@@ -273,6 +312,10 @@ namespace NetfixPOS.NewSetup
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.CheckBox chkIsDefault;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.TextBox txtRoomCharges;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomName;
@@ -280,10 +323,9 @@ namespace NetfixPOS.NewSetup
         private System.Windows.Forms.DataGridViewTextBoxColumn colModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsDeleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsAvailable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomCharges;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colIsDefault;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
-        private System.Windows.Forms.CheckBox chkIsDefault;
-        private System.Windows.Forms.Button btnNew;
     }
 }

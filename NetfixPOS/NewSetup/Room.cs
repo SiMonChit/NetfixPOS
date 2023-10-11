@@ -51,7 +51,7 @@ namespace NetfixPOS.NewSetup
             room.CompanyId = 1;
             room.ModifiedDate = DateTime.Now;
             room.IsDefault = chkIsDefault.Checked;
-
+            room.RoomCharges = Convert.ToDecimal(txtRoomCharges.Text);
             switch (btnSave.Text)
             {
                 case "Save":

@@ -18,5 +18,6 @@ namespace NetfixPOS.Models
         public bool IsDefault { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public decimal RoomCharges { get; set; }
     }
 }

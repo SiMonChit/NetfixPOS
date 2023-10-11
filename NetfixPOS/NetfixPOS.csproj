@@ -697,6 +697,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="VisionLink Solution.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -737,6 +739,10 @@
     <Content Include="ImageFile\user.ico" />
     <Content Include="KeyFile\NetfixKeyFile.txt" />
     <Content Include="pos_logo_icon.ico" />
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

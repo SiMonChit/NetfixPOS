@@ -61,7 +61,7 @@ namespace NetfixPOS.NewSetup
         public void DataBind()
         {
             dgvCategory.AutoGenerateColumns = false;
-            dgvCategory.DataSource = _category.GetCategory(0);
+            dgvCategory.DataSource = _category.GetAll();
         }
         private void dgvCategory_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

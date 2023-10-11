@@ -91,7 +91,7 @@ namespace NetfixPOS.DataAccess
             }
         }
 
-        public DataTable GetCategory(int id)
+        public DataTable GetCategory(int id, string CategoryType)
         {
             Command = new SqlCommand(query.Select(id), Connection);
             Command.CommandType = CommandType.Text;
@@ -99,7 +99,28 @@ namespace NetfixPOS.DataAccess
             try
             {
                 Command.Parameters.AddWithValue("CategoryId", id);
-
+                Command.Parameters.AddWithValue("CategoryType", CategoryType);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+        public DataTable GetAll()
+        {
+            Command = new SqlCommand(query.SelectAll(), Connection);
+            Command.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = Command;
                 dataAdapter.Fill(dt);

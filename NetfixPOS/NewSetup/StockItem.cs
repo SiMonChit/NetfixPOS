@@ -67,7 +67,7 @@ namespace NetfixPOS.NewSetup
         }
         private void BindCategory()
         {
-            cboCategory.DataSource = _category.GetCategory(0);
+            cboCategory.DataSource = _category.GetCategory(0,"Sale");
             cboCategory.DisplayMember = "CategoryName";
             cboCategory.ValueMember = "CategoryId";
         }

@@ -134,6 +134,7 @@ namespace NetfixPOS.Sales
                 txtSerPercent.Text = GlobalFunction.appInfo.Rows[0][3].ToString();
                 txtDiscount.Text = GlobalFunction.appInfo.Rows[0][6].ToString();
                 dtpInvoiceDate.Value = Convert.ToDateTime(GlobalFunction.appInfo.Rows[0][1]);
+                txtRoomService.Text = GlobalFunction.appInfo.Rows[0][7].ToString();
             }
             catch (Exception ex)
             {
@@ -161,7 +162,7 @@ namespace NetfixPOS.Sales
         {
             trvCategory.Nodes.Clear();
             DataTable categories = new DataTable();
-            categories = _category.GetCategory(0);
+            categories = _category.GetCategory(0,"Sale");
 
             foreach (DataRow row in categories.Rows)
             {

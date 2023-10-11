@@ -34,7 +34,7 @@ namespace NetfixPOS.NewSetup
             // Clear existing nodes
             trvCategory.Nodes.Clear();
             DataTable categories = new DataTable();
-            categories = _category.GetCategory(0);
+            categories = _category.GetCategory(0,"Sale");
 
             foreach (DataRow row in categories.Rows)
             {

@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -139,12 +140,14 @@ namespace NetfixPOS.DataAccess
     
         public void AppInfo_Update(GeneralModel general)
         {
-            Command = new SqlCommand("UPDATE tbl_GE_AppInfo SET SaleDate  = @SaleDate, ServiceTax = @ServiceTax, InvDiscount = @InvDiscount WHERE General_Id = @General_Id", Connection);
+            AppInfoQuery query = new AppInfoQuery();
+
+            Command = new SqlCommand(query.Update(), Connection);
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue("General_Id", general.General_Id);
-            //Command.Parameters.AddWithValue("ShopId", general.ShopId);
             Command.Parameters.AddWithValue("SaleDate", general.SaleDate);
             Command.Parameters.AddWithValue("ServiceTax", general.ServiceTax);
+            Command.Parameters.AddWithValue("RoomService", general.RoomService);
             Command.Parameters.AddWithValue("InvDiscount", general.InvDiscount);
             try
             {
@@ -165,13 +168,15 @@ namespace NetfixPOS.DataAccess
 
         public void AppInfo_Insert(GeneralModel general)
         {
-            string query = "INSERT tbl_GE_AppInfo VALUES(@ShopId, @SaleDate, @ActivateKey, @ServiceTax, 1, @InvDiscount)";
-            Command = new SqlCommand(query, Connection);
+            AppInfoQuery query = new AppInfoQuery();
+            
+            Command = new SqlCommand(query.Insert(), Connection);
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue("ActivateKey", general.ActivateKey);
             Command.Parameters.AddWithValue("ShopId", general.ShopId);
             Command.Parameters.AddWithValue("SaleDate", general.SaleDate);
             Command.Parameters.AddWithValue("ServiceTax", general.ServiceTax);
+            Command.Parameters.AddWithValue("RoomService", general.RoomService);
             Command.Parameters.AddWithValue("InvDiscount", general.InvDiscount);
             try
             {

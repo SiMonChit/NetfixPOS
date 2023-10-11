@@ -61,9 +61,13 @@ namespace NetfixPOS.Controller
            
         }
 
-        public DataTable GetCategory(int id)
+        public DataTable GetCategory(int id, string CategoryType)
         {
-            return _category.GetCategory(id);
+            return _category.GetCategory(id, CategoryType);
+        }
+        public DataTable GetAll()
+        {
+            return _category.GetAll();
         }
     }
 }

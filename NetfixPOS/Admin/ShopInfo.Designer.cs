@@ -54,12 +54,15 @@ namespace NetfixPOS.Admin
             this.dgvSoftwareInfo = new System.Windows.Forms.DataGridView();
             this.colGeneral_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShopId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActivateKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colServiceTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomService = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtRoomService = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -115,6 +118,8 @@ namespace NetfixPOS.Admin
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtRoomService);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtDiscount);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -134,15 +139,15 @@ namespace NetfixPOS.Admin
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(112, 180);
+            this.txtDiscount.Location = new System.Drawing.Point(372, 207);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(397, 26);
+            this.txtDiscount.Size = new System.Drawing.Size(137, 26);
             this.txtDiscount.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 185);
+            this.label8.Location = new System.Drawing.Point(268, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 20);
             this.label8.TabIndex = 13;
@@ -160,15 +165,15 @@ namespace NetfixPOS.Admin
             // 
             // txtService
             // 
-            this.txtService.Location = new System.Drawing.Point(112, 142);
+            this.txtService.Location = new System.Drawing.Point(372, 142);
             this.txtService.Name = "txtService";
-            this.txtService.Size = new System.Drawing.Size(397, 26);
+            this.txtService.Size = new System.Drawing.Size(137, 26);
             this.txtService.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 144);
+            this.label6.Location = new System.Drawing.Point(276, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 10;
@@ -281,9 +286,10 @@ namespace NetfixPOS.Admin
             this.dgvSoftwareInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGeneral_Id,
             this.colShopId,
-            this.colSaleDate,
             this.colActivateKey,
+            this.colSaleDate,
             this.colServiceTax,
+            this.colRoomService,
             this.colInvDiscount,
             this.colIsActive,
             this.colEdit});
@@ -313,6 +319,16 @@ namespace NetfixPOS.Admin
             this.colShopId.Visible = false;
             this.colShopId.Width = 150;
             // 
+            // colActivateKey
+            // 
+            this.colActivateKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colActivateKey.DataPropertyName = "ActivateKey";
+            this.colActivateKey.HeaderText = "ActivateKey";
+            this.colActivateKey.MinimumWidth = 8;
+            this.colActivateKey.Name = "colActivateKey";
+            this.colActivateKey.ReadOnly = true;
+            this.colActivateKey.Visible = false;
+            // 
             // colSaleDate
             // 
             this.colSaleDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -323,15 +339,6 @@ namespace NetfixPOS.Admin
             this.colSaleDate.Name = "colSaleDate";
             this.colSaleDate.ReadOnly = true;
             // 
-            // colActivateKey
-            // 
-            this.colActivateKey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colActivateKey.DataPropertyName = "ActivateKey";
-            this.colActivateKey.HeaderText = "ActivateKey";
-            this.colActivateKey.MinimumWidth = 8;
-            this.colActivateKey.Name = "colActivateKey";
-            this.colActivateKey.ReadOnly = true;
-            // 
             // colServiceTax
             // 
             this.colServiceTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -341,6 +348,16 @@ namespace NetfixPOS.Admin
             this.colServiceTax.MinimumWidth = 8;
             this.colServiceTax.Name = "colServiceTax";
             this.colServiceTax.ReadOnly = true;
+            // 
+            // colRoomService
+            // 
+            this.colRoomService.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomService.DataPropertyName = "RoomService";
+            this.colRoomService.FillWeight = 50F;
+            this.colRoomService.HeaderText = "RoomService";
+            this.colRoomService.MinimumWidth = 8;
+            this.colRoomService.Name = "colRoomService";
+            this.colRoomService.ReadOnly = true;
             // 
             // colInvDiscount
             // 
@@ -363,12 +380,28 @@ namespace NetfixPOS.Admin
             // colEdit
             // 
             this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEdit.FillWeight = 40F;
+            this.colEdit.FillWeight = 30F;
             this.colEdit.HeaderText = "Edit";
             this.colEdit.MinimumWidth = 8;
             this.colEdit.Name = "colEdit";
             this.colEdit.Text = "Edit";
             this.colEdit.UseColumnTextForButtonValue = true;
+            // 
+            // txtRoomService
+            // 
+            this.txtRoomService.Location = new System.Drawing.Point(372, 174);
+            this.txtRoomService.Name = "txtRoomService";
+            this.txtRoomService.Size = new System.Drawing.Size(137, 26);
+            this.txtRoomService.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(258, 177);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Room Service";
             // 
             // ShopInfo
             // 
@@ -413,15 +446,18 @@ namespace NetfixPOS.Admin
         private System.Windows.Forms.DataGridView dgvSoftwareInfo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnShopUpdate;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGeneral_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShopId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colActivateKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colServiceTax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomService;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
-        private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtRoomService;
+        private System.Windows.Forms.Label label9;
     }
 }

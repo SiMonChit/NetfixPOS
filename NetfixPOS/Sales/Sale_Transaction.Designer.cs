@@ -69,6 +69,8 @@ namespace NetfixPOS.Sales
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnAddSinger = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAddSession = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblEndTime = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblStartTime = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblSession = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -92,6 +94,8 @@ namespace NetfixPOS.Sales
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsFOC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtRoomService = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
@@ -503,6 +507,10 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kryptonLabel2);
+            this.kryptonPanel1.Controls.Add(this.txtRoomService);
+            this.kryptonPanel1.Controls.Add(this.btnAddSinger);
+            this.kryptonPanel1.Controls.Add(this.btnAddSession);
             this.kryptonPanel1.Controls.Add(this.lblEndTime);
             this.kryptonPanel1.Controls.Add(this.lblStartTime);
             this.kryptonPanel1.Controls.Add(this.lblSession);
@@ -519,9 +527,25 @@ namespace NetfixPOS.Sales
             this.kryptonPanel1.Size = new System.Drawing.Size(340, 557);
             this.kryptonPanel1.TabIndex = 5;
             // 
+            // btnAddSinger
+            // 
+            this.btnAddSinger.Location = new System.Drawing.Point(101, 141);
+            this.btnAddSinger.Name = "btnAddSinger";
+            this.btnAddSinger.Size = new System.Drawing.Size(123, 40);
+            this.btnAddSinger.TabIndex = 58;
+            this.btnAddSinger.Values.Text = "Add Singer";
+            // 
+            // btnAddSession
+            // 
+            this.btnAddSession.Location = new System.Drawing.Point(102, 408);
+            this.btnAddSession.Name = "btnAddSession";
+            this.btnAddSession.Size = new System.Drawing.Size(123, 40);
+            this.btnAddSession.TabIndex = 57;
+            this.btnAddSession.Values.Text = "Add Session";
+            // 
             // lblEndTime
             // 
-            this.lblEndTime.Location = new System.Drawing.Point(1, 235);
+            this.lblEndTime.Location = new System.Drawing.Point(1, 284);
             this.lblEndTime.Name = "lblEndTime";
             this.lblEndTime.Size = new System.Drawing.Size(88, 29);
             this.lblEndTime.TabIndex = 56;
@@ -529,7 +553,7 @@ namespace NetfixPOS.Sales
             // 
             // lblStartTime
             // 
-            this.lblStartTime.Location = new System.Drawing.Point(-7, 195);
+            this.lblStartTime.Location = new System.Drawing.Point(-7, 244);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(96, 29);
             this.lblStartTime.TabIndex = 55;
@@ -537,7 +561,7 @@ namespace NetfixPOS.Sales
             // 
             // lblSession
             // 
-            this.lblSession.Location = new System.Drawing.Point(15, 152);
+            this.lblSession.Location = new System.Drawing.Point(15, 201);
             this.lblSession.Name = "lblSession";
             this.lblSession.Size = new System.Drawing.Size(74, 29);
             this.lblSession.TabIndex = 54;
@@ -569,7 +593,7 @@ namespace NetfixPOS.Sales
             "3 Session",
             "4 Session",
             "5 Session"});
-            this.cboSession.Location = new System.Drawing.Point(101, 148);
+            this.cboSession.Location = new System.Drawing.Point(101, 197);
             this.cboSession.Name = "cboSession";
             this.cboSession.Size = new System.Drawing.Size(232, 29);
             this.cboSession.TabIndex = 50;
@@ -579,7 +603,7 @@ namespace NetfixPOS.Sales
             // 
             this.dtp_EndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_EndTime.Location = new System.Drawing.Point(101, 231);
+            this.dtp_EndTime.Location = new System.Drawing.Point(101, 280);
             this.dtp_EndTime.Name = "dtp_EndTime";
             this.dtp_EndTime.Size = new System.Drawing.Size(146, 30);
             this.dtp_EndTime.TabIndex = 47;
@@ -588,7 +612,7 @@ namespace NetfixPOS.Sales
             // 
             this.dtp_StartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_StartTime.Location = new System.Drawing.Point(101, 190);
+            this.dtp_StartTime.Location = new System.Drawing.Point(101, 239);
             this.dtp_StartTime.Name = "dtp_StartTime";
             this.dtp_StartTime.Size = new System.Drawing.Size(146, 30);
             this.dtp_StartTime.TabIndex = 46;
@@ -599,7 +623,7 @@ namespace NetfixPOS.Sales
             this.cboSinger.FormattingEnabled = true;
             this.cboSinger.Location = new System.Drawing.Point(101, 107);
             this.cboSinger.Name = "cboSinger";
-            this.cboSinger.Size = new System.Drawing.Size(236, 28);
+            this.cboSinger.Size = new System.Drawing.Size(226, 28);
             this.cboSinger.TabIndex = 45;
             // 
             // cboWaiter
@@ -608,7 +632,7 @@ namespace NetfixPOS.Sales
             this.cboWaiter.FormattingEnabled = true;
             this.cboWaiter.Location = new System.Drawing.Point(101, 30);
             this.cboWaiter.Name = "cboWaiter";
-            this.cboWaiter.Size = new System.Drawing.Size(236, 28);
+            this.cboWaiter.Size = new System.Drawing.Size(226, 28);
             this.cboWaiter.TabIndex = 43;
             // 
             // dgvSaleItem
@@ -751,6 +775,22 @@ namespace NetfixPOS.Sales
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
+            // txtRoomService
+            // 
+            this.txtRoomService.Location = new System.Drawing.Point(102, 347);
+            this.txtRoomService.Name = "txtRoomService";
+            this.txtRoomService.ReadOnly = true;
+            this.txtRoomService.Size = new System.Drawing.Size(146, 31);
+            this.txtRoomService.TabIndex = 59;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(101, 316);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(124, 29);
+            this.kryptonLabel2.TabIndex = 60;
+            this.kryptonLabel2.Values.Text = "Room Service";
+            // 
             // Sale_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -846,5 +886,9 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colIsFOC;
         private System.Windows.Forms.DataGridViewButtonColumn colRemove;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddSession;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddSinger;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomService;
     }
 }

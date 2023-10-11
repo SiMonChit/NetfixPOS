@@ -53,6 +53,7 @@ namespace NetfixPOS.DataAccess
                 Command.Parameters.AddWithValue("CompanyId", room.CompanyId);
                 Command.Parameters.AddWithValue("ModifiedDate", room.ModifiedDate);
                 Command.Parameters.AddWithValue("IsDefault", room.IsDefault);
+                Command.Parameters.AddWithValue("RoomCharges", room.RoomCharges);
                 Connection.Open();
                 Command.ExecuteNonQuery();
             }
@@ -80,6 +81,7 @@ namespace NetfixPOS.DataAccess
                 Command.Parameters.AddWithValue("CompanyId", room.CompanyId);
                 Command.Parameters.AddWithValue("ModifiedDate", room.ModifiedDate);
                 Command.Parameters.AddWithValue("IsDefault", room.IsDefault);
+                Command.Parameters.AddWithValue("RoomCharges", room.RoomCharges);
                 Connection.Open();
                 Command.ExecuteNonQuery();
             }
