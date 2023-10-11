@@ -55,13 +55,23 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
             Command.Parameters.AddWithValue("Singer", headerRow.Singer);
 
+           
+            
+
             try
             {
                 string key = Command.ExecuteScalar().ToString();
 
+                //Room session start
+                if (!string.IsNullOrEmpty(headerRow.RoomNo))
+                {
+                    RoomDAL _rool = new RoomDAL();
+                    _rool.RoomSessionStart(headerRow.RoomNo);
+                }
+
+                //Insert Sale Items
                 if (detail_dt.Rows.Count > 0)
                 {
-                    //Insert Sale Items
                     ItemInsert(key, detail_dt, Connection, Transaction);
                 }
 
@@ -159,18 +169,12 @@ namespace NetfixPOS.DataAccess
 
                 try
                 {
-                    //Connection.Open();
                     Command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-                //finally
-                //{
-                //    if (Connection.State == ConnectionState.Open)
-                //        Connection.Close();
-                //}
             }
         }
 

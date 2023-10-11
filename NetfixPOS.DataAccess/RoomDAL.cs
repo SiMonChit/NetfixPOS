@@ -117,5 +117,41 @@ namespace NetfixPOS.DataAccess
             }
             return dt;
         }
+        public int RoomSessionStart(string RoomNo)
+        {
+            Command = new SqlCommand(query.RoomSessionStart(), Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("RoomNo", RoomNo);
+            try
+            {
+                return Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public int RoomSessionEnd(string RoomNo)
+        {
+            Command = new SqlCommand(query.RoomSessionEnd(), Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("RoomNo", RoomNo);
+
+            try
+            {
+                Connection.Open();
+                return Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open)
+                    Connection.Close();
+            }
+        }
     }
 }

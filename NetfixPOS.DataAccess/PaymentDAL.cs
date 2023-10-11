@@ -17,7 +17,6 @@ namespace NetfixPOS.DataAccess
             string query = "Payment_Insert";
             Command = new SqlCommand(query, Connection);
             Command.CommandType = CommandType.StoredProcedure;
-            int returnvalue = 0;
             try
             {
                 Command.Parameters.AddWithValue("PaymentType", payment.PaymentType);
@@ -28,7 +27,17 @@ namespace NetfixPOS.DataAccess
                 Command.Parameters.AddWithValue("UserID", payment.UserID);
                 Command.Parameters.AddWithValue("SaleId", SaleId);
                 Connection.Open();
-                returnvalue = Command.ExecuteNonQuery();
+
+                //Room Session End
+                SaleDAL _sale = new SaleDAL();
+                string RoomNo = _sale.SelectHeaderRow(SaleId).RoomNo;
+                if (!string.IsNullOrEmpty(RoomNo))
+                {
+                    RoomDAL _room = new RoomDAL();
+                    _room.RoomSessionEnd(RoomNo);
+                }
+
+                return Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -39,7 +48,6 @@ namespace NetfixPOS.DataAccess
                 if (Connection.State == ConnectionState.Open)
                     Connection.Close();
             }
-            return returnvalue;
         }
 
         public void Update(PaymentModel payment)
