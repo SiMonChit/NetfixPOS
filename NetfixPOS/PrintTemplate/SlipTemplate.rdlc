@@ -160,15 +160,15 @@
         </Style>
       </Textbox>
       <Image Name="ShopImage">
-        <Source>Embedded</Source>
-        <Value />
+        <Source>Database</Source>
+        <Value>=First(Fields!ShopImage.Value, "SaleSlip_DataSet")</Value>
+        <MIMEType>image/jpeg</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>0.04023cm</Top>
         <Left>0cm</Left>
         <Height>1.5cm</Height>
         <Width>1.5cm</Width>
         <ZIndex>5</ZIndex>
-        <ToolTip>=First(Fields!ShopImage.Value, "SaleSlip_DataSet")</ToolTip>
         <Style>
           <Border>
             <Style>None</Style>
@@ -665,7 +665,7 @@
         <Top>3.67453cm</Top>
         <Left>0cm</Left>
         <Height>1.8cm</Height>
-        <Width>9.34862cm</Width>
+        <Width>9.34863cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -677,7 +677,7 @@
     <Height>10.2482cm</Height>
     <Style />
   </Body>
-  <Width>9.34862cm</Width>
+  <Width>9.34863cm</Width>
   <Page>
     <PageFooter>
       <Height>0.67027cm</Height>

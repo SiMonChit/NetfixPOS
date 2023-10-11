@@ -21,6 +21,7 @@ namespace NetfixPOS.Sales
             _sale = new SaleController();
         }
         SaleController _sale;
+        string SaleId = "";
         private void dgvSaleHeaderList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             GlobalFunction.GridView_DataBindingComplete(sender, e);
@@ -30,6 +31,11 @@ namespace NetfixPOS.Sales
         {
             dgvSaleHeaderList.AutoGenerateColumns = false;
             dgvSaleHeaderList.DataSource = _sale.SaleHeaderSelectByDate(dtp_FromDate.Value, dtp_ToDate.Value);
+        }
+
+        private void dgvSaleHeaderList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

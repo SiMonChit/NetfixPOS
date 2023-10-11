@@ -34,7 +34,7 @@ namespace NetfixPOS.Payment
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            frm_Print print = new frm_Print();
+            frm_Print print = new frm_Print(saleid);
             print.ShowDialog();
         }
 

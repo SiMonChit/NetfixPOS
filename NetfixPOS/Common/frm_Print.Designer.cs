@@ -35,6 +35,8 @@ namespace NetfixPOS.Common
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cboTemplate = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.btnClose = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtPrintQty = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.cboPrinter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTemplate)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@ namespace NetfixPOS.Common
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(422, 132);
+            this.btnPrint.Location = new System.Drawing.Point(422, 161);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(90, 40);
             this.btnPrint.TabIndex = 2;
@@ -82,24 +84,42 @@ namespace NetfixPOS.Common
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(520, 132);
+            this.btnClose.Location = new System.Drawing.Point(520, 161);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 40);
             this.btnClose.TabIndex = 5;
             this.btnClose.Values.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Location = new System.Drawing.Point(35, 106);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(85, 29);
+            this.kryptonLabel3.TabIndex = 6;
+            this.kryptonLabel3.Values.Text = "Print Qty";
+            // 
+            // txtPrintQty
+            // 
+            this.txtPrintQty.Location = new System.Drawing.Point(127, 108);
+            this.txtPrintQty.Name = "txtPrintQty";
+            this.txtPrintQty.Size = new System.Drawing.Size(100, 31);
+            this.txtPrintQty.TabIndex = 7;
+            // 
             // frm_Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 213);
+            this.Controls.Add(this.txtPrintQty);
+            this.Controls.Add(this.kryptonLabel3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cboTemplate);
             this.Controls.Add(this.kryptonLabel2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.cboPrinter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_Print";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print";
@@ -118,5 +138,7 @@ namespace NetfixPOS.Common
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboTemplate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnClose;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtPrintQty;
     }
 }

@@ -61,13 +61,13 @@ namespace NetfixPOS.Payment
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(970, 251);
+            this.panel2.Size = new System.Drawing.Size(702, 251);
             this.panel2.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(447, 20);
+            this.label4.Location = new System.Drawing.Point(81, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 29;
@@ -75,23 +75,23 @@ namespace NetfixPOS.Payment
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(451, 45);
+            this.txtRemark.Location = new System.Drawing.Point(167, 140);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(484, 108);
+            this.txtRemark.Size = new System.Drawing.Size(484, 91);
             this.txtRemark.TabIndex = 28;
             // 
             // txtPaidAmount
             // 
-            this.txtPaidAmount.Location = new System.Drawing.Point(161, 188);
+            this.txtPaidAmount.Location = new System.Drawing.Point(167, 93);
             this.txtPaidAmount.Name = "txtPaidAmount";
-            this.txtPaidAmount.Size = new System.Drawing.Size(239, 26);
+            this.txtPaidAmount.Size = new System.Drawing.Size(233, 26);
             this.txtPaidAmount.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 188);
+            this.label3.Location = new System.Drawing.Point(46, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 26;
@@ -118,7 +118,7 @@ namespace NetfixPOS.Payment
             // 
             this.groupBox1.Controls.Add(this.cboSaleType);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(167, 96);
+            this.groupBox1.Location = new System.Drawing.Point(418, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(233, 72);
             this.groupBox1.TabIndex = 9;
@@ -159,7 +159,8 @@ namespace NetfixPOS.Payment
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(719, 283);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(451, 283);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(103, 38);
             this.btnSave.TabIndex = 3;
@@ -168,7 +169,8 @@ namespace NetfixPOS.Payment
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(833, 283);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(565, 283);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(103, 38);
             this.btnClose.TabIndex = 4;
@@ -180,7 +182,7 @@ namespace NetfixPOS.Payment
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(970, 354);
+            this.ClientSize = new System.Drawing.Size(702, 354);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
