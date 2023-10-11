@@ -103,8 +103,10 @@ namespace NetfixPOS.Common
             // 
             this.txtPrintQty.Location = new System.Drawing.Point(127, 108);
             this.txtPrintQty.Name = "txtPrintQty";
-            this.txtPrintQty.Size = new System.Drawing.Size(100, 31);
+            this.txtPrintQty.Size = new System.Drawing.Size(100, 32);
             this.txtPrintQty.TabIndex = 7;
+            this.txtPrintQty.Text = "1";
+            this.txtPrintQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frm_Print
             // 

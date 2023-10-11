@@ -76,6 +76,7 @@ namespace NetfixPOS.Common
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Print(saleid);
+            this.Close();
         }
         private void Print(string SaleId)
         {
@@ -89,23 +90,29 @@ namespace NetfixPOS.Common
                 string fullPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\PrintTemplate\SlipTemplate.rdlc";
                 report.ReportPath = fullPath;
                 report.DataSources.Add(new ReportDataSource("SaleSlip_DataSet", slipdata));
-
-                try
-                {
-                    int printQty = Convert.ToInt32(txtPrintQty.Text);
-                    for (int i = 0; i < printQty; i++)
-                    {
-                        PrintToPrinter(report);
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("How many paper your want to print ?","Print Count",MessageBoxButtons.OK);
-                }
-
-                
             }
-            
+            else if(cboTemplate.Text == "A4Voucher.rdlc")
+            {
+
+            }
+            else if (cboTemplate.Text == "A5Voucher.rdlc")
+            {
+
+            }
+
+            try
+            {
+                int printQty = Convert.ToInt32(txtPrintQty.Text);
+                for (int i = 0; i < printQty; i++)
+                {
+                    PrintToPrinter(report);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("How many paper your want to print ?", "Print Count", MessageBoxButtons.OK);
+            }
+
         }
         private static List<Stream> m_streams;
         private static int m_currentPageIndex = 0;

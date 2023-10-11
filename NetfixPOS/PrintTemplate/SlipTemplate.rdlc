@@ -11,7 +11,7 @@
               <TextRun>
                 <Value>Inv-No</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -41,7 +41,7 @@
               <TextRun>
                 <Value>=First(Fields!InvNo.Value, "SaleSlip_DataSet")</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -52,7 +52,7 @@
         <Top>0.63417in</Top>
         <Left>0.54888in</Left>
         <Height>0.20139in</Height>
-        <Width>1in</Width>
+        <Width>0.86806in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -73,7 +73,7 @@
               <TextRun>
                 <Value>Print Date</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -82,7 +82,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
-        <Left>1.57666in</Left>
+        <Left>1.43083in</Left>
         <Height>0.20139in</Height>
         <Width>0.64583in</Width>
         <ZIndex>2</ZIndex>
@@ -105,7 +105,7 @@
               <TextRun>
                 <Value>=First(Fields!PrintDate.Value, "SaleSlip_DataSet")</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <Format>MM/dd/yy</Format>
                 </Style>
               </TextRun>
@@ -115,9 +115,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
-        <Left>2.23639in</Left>
+        <Left>2.09056in</Left>
         <Height>0.20139in</Height>
-        <Width>1in</Width>
+        <Width>0.74306in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -198,7 +198,7 @@
         <Top>0.01584in</Top>
         <Left>0.60444in</Left>
         <Height>0.20139in</Height>
-        <Width>2.63195in</Width>
+        <Width>2.22917in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -231,8 +231,8 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.23112in</Top>
         <Left>0.60444in</Left>
-        <Height>0.20139in</Height>
-        <Width>2.63195in</Width>
+        <Height>0.36138in</Height>
+        <Width>2.22917in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -747,7 +747,7 @@
     <Height>10.2482cm</Height>
     <Style />
   </Body>
-  <Width>8.22044cm</Width>
+  <Width>7.19738cm</Width>
   <Page>
     <PageFooter>
       <Height>0.67027cm</Height>
@@ -777,7 +777,7 @@
           <Top>0cm</Top>
           <Left>0cm</Left>
           <Height>0.6cm</Height>
-          <Width>8.22044cm</Width>
+          <Width>7.19738cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
