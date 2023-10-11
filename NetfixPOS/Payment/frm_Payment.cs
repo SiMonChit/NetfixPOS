@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using NetfixPOS.Common;
 using NetfixPOS.Controller;
+using NetfixPOS.Models;
 
 namespace NetfixPOS.Payment
 {
@@ -19,10 +20,15 @@ namespace NetfixPOS.Payment
         {
             InitializeComponent();
             _sale = new SaleController();
+            _payment = new PaymentController();
+            payment = new PaymentModel();
+
             saleid = SaleId;
             GetSaleTotalAmount(SaleId);
         }
         SaleController _sale;
+        PaymentController _payment;
+        PaymentModel payment;
         string saleid = "";
         public frm_Payment()
         {
@@ -34,8 +40,33 @@ namespace NetfixPOS.Payment
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            frm_Print print = new frm_Print(saleid);
-            print.ShowDialog();
+            if (cboPaymentType.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select PaymentType", "PaymentType", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                payment.PaymentType = cboPaymentType.Text;
+                payment.PaySlipDate = DateTime.Now;
+                payment.PaySlipNo = txtPaymentNo.Text;
+                payment.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text);
+                payment.Remark = txtRemark.Text;
+                payment.UserID = 1;
+
+                int isSuccess = _payment.Insert(payment, saleid);
+                if (isSuccess == 1)
+                {
+                    frm_Print print = new frm_Print(saleid);
+                    print.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Someting worng", "Payment", MessageBoxButtons.OK);
+                }
+                
+            }
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)

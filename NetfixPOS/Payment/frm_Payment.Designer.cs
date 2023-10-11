@@ -37,7 +37,7 @@ namespace NetfixPOS.Payment
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboSaleType = new System.Windows.Forms.ComboBox();
+            this.cboPaymentType = new System.Windows.Forms.ComboBox();
             this.txtPaymentNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -79,14 +79,14 @@ namespace NetfixPOS.Payment
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(484, 91);
-            this.txtRemark.TabIndex = 28;
+            this.txtRemark.TabIndex = 4;
             // 
             // txtPaidAmount
             // 
             this.txtPaidAmount.Location = new System.Drawing.Point(167, 93);
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(233, 26);
-            this.txtPaidAmount.TabIndex = 27;
+            this.txtPaidAmount.TabIndex = 2;
             // 
             // label3
             // 
@@ -112,11 +112,11 @@ namespace NetfixPOS.Payment
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.Size = new System.Drawing.Size(233, 26);
-            this.txtTotalAmount.TabIndex = 24;
+            this.txtTotalAmount.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboSaleType);
+            this.groupBox1.Controls.Add(this.cboPaymentType);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(418, 20);
             this.groupBox1.Name = "groupBox1";
@@ -125,19 +125,20 @@ namespace NetfixPOS.Payment
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment Type";
             // 
-            // cboSaleType
+            // cboPaymentType
             // 
-            this.cboSaleType.FormattingEnabled = true;
-            this.cboSaleType.Items.AddRange(new object[] {
+            this.cboPaymentType.FormattingEnabled = true;
+            this.cboPaymentType.Items.AddRange(new object[] {
             "Cash",
             "KBZ Pay",
             "AYA Pay",
             "CB Pay",
             "Wave Pay"});
-            this.cboSaleType.Location = new System.Drawing.Point(26, 28);
-            this.cboSaleType.Name = "cboSaleType";
-            this.cboSaleType.Size = new System.Drawing.Size(182, 28);
-            this.cboSaleType.TabIndex = 0;
+            this.cboPaymentType.Location = new System.Drawing.Point(26, 28);
+            this.cboPaymentType.Name = "cboPaymentType";
+            this.cboPaymentType.Size = new System.Drawing.Size(182, 28);
+            this.cboPaymentType.TabIndex = 3;
+            this.cboPaymentType.Text = "--Select PaymentType--";
             // 
             // txtPaymentNo
             // 
@@ -145,7 +146,7 @@ namespace NetfixPOS.Payment
             this.txtPaymentNo.Name = "txtPaymentNo";
             this.txtPaymentNo.ReadOnly = true;
             this.txtPaymentNo.Size = new System.Drawing.Size(233, 26);
-            this.txtPaymentNo.TabIndex = 6;
+            this.txtPaymentNo.TabIndex = 0;
             this.txtPaymentNo.Text = "Auto generate";
             // 
             // label1
@@ -163,7 +164,7 @@ namespace NetfixPOS.Payment
             this.btnSave.Location = new System.Drawing.Point(451, 283);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(103, 38);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Values.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -204,7 +205,7 @@ namespace NetfixPOS.Payment
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboSaleType;
+        private System.Windows.Forms.ComboBox cboPaymentType;
         private System.Windows.Forms.TextBox txtPaymentNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
