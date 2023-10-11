@@ -21,7 +21,7 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
         <Height>0.20139in</Height>
-        <Width>0.59055in</Width>
+        <Width>0.535in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -39,7 +39,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!InvNo.Value, "SaleSlip_DataSet")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -50,7 +50,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
-        <Left>0.60444in</Left>
+        <Left>0.54888in</Left>
         <Height>0.20139in</Height>
         <Width>1in</Width>
         <ZIndex>1</ZIndex>
@@ -82,7 +82,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
-        <Left>2in</Left>
+        <Left>1.57666in</Left>
         <Height>0.20139in</Height>
         <Width>0.64583in</Width>
         <ZIndex>2</ZIndex>
@@ -103,9 +103,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!PrintDate.Value, "SaleSlip_DataSet")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>MM/dd/yy</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -114,7 +115,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.63417in</Top>
-        <Left>2.65973in</Left>
+        <Left>2.23639in</Left>
         <Height>0.20139in</Height>
         <Width>1in</Width>
         <ZIndex>3</ZIndex>
@@ -147,7 +148,7 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.84945in</Top>
         <Height>0.20139in</Height>
-        <Width>0.59055in</Width>
+        <Width>0.535in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -182,20 +183,22 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!ShopName.Value, "SaleSlip_DataSet")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.01584in</Top>
         <Left>0.60444in</Left>
         <Height>0.20139in</Height>
-        <Width>3.07612in</Width>
+        <Width>2.63195in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -214,20 +217,22 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!CurrentAddress.Value, "SaleSlip_DataSet")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.23112in</Top>
         <Left>0.60444in</Left>
         <Height>0.20139in</Height>
-        <Width>3.07612in</Width>
+        <Width>2.63195in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -243,16 +248,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.82292cm</Width>
+              <Width>2.95547cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1825cm</Width>
+              <Width>1.5124cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.14181cm</Width>
+              <Width>0.78921cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.2014cm</Width>
+              <Width>1.77824cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -457,6 +462,7 @@
                               <Value>=Fields!SalePrice.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Format>0;(0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -471,8 +477,6 @@
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -494,6 +498,7 @@
                               <Value>=Fields!Qty.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Format>0</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -510,7 +515,6 @@
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -533,6 +537,7 @@
                               <Value>=Fields!Amount.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Format>0;(0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -549,7 +554,6 @@
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -597,11 +601,76 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <ColSpan>3</ColSpan>
                   </CellContents>
                 </TablixCell>
-                <TablixCell />
-                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox19">
@@ -614,6 +683,7 @@
                               <Value>=Sum(Fields!Amount.Value, "SaleSlip_DataSet")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Format>0;(0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -665,7 +735,7 @@
         <Top>3.67453cm</Top>
         <Left>0cm</Left>
         <Height>1.8cm</Height>
-        <Width>9.34863cm</Width>
+        <Width>7.03532cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -677,7 +747,7 @@
     <Height>10.2482cm</Height>
     <Style />
   </Body>
-  <Width>9.34863cm</Width>
+  <Width>8.22044cm</Width>
   <Page>
     <PageFooter>
       <Height>0.67027cm</Height>
@@ -707,7 +777,7 @@
           <Top>0cm</Top>
           <Left>0cm</Left>
           <Height>0.6cm</Height>
-          <Width>9.29571cm</Width>
+          <Width>8.22044cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

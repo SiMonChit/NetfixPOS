@@ -22,7 +22,7 @@ namespace NetfixPOS.Query
         public string GetListForSaleSlip()
         {
             query = "SELECT sh.*, StockId, StockName, SalePrice, Qty, sdt.Discount, Amount, sdt.IsFOC AS IsFOCDetail, ShopImage, ShopName, CurrentAddress, PhoneNo";
-            query += "FROM SaleHeader sh INNER JOIN SaleDetail sdt ON sdt.SaleId = sh.SaleId CROSS JOIN ShopInfo WHERE sh.SaleId = @SaleId AND sh.IsActive = 1 AND sdt.IsActive=1";
+            query += " FROM SaleHeader sh INNER JOIN SaleDetail sdt ON sdt.SaleId = sh.SaleId CROSS JOIN ShopInfo WHERE sh.SaleId = @SaleId AND sh.IsActive = 1 AND sdt.IsActive=1";
             return query;
         }
     }

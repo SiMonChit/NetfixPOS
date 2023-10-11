@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
+using NetfixPOS.Controller;
 using NetfixPOS.Models;
 
 namespace NetfixPOS.Common
@@ -23,15 +24,15 @@ namespace NetfixPOS.Common
             GetTemplateFile();
             BindPrinterDevice();
         }
-
-
         public frm_Print(string SaleId)
         {
             InitializeComponent();
             GetTemplateFile();
             BindPrinterDevice();
             saleid = SaleId;
+            _sale = new SaleController();
         }
+        SaleController _sale;
         string saleid = "";
         private void BindPrinterDevice()
         {
@@ -81,18 +82,28 @@ namespace NetfixPOS.Common
             DataTable slipdata = new DataTable();
             LocalReport report = new LocalReport();
 
-            if (cboTemplate.Text == "")
+            if (cboTemplate.Text == "SlipTemplate.rdlc")
             {
+                slipdata = _sale.GetSaleSlip(SaleId);
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 string fullPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\PrintTemplate\SlipTemplate.rdlc";
                 report.ReportPath = fullPath;
                 report.DataSources.Add(new ReportDataSource("SaleSlip_DataSet", slipdata));
 
-                int printQty = Convert.ToInt32(txtPrintQty.Text);
-                for (int i=0;i<printQty;i++)
+                try
                 {
-                    PrintToPrinter(report);
+                    int printQty = Convert.ToInt32(txtPrintQty.Text);
+                    for (int i = 0; i < printQty; i++)
+                    {
+                        PrintToPrinter(report);
+                    }
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("How many paper your want to print ?","Print Count",MessageBoxButtons.OK);
+                }
+
+                
             }
             
         }
