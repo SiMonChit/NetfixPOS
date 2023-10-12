@@ -116,6 +116,10 @@ namespace NetfixPOS.Controller
             return _sale.SelectHeaderRow(saleid);
         }
 
+        public DataTable GetdataForDashboard(DateTime SaleDate)
+        {
+            return _sale.GetdataForDashboard(SaleDate);
+        }
         #endregion
 
         #region SaleItem Select

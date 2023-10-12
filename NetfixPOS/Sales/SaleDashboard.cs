@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using NetfixPOS.Common;
 using NetfixPOS.Controller;
+using NetfixPOS.Models.DataSetFile;
 using NetfixPOS.Payment;
 
 namespace NetfixPOS.Sales
@@ -20,11 +21,45 @@ namespace NetfixPOS.Sales
         {
             InitializeComponent();
             _sales = new SaleController();
-            
+            _generate = new AutoGenerateController();
+            _shop = new ShopController();
+
+            GetSaleDate();
+            ShowDataOnDashboard();
         }
         SaleController _sales;
+        AutoGenerateController _generate;
+        ShopController _shop;
+
         private int remainingTime = 200; // 60 minutes * 60 seconds
         bool isTable = false;
+
+        private void GetSaleDate()
+        {
+            try
+            {
+                GlobalFunction.appInfo = _generate.GetAppInfo();
+                dtpSaleDate.Value = Convert.ToDateTime(GlobalFunction.appInfo.Rows[0][1]);
+
+                //GetShop Name
+                ds_ShopInfo.ShopInfoRow shopinfo = _shop.GetShopName();
+                lblShopName.Text = shopinfo.ShopName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "App Information", MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void ShowDataOnDashboard()
+        {
+            DataRow dataRow = _sales.GetdataForDashboard(dtpSaleDate.Value).Rows[0];
+            lblNetAmount.Text = dataRow[0].ToString();
+            lblTotalCash.Text = dataRow[1].ToString();
+            lblTotalCredit.Text = dataRow[2].ToString();
+            lblTotalSalesCount.Text = dataRow[3].ToString();
+        }
         private void countdownTimer_Tick(object sender, EventArgs e)
         {
             lblTimer.Text = FormatTime(remainingTime);

@@ -28,7 +28,6 @@ namespace NetfixPOS.Models
 		public bool IsFOC { get; set; }
 		public bool IsActive { get; set; }
 		public string InvoiceStatus { get; set; }
-		public string Singer { get; set; }
 		public decimal ServiceCharges { get; set; }
 	}
 }

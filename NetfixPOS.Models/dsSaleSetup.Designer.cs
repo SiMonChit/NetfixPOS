@@ -393,8 +393,6 @@ namespace NetfixPOS.Models {
             
             private global::System.Data.DataColumn columnPrintDate;
             
-            private global::System.Data.DataColumn columnSinger;
-            
             private global::System.Data.DataColumn columnServiceCharges;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,14 +606,6 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SingerColumn {
-                get {
-                    return this.columnSinger;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn ServiceChargesColumn {
                 get {
                     return this.columnServiceCharges;
@@ -682,7 +672,6 @@ namespace NetfixPOS.Models {
                         string InvoiceStatus, 
                         string WaiterName, 
                         System.DateTime PrintDate, 
-                        string Singer, 
                         decimal ServiceCharges) {
                 SaleHeaderRow rowSaleHeaderRow = ((SaleHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -708,7 +697,6 @@ namespace NetfixPOS.Models {
                         InvoiceStatus,
                         WaiterName,
                         PrintDate,
-                        Singer,
                         ServiceCharges};
                 rowSaleHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaleHeaderRow);
@@ -761,7 +749,6 @@ namespace NetfixPOS.Models {
                 this.columnInvoiceStatus = base.Columns["InvoiceStatus"];
                 this.columnWaiterName = base.Columns["WaiterName"];
                 this.columnPrintDate = base.Columns["PrintDate"];
-                this.columnSinger = base.Columns["Singer"];
                 this.columnServiceCharges = base.Columns["ServiceCharges"];
             }
             
@@ -812,8 +799,6 @@ namespace NetfixPOS.Models {
                 base.Columns.Add(this.columnWaiterName);
                 this.columnPrintDate = new global::System.Data.DataColumn("PrintDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrintDate);
-                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSinger);
                 this.columnServiceCharges = new global::System.Data.DataColumn("ServiceCharges", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnServiceCharges);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1430,8 +1415,6 @@ namespace NetfixPOS.Models {
             
             private global::System.Data.DataColumn columnUserName;
             
-            private global::System.Data.DataColumn columnSinger;
-            
             private global::System.Data.DataColumn columnServiceCharges;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1661,14 +1644,6 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SingerColumn {
-                get {
-                    return this.columnSinger;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn ServiceChargesColumn {
                 get {
                     return this.columnServiceCharges;
@@ -1737,7 +1712,6 @@ namespace NetfixPOS.Models {
                         System.DateTime PrintDate, 
                         string CustomerName, 
                         string UserName, 
-                        string Singer, 
                         decimal ServiceCharges) {
                 SaleHeaderSlipRow rowSaleHeaderSlipRow = ((SaleHeaderSlipRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -1765,7 +1739,6 @@ namespace NetfixPOS.Models {
                         PrintDate,
                         CustomerName,
                         UserName,
-                        Singer,
                         ServiceCharges};
                 rowSaleHeaderSlipRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaleHeaderSlipRow);
@@ -1813,7 +1786,6 @@ namespace NetfixPOS.Models {
                 this.columnPrintDate = base.Columns["PrintDate"];
                 this.columnCustomerName = base.Columns["CustomerName"];
                 this.columnUserName = base.Columns["UserName"];
-                this.columnSinger = base.Columns["Singer"];
                 this.columnServiceCharges = base.Columns["ServiceCharges"];
             }
             
@@ -1868,8 +1840,6 @@ namespace NetfixPOS.Models {
                 base.Columns.Add(this.columnCustomerName);
                 this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserName);
-                this.columnSinger = new global::System.Data.DataColumn("Singer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSinger);
                 this.columnServiceCharges = new global::System.Data.DataColumn("ServiceCharges", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnServiceCharges);
                 this.columnSaleId.AllowDBNull = false;
@@ -2344,22 +2314,6 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Singer {
-                get {
-                    try {
-                        return ((string)(this[this.tableSaleHeader.SingerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'SaleHeader\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSaleHeader.SingerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal ServiceCharges {
                 get {
                     try {
@@ -2540,18 +2494,6 @@ namespace NetfixPOS.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrintDateNull() {
                 this[this.tableSaleHeader.PrintDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSingerNull() {
-                return this.IsNull(this.tableSaleHeader.SingerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSingerNull() {
-                this[this.tableSaleHeader.SingerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3284,22 +3226,6 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Singer {
-                get {
-                    try {
-                        return ((string)(this[this.tableSaleHeaderSlip.SingerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Singer\' in table \'SaleHeaderSlip\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSaleHeaderSlip.SingerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal ServiceCharges {
                 get {
                     try {
@@ -3492,18 +3418,6 @@ namespace NetfixPOS.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetUserNameNull() {
                 this[this.tableSaleHeaderSlip.UserNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSingerNull() {
-                return this.IsNull(this.tableSaleHeaderSlip.SingerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSingerNull() {
-                this[this.tableSaleHeaderSlip.SingerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

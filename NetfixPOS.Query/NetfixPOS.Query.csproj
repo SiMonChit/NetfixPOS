@@ -50,6 +50,7 @@
     <Compile Include="PurchaseQuery.cs" />
     <Compile Include="RoomQuery.cs" />
     <Compile Include="SaleQuery.cs" />
+    <Compile Include="ShopQuery.cs" />
     <Compile Include="StockQuery.cs" />
     <Compile Include="SupplierQuery.cs" />
     <Compile Include="TableQuery.cs" />

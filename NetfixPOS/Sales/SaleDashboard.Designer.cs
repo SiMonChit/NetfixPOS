@@ -39,16 +39,16 @@ namespace NetfixPOS.Sales
             this.lblUser = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel6 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblTotalSalesCount = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel5 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblTotalCredit = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel4 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblTotalCash = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblNetAmount = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnRefresh = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -72,6 +72,7 @@ namespace NetfixPOS.Sales
             this.colEdit = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.page_Room = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.dgvRoom = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.countdownTimer = new System.Windows.Forms.Timer(this.components);
             this.colRoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colroomJoin = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
             this.colRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +86,6 @@ namespace NetfixPOS.Sales
             this.col_TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_InvoiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
-            this.countdownTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel6)).BeginInit();
@@ -120,7 +120,7 @@ namespace NetfixPOS.Sales
             this.kryptonPanel1.Controls.Add(this.kryptonPanel3);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Silver;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
@@ -130,7 +130,7 @@ namespace NetfixPOS.Sales
             // lblShopName
             // 
             this.lblShopName.Location = new System.Drawing.Point(14, 21);
-            this.lblShopName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblShopName.Margin = new System.Windows.Forms.Padding(2);
             this.lblShopName.Name = "lblShopName";
             this.lblShopName.Size = new System.Drawing.Size(117, 23);
             this.lblShopName.StateNormal.ShortText.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,7 +141,7 @@ namespace NetfixPOS.Sales
             // 
             this.lblTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimer.Location = new System.Drawing.Point(1028, 32);
-            this.lblTimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblTimer.Margin = new System.Windows.Forms.Padding(2);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(40, 20);
             this.lblTimer.TabIndex = 5;
@@ -151,7 +151,7 @@ namespace NetfixPOS.Sales
             // 
             this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUser.Location = new System.Drawing.Point(1027, 8);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(71, 20);
             this.lblUser.TabIndex = 4;
@@ -161,7 +161,7 @@ namespace NetfixPOS.Sales
             // 
             this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonLabel1.Location = new System.Drawing.Point(949, 8);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(77, 20);
             this.kryptonLabel1.TabIndex = 3;
@@ -169,31 +169,31 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel6
             // 
-            this.kryptonPanel6.Controls.Add(this.kryptonLabel9);
+            this.kryptonPanel6.Controls.Add(this.lblTotalSalesCount);
             this.kryptonPanel6.Controls.Add(this.kryptonLabel5);
             this.kryptonPanel6.Location = new System.Drawing.Point(773, 8);
-            this.kryptonPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel6.Name = "kryptonPanel6";
             this.kryptonPanel6.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPanel6.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCluster;
             this.kryptonPanel6.Size = new System.Drawing.Size(145, 60);
             this.kryptonPanel6.TabIndex = 1;
             // 
-            // kryptonLabel9
+            // lblTotalSalesCount
             // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(2, 26);
-            this.kryptonLabel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.kryptonLabel9.Name = "kryptonLabel9";
-            this.kryptonLabel9.Size = new System.Drawing.Size(22, 26);
-            this.kryptonLabel9.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
-            this.kryptonLabel9.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel9.TabIndex = 9;
-            this.kryptonLabel9.Values.Text = "0";
+            this.lblTotalSalesCount.Location = new System.Drawing.Point(2, 26);
+            this.lblTotalSalesCount.Margin = new System.Windows.Forms.Padding(2);
+            this.lblTotalSalesCount.Name = "lblTotalSalesCount";
+            this.lblTotalSalesCount.Size = new System.Drawing.Size(22, 26);
+            this.lblTotalSalesCount.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
+            this.lblTotalSalesCount.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSalesCount.TabIndex = 9;
+            this.lblTotalSalesCount.Values.Text = "0";
             // 
             // kryptonLabel5
             // 
             this.kryptonLabel5.Location = new System.Drawing.Point(2, 2);
-            this.kryptonLabel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel5.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(125, 22);
             this.kryptonLabel5.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -203,31 +203,31 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel5
             // 
-            this.kryptonPanel5.Controls.Add(this.kryptonLabel8);
+            this.kryptonPanel5.Controls.Add(this.lblTotalCredit);
             this.kryptonPanel5.Controls.Add(this.kryptonLabel4);
             this.kryptonPanel5.Location = new System.Drawing.Point(624, 8);
-            this.kryptonPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel5.Name = "kryptonPanel5";
             this.kryptonPanel5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel5.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
             this.kryptonPanel5.Size = new System.Drawing.Size(145, 60);
             this.kryptonPanel5.TabIndex = 2;
             // 
-            // kryptonLabel8
+            // lblTotalCredit
             // 
-            this.kryptonLabel8.Location = new System.Drawing.Point(2, 26);
-            this.kryptonLabel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.kryptonLabel8.Name = "kryptonLabel8";
-            this.kryptonLabel8.Size = new System.Drawing.Size(22, 26);
-            this.kryptonLabel8.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
-            this.kryptonLabel8.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel8.TabIndex = 8;
-            this.kryptonLabel8.Values.Text = "0";
+            this.lblTotalCredit.Location = new System.Drawing.Point(2, 26);
+            this.lblTotalCredit.Margin = new System.Windows.Forms.Padding(2);
+            this.lblTotalCredit.Name = "lblTotalCredit";
+            this.lblTotalCredit.Size = new System.Drawing.Size(22, 26);
+            this.lblTotalCredit.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
+            this.lblTotalCredit.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCredit.TabIndex = 8;
+            this.lblTotalCredit.Values.Text = "0";
             // 
             // kryptonLabel4
             // 
             this.kryptonLabel4.Location = new System.Drawing.Point(2, 2);
-            this.kryptonLabel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel4.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(88, 22);
             this.kryptonLabel4.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -237,31 +237,31 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel4
             // 
-            this.kryptonPanel4.Controls.Add(this.kryptonLabel7);
+            this.kryptonPanel4.Controls.Add(this.lblTotalCash);
             this.kryptonPanel4.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel4.Location = new System.Drawing.Point(475, 8);
-            this.kryptonPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel4.Name = "kryptonPanel4";
             this.kryptonPanel4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPanel4.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
             this.kryptonPanel4.Size = new System.Drawing.Size(145, 60);
             this.kryptonPanel4.TabIndex = 1;
             // 
-            // kryptonLabel7
+            // lblTotalCash
             // 
-            this.kryptonLabel7.Location = new System.Drawing.Point(2, 26);
-            this.kryptonLabel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.kryptonLabel7.Name = "kryptonLabel7";
-            this.kryptonLabel7.Size = new System.Drawing.Size(22, 26);
-            this.kryptonLabel7.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
-            this.kryptonLabel7.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel7.TabIndex = 7;
-            this.kryptonLabel7.Values.Text = "0";
+            this.lblTotalCash.Location = new System.Drawing.Point(2, 26);
+            this.lblTotalCash.Margin = new System.Windows.Forms.Padding(2);
+            this.lblTotalCash.Name = "lblTotalCash";
+            this.lblTotalCash.Size = new System.Drawing.Size(22, 26);
+            this.lblTotalCash.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
+            this.lblTotalCash.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCash.TabIndex = 7;
+            this.lblTotalCash.Values.Text = "0";
             // 
             // kryptonLabel3
             // 
             this.kryptonLabel3.Location = new System.Drawing.Point(2, 2);
-            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(80, 22);
             this.kryptonLabel3.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -271,31 +271,31 @@ namespace NetfixPOS.Sales
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Controls.Add(this.kryptonLabel6);
+            this.kryptonPanel3.Controls.Add(this.lblNetAmount);
             this.kryptonPanel3.Controls.Add(this.kryptonLabel2);
             this.kryptonPanel3.Location = new System.Drawing.Point(325, 8);
-            this.kryptonPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPanel3.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
             this.kryptonPanel3.Size = new System.Drawing.Size(145, 60);
             this.kryptonPanel3.TabIndex = 0;
             // 
-            // kryptonLabel6
+            // lblNetAmount
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(2, 26);
-            this.kryptonLabel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(22, 26);
-            this.kryptonLabel6.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
-            this.kryptonLabel6.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel6.TabIndex = 6;
-            this.kryptonLabel6.Values.Text = "0";
+            this.lblNetAmount.Location = new System.Drawing.Point(2, 26);
+            this.lblNetAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.lblNetAmount.Name = "lblNetAmount";
+            this.lblNetAmount.Size = new System.Drawing.Size(22, 26);
+            this.lblNetAmount.StateNormal.ShortText.Color1 = System.Drawing.Color.Yellow;
+            this.lblNetAmount.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetAmount.TabIndex = 6;
+            this.lblNetAmount.Values.Text = "0";
             // 
             // kryptonLabel2
             // 
             this.kryptonLabel2.Location = new System.Drawing.Point(2, 2);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(35, 22);
             this.kryptonLabel2.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -314,7 +314,7 @@ namespace NetfixPOS.Sales
             this.kryptonPanel2.Controls.Add(this.btnJoin);
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 381);
-            this.kryptonPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Black;
             this.kryptonPanel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCluster;
@@ -347,7 +347,7 @@ namespace NetfixPOS.Sales
             this.dtpSaleDate.Enabled = false;
             this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpSaleDate.Location = new System.Drawing.Point(85, 13);
-            this.dtpSaleDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpSaleDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpSaleDate.Name = "dtpSaleDate";
             this.dtpSaleDate.Size = new System.Drawing.Size(82, 21);
             this.dtpSaleDate.TabIndex = 18;
@@ -355,7 +355,7 @@ namespace NetfixPOS.Sales
             // kryptonLabel10
             // 
             this.kryptonLabel10.Location = new System.Drawing.Point(14, 12);
-            this.kryptonLabel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel10.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel10.Name = "kryptonLabel10";
             this.kryptonLabel10.Size = new System.Drawing.Size(68, 20);
             this.kryptonLabel10.StateNormal.ShortText.Color1 = System.Drawing.Color.Blue;
@@ -395,7 +395,7 @@ namespace NetfixPOS.Sales
             // 
             this.kryptonDockableNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonDockableNavigator1.Location = new System.Drawing.Point(0, 71);
-            this.kryptonDockableNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonDockableNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonDockableNavigator1.Name = "kryptonDockableNavigator1";
             this.kryptonDockableNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCalendarDay;
             this.kryptonDockableNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
@@ -414,7 +414,7 @@ namespace NetfixPOS.Sales
             this.page_Table.Controls.Add(this.dgvTable);
             this.page_Table.Flags = 65534;
             this.page_Table.LastVisibleSet = true;
-            this.page_Table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.page_Table.Margin = new System.Windows.Forms.Padding(2);
             this.page_Table.MinimumSize = new System.Drawing.Size(33, 32);
             this.page_Table.Name = "page_Table";
             this.page_Table.Size = new System.Drawing.Size(1125, 285);
@@ -438,7 +438,7 @@ namespace NetfixPOS.Sales
             this.colEdit});
             this.dgvTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTable.Location = new System.Drawing.Point(0, 0);
-            this.dgvTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTable.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.RowHeadersWidth = 50;
             this.dgvTable.RowTemplate.Height = 40;
@@ -538,7 +538,7 @@ namespace NetfixPOS.Sales
             this.page_Room.Controls.Add(this.dgvRoom);
             this.page_Room.Flags = 65534;
             this.page_Room.LastVisibleSet = true;
-            this.page_Room.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.page_Room.Margin = new System.Windows.Forms.Padding(2);
             this.page_Room.MinimumSize = new System.Drawing.Size(33, 32);
             this.page_Room.Name = "page_Room";
             this.page_Room.Size = new System.Drawing.Size(1124, 283);
@@ -566,7 +566,7 @@ namespace NetfixPOS.Sales
             this.colUpdate});
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoom.Location = new System.Drawing.Point(0, 0);
-            this.dgvRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRoom.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.RowHeadersWidth = 50;
             this.dgvRoom.RowTemplate.Height = 40;
@@ -574,6 +574,10 @@ namespace NetfixPOS.Sales
             this.dgvRoom.TabIndex = 1;
             this.dgvRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellContentClick);
             this.dgvRoom.Click += new System.EventHandler(this.dgvRoom_Click);
+            // 
+            // countdownTimer
+            // 
+            this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
             // 
             // colRoomId
             // 
@@ -673,6 +677,7 @@ namespace NetfixPOS.Sales
             this.colSinger.MinimumWidth = 8;
             this.colSinger.Name = "colSinger";
             this.colSinger.ReadOnly = true;
+            this.colSinger.Visible = false;
             // 
             // col_TotalAmount
             // 
@@ -705,10 +710,6 @@ namespace NetfixPOS.Sales
             this.colUpdate.Text = "Update";
             this.colUpdate.UseColumnTextForButtonValue = true;
             // 
-            // countdownTimer
-            // 
-            this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
-            // 
             // SaleDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,7 +719,7 @@ namespace NetfixPOS.Sales
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SaleDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -773,10 +774,10 @@ namespace NetfixPOS.Sales
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTotalSalesCount;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTotalCredit;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTotalCash;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNetAmount;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnJoin;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnPayment;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnPaidConfirm;
@@ -795,6 +796,7 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceStatus;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEdit;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomId;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn colroomJoin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNo;
@@ -808,6 +810,5 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn col_TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_InvoiceStatus;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colUpdate;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
     }
 }

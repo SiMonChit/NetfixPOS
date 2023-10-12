@@ -54,7 +54,6 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("InvoiceStatus", headerRow.InvoiceStatus);
             Command.Parameters.AddWithValue("WaiterName", headerRow.WaiterName);
             Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
-            Command.Parameters.AddWithValue("Singer", headerRow.Singer);
 
             try
             {
@@ -167,11 +166,10 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("InvoiceStatus", headerRow.InvoiceStatus);
             Command.Parameters.AddWithValue("WaiterName", headerRow.WaiterName);
             Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
-            Command.Parameters.AddWithValue("Singer", headerRow.Singer);
 
             try
             {
-                string key = Command.ExecuteScalar().ToString();
+                Command.ExecuteNonQuery();
 
                 //Room session start
                 //if (!string.IsNullOrEmpty(headerRow.RoomNo))
@@ -180,10 +178,13 @@ namespace NetfixPOS.DataAccess
                 //    _rool.RoomSessionStart(headerRow.RoomNo, DateTime.Now, DateTime.Now);
                 //}
 
+                //Delete Old Sale Items
+                ItemDelete(headerRow.SaleId, Connection, Transaction);
+
                 //Insert Sale Items
                 if (detail_dt.Rows.Count > 0)
                 {
-                    ItemInsert(key, detail_dt, Connection, Transaction);
+                    ItemInsert(headerRow.SaleId, detail_dt, Connection, Transaction);
                 }
 
             }
@@ -269,7 +270,21 @@ namespace NetfixPOS.DataAccess
             }
         }
 
+        public void ItemDelete(string headerKey, SqlConnection connection, SqlTransaction transaction)
+        {
+            Command = new SqlCommand(query.SaleItemDelete(), Connection, transaction);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("SaleId", headerKey);
 
+            try
+            {
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #region Select Header
 
@@ -427,8 +442,34 @@ namespace NetfixPOS.DataAccess
             return dt;
         }
 
-        
+        public DataTable GetdataForDashboard(DateTime SaleDate)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Command = new SqlCommand(query.ShowDataOnDashboard(), Connection);
+                Command.CommandType = CommandType.Text;
+                Command.Parameters.AddWithValue("SaleDate", SaleDate);
+                SqlDataAdapter adapter = new SqlDataAdapter(Command);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open)
+                    Connection.Close();
+            }
+
+            return dt;
+        }
+
         #endregion
+
+
+
         #region JoinTable
 
         public void JoinTable(string id, string name, string otherId, string otherName)

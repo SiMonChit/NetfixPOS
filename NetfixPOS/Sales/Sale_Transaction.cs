@@ -115,6 +115,7 @@ namespace NetfixPOS.Sales
         dsSaleSetup.SaleHeaderDataTable sale_header;
         decimal TotalAmount = 0;
 
+
         public void CustomerDataBind()
         {
             cboCustomer.DataSource = _customer.GetCustomer(0);
@@ -225,6 +226,7 @@ namespace NetfixPOS.Sales
             tempItemRow.SalePrice = Convert.ToDecimal(dgvStock.CurrentRow.Cells["colSellingPrice"].Value);
             tempItemRow.Discount = 0;
             tempItemRow.Qty = 1;
+            tempItemRow.IsFOC = false;
             tempItemRow.Amount = Convert.ToDecimal(tempItemRow.SalePrice * Convert.ToDecimal(tempItemRow.Qty));
 
             if (txtTotalAmount.Text == "0") TotalAmount = tempItemRow.Amount;
@@ -264,7 +266,6 @@ namespace NetfixPOS.Sales
 
                 headerRow.WaiterName = cboWaiter.Text;
                 headerRow.PrintDate = DateTime.Now;
-                headerRow.Singer = "";//cboSinger.Text;
                 headerRow.BalanceAmount = Convert.ToDecimal(Convert.ToDecimal(txtTotalAmount.Text) - Convert.ToDecimal(txtPaidAmount.Text));
                 headerRow.C_tax = Convert.ToDecimal(txtTaxPercent.Text);
                 headerRow.ServiceCharges = Convert.ToDecimal(txtServicePercent.Text);
@@ -367,15 +368,38 @@ namespace NetfixPOS.Sales
             {
                 if (dgvSaleItem.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.Equals("colQty"))
                 {
-                    if (dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].EditedFormattedValue.ToString() == string.Empty)
+                    if (Convert.ToBoolean(dgvSaleItem.Rows[e.RowIndex].Cells["colIsFOC"].EditedFormattedValue) == true)
                     {
-                        dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].Value = 0;
+                        dgvSaleItem.Rows[e.RowIndex].Cells["colAmount"].Value = 0;
                     }
-                    dgvSaleItem.Rows[e.RowIndex].Cells["colAmount"].Value = Convert.ToInt32(dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].Value) * Convert.ToDecimal(dgvSaleItem.Rows[e.RowIndex].Cells["colSalePrice"].EditedFormattedValue);
+                    else
+                    {
+                        if (dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].EditedFormattedValue.ToString() == string.Empty)
+                        {
+                            dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].Value = 0;
+                        }
+                        dgvSaleItem.Rows[e.RowIndex].Cells["colAmount"].Value = Convert.ToInt32(dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].Value) * Convert.ToDecimal(dgvSaleItem.Rows[e.RowIndex].Cells["colSalePrice"].EditedFormattedValue);
+
+                    }
 
                     Show_TotalAmount(e);
 
                 }
+
+                if (dgvSaleItem.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.Equals("colIsFOC"))
+                {
+                    if (Convert.ToBoolean(dgvSaleItem.Rows[e.RowIndex].Cells["colIsFOC"].EditedFormattedValue) == true)
+                    {
+                        dgvSaleItem.Rows[e.RowIndex].Cells["colAmount"].Value = 0;
+                    }
+                    else
+                    {
+                        dgvSaleItem.Rows[e.RowIndex].Cells["colAmount"].Value = Convert.ToInt32(dgvSaleItem.Rows[e.RowIndex].Cells["colQty"].Value) * Convert.ToDecimal(dgvSaleItem.Rows[e.RowIndex].Cells["colSalePrice"].EditedFormattedValue);
+                    }
+                    Show_TotalAmount(e);
+
+                }
+
 
             }
             catch (Exception ex)
@@ -386,23 +410,27 @@ namespace NetfixPOS.Sales
 
         private void Show_TotalAmount(DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0)
             {
                 TotalAmount = 0;
                 string SerTax = txtTaxAmount.Text;
-                TotalAmount = (TotalAmount * Convert.ToDecimal(SerTax)) + TotalAmount;
+                string SerCharges = txtServiceAmount.Text;
+
+                TotalAmount = (Convert.ToDecimal(SerCharges) + Convert.ToDecimal(SerTax)) + TotalAmount;
 
                 foreach (DataGridViewRow row in dgvSaleItem.Rows)
                 {
                     TotalAmount += Convert.ToDecimal(row.Cells["colAmount"].Value);
                 }
-
                 txtNetAmount.Text = TotalAmount.ToString();
 
-                txtTotalAmount.Text = TotalAmount.ToString();
+                txtTotalAmount.Text = (TotalAmount - Convert.ToDecimal(txtDiscount.Text)).ToString();
 
                 txtTaxAmount.Text = ((Convert.ToDecimal(txtTaxPercent.Text) * TotalAmount) / 100).ToString("0.##");
                 txtServiceAmount.Text = ((Convert.ToDecimal(txtServicePercent.Text) * TotalAmount) / 100).ToString("0.##");
+
+                
             }
         }
 
@@ -534,13 +562,15 @@ namespace NetfixPOS.Sales
             cboSalePerson.SelectedValue = headerRow.UserID;
             cboCustomer.SelectedValue = headerRow.CustomerId;
             cboSaleType.SelectedValue = headerRow.SaleTypeId;
-            if(headerRow.TableNo!=null) txtTableOrRoom.Text = headerRow.TableNo;
+            if(!string.IsNullOrEmpty(headerRow.TableNo)) txtTableOrRoom.Text = headerRow.TableNo;
             else txtTableOrRoom.Text = headerRow.RoomNo;
             txtRemark.Text = headerRow.Remark;
             txtDiscount.Text = headerRow.DiscountAmount.ToString();
             txtDeliveryFee.Text = headerRow.DeliveryFee.ToString();
             txtTaxPercent.Text = headerRow.C_tax.ToString();
             txtTaxAmount.Text = ((headerRow.C_tax / 100) * headerRow.TotalAmount).ToString();
+            txtServicePercent.Text = headerRow.ServiceCharges.ToString();
+            txtServiceAmount.Text = ((headerRow.ServiceCharges / 100) * headerRow.TotalAmount).ToString();
             chkFOC.Checked = headerRow.IsFOC;
             ItemDataBind(SaleId);
         }
@@ -578,6 +608,11 @@ namespace NetfixPOS.Sales
                 dtp_StartTime.Value = DateTime.Now;
                 dtp_EndTime.Value = DateTime.Now.AddHours(5);
             }
+        }
+
+        private void txtNetAmount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,6 +32,10 @@ namespace NetfixPOS.Controller
         {
             return _shop.Select();
         }
+        public ds_ShopInfo.ShopInfoRow GetShopName()
+        {
+            return _shop.GetShopName();
+        }
         public int Check_IsRegister()
         {
             return _shop.Check_IsRegister();
