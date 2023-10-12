@@ -29,13 +29,13 @@ namespace NetfixPOS.DataAccess
                 Connection.Open();
 
                 //Room Session End
-                SaleDAL _sale = new SaleDAL();
-                string RoomNo = _sale.SelectHeaderRow(SaleId).RoomNo;
-                if (!string.IsNullOrEmpty(RoomNo))
-                {
-                    RoomDAL _room = new RoomDAL();
-                    _room.RoomSessionEnd(RoomNo);
-                }
+                //SaleDAL _sale = new SaleDAL();
+                //string RoomNo = _sale.SelectHeaderRow(SaleId).RoomNo;
+                //if (!string.IsNullOrEmpty(RoomNo))
+                //{
+                //    RoomDAL _room = new RoomDAL();
+                //    _room.RoomSessionEnd(RoomNo);
+                //}
 
                 return Command.ExecuteNonQuery();
             }

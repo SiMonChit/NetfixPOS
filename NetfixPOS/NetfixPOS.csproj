@@ -494,6 +494,7 @@
       <DependentUpon>frm_Print.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\GlobalFunction.cs" />
+    <Compile Include="Common\GlobalPrintFunction.cs" />
     <Compile Include="Common\ProgressReport.cs" />
     <Compile Include="Database\ServerConnect.cs">
       <SubType>Form</SubType>
