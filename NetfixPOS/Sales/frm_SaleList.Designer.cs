@@ -132,6 +132,7 @@ namespace NetfixPOS.Sales
             this.btnPrint.Size = new System.Drawing.Size(112, 39);
             this.btnPrint.TabIndex = 5;
             this.btnPrint.Values.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // dgvSaleHeaderList
             // 

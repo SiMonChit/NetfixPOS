@@ -11,10 +11,9 @@ namespace NetfixPOS.Models
 		public int eod_id { get; set; }
 		public DateTime eod_Date { get; set; }
 		public int UserID { get; set; }
-		public int InvTotal { get; set; }
-		public decimal InvoiceAmount { get; set; }
-		public int PaymentTotal { get; set; }
-		public decimal PaymentAmount { get; set; }
+		public string eod_desc { get; set; }//For description
+		public int VoucherQty { get; set; }
+		public decimal VoucherAmount { get; set; }
 		public bool IsActive { get; set; }
 	}
 }

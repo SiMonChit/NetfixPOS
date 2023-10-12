@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,11 @@ namespace NetfixPOS.DataAccess
 {
     public class DamageDAL : DataControllerBase, IDamage
     {
+        DamageQuery query;
+        public DamageDAL()
+        {
+            query = new DamageQuery();
+        }
         public void Delete(int id)
         {
             throw new NotImplementedException();
@@ -25,6 +31,31 @@ namespace NetfixPOS.DataAccess
             try
             {
                 Command.Parameters.AddWithValue("Dmg_Date", dateTime);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable GetDamageList(DateTime fromDate, DateTime toDate)
+        {
+            Command = new SqlCommand(query.Damage_ListByDate(), Connection);
+            Command.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("fromDate", fromDate);
+                Command.Parameters.AddWithValue("toDate", toDate);
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = Command;

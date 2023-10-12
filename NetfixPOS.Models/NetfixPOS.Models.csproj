@@ -49,6 +49,11 @@
     <Compile Include="CurrencyModel.cs" />
     <Compile Include="CustomerModel.cs" />
     <Compile Include="DamageModel.cs" />
+    <Compile Include="DataSetFile\ds_Damage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_Damage.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetFile\ds_EndOfDayDetail.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +150,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSetFile\ds_Damage.xsc">
+      <DependentUpon>ds_Damage.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFile\ds_Damage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_Damage.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetFile\ds_Damage.xss">
+      <DependentUpon>ds_Damage.xsd</DependentUpon>
+    </None>
     <None Include="DataSetFile\ds_EndOfDayDetail.xsc">
       <DependentUpon>ds_EndOfDayDetail.xsd</DependentUpon>
     </None>

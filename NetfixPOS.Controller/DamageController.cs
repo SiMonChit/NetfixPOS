@@ -28,7 +28,10 @@ namespace NetfixPOS.Controller
         {
             return _damage.GetDamageList(dateTime);
         }
-
+        public DataTable GetDamageList(DateTime fromDate, DateTime toDate)
+        {
+            return _damage.GetDamageList(fromDate, toDate);
+        }
         public void Insert(DamageModel damage)
         {
             try

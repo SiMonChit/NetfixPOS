@@ -44,6 +44,8 @@
     <Compile Include="AppInfoQuery.cs" />
     <Compile Include="CategoryQuery.cs" />
     <Compile Include="ConversionQuery.cs" />
+    <Compile Include="DamageQuery.cs" />
+    <Compile Include="EndOfDayQuery.cs" />
     <Compile Include="ExpenseQuery.cs" />
     <Compile Include="IncomeQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

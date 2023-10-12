@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,20 +13,24 @@ namespace NetfixPOS.DataAccess
 {
     public class EndOfDayDAL : DataControllerBase, IEndOfDay
     {
+        private EndOfDayQuery query;
+        public EndOfDayDAL()
+        {
+            query = new EndOfDayQuery();
+        }
         public int Insert(EndOfDayModel emdOfDay)
         {
-            string query = "INSERT tbl_GE_EndOfDate VALUES(@eod_Date, @UserID, @InvTotal, @InvoiceAmount, @PaymentTotal, @PaymentAmount, 1)";
-            Command = new SqlCommand(query, Connection);
+            Command = new SqlCommand(query.Insert(), Connection);
             Command.CommandType = CommandType.Text;
             int returnvalue = 0;
             try
             {
-                Command.Parameters.AddWithValue("eod_Date", emdOfDay.eod_Date);
+                
                 Command.Parameters.AddWithValue("UserID", emdOfDay.UserID);
-                Command.Parameters.AddWithValue("InvTotal", emdOfDay.InvTotal);
-                Command.Parameters.AddWithValue("InvoiceAmount", emdOfDay.InvoiceAmount);
-                Command.Parameters.AddWithValue("PaymentTotal", emdOfDay.PaymentTotal);
-                Command.Parameters.AddWithValue("PaymentAmount", emdOfDay.PaymentAmount);
+                Command.Parameters.AddWithValue("eod_desc", emdOfDay.eod_desc);
+                Command.Parameters.AddWithValue("VoucherQty", emdOfDay.VoucherQty);
+                Command.Parameters.AddWithValue("VoucherAmount", emdOfDay.VoucherAmount);
+                Command.Parameters.AddWithValue("eod_Date", emdOfDay.eod_Date);
 
                 Connection.Open();
                 returnvalue = Command.ExecuteNonQuery();
@@ -95,7 +100,7 @@ namespace NetfixPOS.DataAccess
             DataTable dt = new DataTable();
             try
             {
-                Command.Parameters.AddWithValue("UserID", userid);
+                Command.Parameters.AddWithValue("UserID", 1);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = Command;
                 dataAdapter.Fill(dt);
@@ -111,6 +116,27 @@ namespace NetfixPOS.DataAccess
             return dt;
         }
 
-
+        public DataTable CheckEndOfDay(DateTime nowdate)
+        {
+            Command = new SqlCommand(query.IsEndOfDay(), Connection);
+            Command.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("eod_Date", nowdate);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
     }
 }

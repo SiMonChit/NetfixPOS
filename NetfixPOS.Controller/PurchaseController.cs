@@ -65,5 +65,9 @@ namespace NetfixPOS.Controller
         {
             return _purchase.GetPurchaseList(purdate);
         }
+        public DataTable GetPurchaseList(DateTime fromDate, DateTime toDate)
+        {
+            return _purchase.GetPurchaseList(fromDate, toDate);
+        }
     }
 }

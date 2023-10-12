@@ -1,7 +1,7 @@
 ﻿
 namespace NetfixPOS.Report
 {
-    partial class frm_DamageReport
+    partial class frm_PurchaseReport
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,11 @@ namespace NetfixPOS.Report
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.rpv_Damage = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ds_DamageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rpv_Purchase = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ds_PurchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_DamageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -55,8 +55,8 @@ namespace NetfixPOS.Report
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderPrimary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(1124, 80);
-            this.kryptonPanel1.TabIndex = 0;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1239, 80);
+            this.kryptonPanel1.TabIndex = 1;
             // 
             // btnRefresh
             // 
@@ -99,38 +99,38 @@ namespace NetfixPOS.Report
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "From Date";
             // 
-            // rpv_Damage
+            // rpv_Purchase
             // 
-            this.rpv_Damage.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Damage_ds";
-            reportDataSource1.Value = this.ds_DamageBindingSource;
-            this.rpv_Damage.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpv_Damage.LocalReport.ReportEmbeddedResource = "NetfixPOS.rdlc_File.rdlc_Damage.rdlc";
-            this.rpv_Damage.Location = new System.Drawing.Point(0, 80);
-            this.rpv_Damage.Name = "rpv_Damage";
-            this.rpv_Damage.ServerReport.BearerToken = null;
-            this.rpv_Damage.Size = new System.Drawing.Size(1124, 561);
-            this.rpv_Damage.TabIndex = 4;
+            this.rpv_Purchase.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Purchase_ds";
+            reportDataSource1.Value = this.ds_PurchaseBindingSource;
+            this.rpv_Purchase.LocalReport.DataSources.Add(reportDataSource1);
+            this.rpv_Purchase.LocalReport.ReportEmbeddedResource = "NetfixPOS.rdlc_File.rdlc_Purchase.rdlc";
+            this.rpv_Purchase.Location = new System.Drawing.Point(0, 80);
+            this.rpv_Purchase.Name = "rpv_Purchase";
+            this.rpv_Purchase.ServerReport.BearerToken = null;
+            this.rpv_Purchase.Size = new System.Drawing.Size(1239, 585);
+            this.rpv_Purchase.TabIndex = 5;
             // 
-            // ds_DamageBindingSource
+            // ds_PurchaseBindingSource
             // 
-            this.ds_DamageBindingSource.DataMember = "tbl_Damage";
-            this.ds_DamageBindingSource.DataSource = typeof(NetfixPOS.Models.DataSetFile.ds_Damage);
+            this.ds_PurchaseBindingSource.DataMember = "tbl_Purchase";
+            this.ds_PurchaseBindingSource.DataSource = typeof(NetfixPOS.Models.DataSetFile.ds_Purchase);
             // 
-            // frm_DamageReport
+            // frm_PurchaseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 641);
-            this.Controls.Add(this.rpv_Damage);
+            this.ClientSize = new System.Drawing.Size(1239, 665);
+            this.Controls.Add(this.rpv_Purchase);
             this.Controls.Add(this.kryptonPanel1);
-            this.Name = "frm_DamageReport";
-            this.Text = "DamageReport";
-            this.Load += new System.EventHandler(this.frm_DamageReport_Load);
+            this.Name = "frm_PurchaseReport";
+            this.Text = "Purchase Report";
+            this.Load += new System.EventHandler(this.frm_PurchaseReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_DamageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,12 +138,12 @@ namespace NetfixPOS.Report
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpToDate;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFromDate;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
-        private Microsoft.Reporting.WinForms.ReportViewer rpv_Damage;
-        private System.Windows.Forms.BindingSource ds_DamageBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer rpv_Purchase;
+        private System.Windows.Forms.BindingSource ds_PurchaseBindingSource;
     }
 }

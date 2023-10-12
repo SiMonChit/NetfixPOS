@@ -25,7 +25,7 @@ namespace NetfixPOS.Controller
             try
             {
                 isSuccess = _endofday.Insert(emdOfDay);
-                _eventLogs.AddLog("Insert", DateTime.Now, "EndOfDay Form", "Insert " + emdOfDay.InvTotal.ToString() + " " + emdOfDay.PaymentTotal.ToString() + " " + "User :" + emdOfDay.UserID, "Insert Success");
+                _eventLogs.AddLog("Insert", DateTime.Now, "EndOfDay Form", "Insert " + emdOfDay.VoucherAmount.ToString() +" User : " + emdOfDay.UserID, " Insert Success");
                 return isSuccess;
             }
             catch (Exception ex)
@@ -45,6 +45,16 @@ namespace NetfixPOS.Controller
         public DataTable GetSaleDetailForDayEnd(int userid, DateTime saledate)
         {
             return _endofday.GetSaleDetailForDayEnd(userid, saledate);
+        }
+        public bool CheckEndOfDay(DateTime nowdate)
+        {
+            DataTable dt = new DataTable();
+            dt = _endofday.CheckEndOfDay(nowdate);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

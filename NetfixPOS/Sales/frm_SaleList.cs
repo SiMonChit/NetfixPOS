@@ -35,7 +35,14 @@ namespace NetfixPOS.Sales
 
         private void dgvSaleHeaderList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            SaleId = dgvSaleHeaderList.CurrentRow.Cells["colSaleId"].Value.ToString();
+        }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frm_Print print = new frm_Print(SaleId);
+            GlobalFunction.WriteLog("Sale Voucher Reprint : " + SaleId);
+            print.ShowDialog();
         }
     }
 }

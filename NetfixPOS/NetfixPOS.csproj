@@ -674,6 +674,12 @@
     <Compile Include="Report\frm_IncomeReport.Designer.cs">
       <DependentUpon>frm_IncomeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\frm_PurchaseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_PurchaseReport.Designer.cs">
+      <DependentUpon>frm_PurchaseReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frm_SaleHeaderReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -867,10 +873,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rdlc_File\A5_SaleInvoice.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_dailyAudit.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_Damage.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_EndOfDay.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_EventLogs.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Expense.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Income.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_Purchase.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleHeader.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleItem.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Top10SellingItem.rdlc" />
@@ -878,11 +886,17 @@
     <EmbeddedResource Include="Report\frmDailyAuditReport.resx">
       <DependentUpon>frmDailyAuditReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_DamageReport.resx">
+      <DependentUpon>frm_DamageReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_ExpenseReport.resx">
       <DependentUpon>frm_ExpenseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_IncomeReport.resx">
       <DependentUpon>frm_IncomeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_PurchaseReport.resx">
+      <DependentUpon>frm_PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_SaleHeaderReport.resx">
       <DependentUpon>frm_SaleHeaderReport.cs</DependentUpon>
@@ -916,10 +930,12 @@
       <DependentUpon>TouchPOS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Damage.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EndOfDayDetail.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EventLogs.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Expense.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Income.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Purchase.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleInvoice.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleItem.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleSlip.datasource" />

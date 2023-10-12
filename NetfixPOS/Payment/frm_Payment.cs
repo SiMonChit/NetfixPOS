@@ -24,6 +24,7 @@ namespace NetfixPOS.Payment
             _sale = new SaleController();
             _payment = new PaymentController();
             payment = new PaymentModel();
+            _generate = new AutoGenerateController();
 
             saleid = SaleId;
             GetSaleTotalAmount(SaleId);
@@ -35,12 +36,14 @@ namespace NetfixPOS.Payment
         PaymentController _payment;
         PaymentModel payment;
         string saleid = "";
+        AutoGenerateController _generate;
         public frm_Payment()
         {
             InitializeComponent();
             txtPaidAmount.Focus();
             GetTemplateFile();
             BindPrinterDevice();
+            _generate = new AutoGenerateController();
         }
         private void ClearControl()
         {
@@ -52,6 +55,7 @@ namespace NetfixPOS.Payment
         private void GetSaleTotalAmount(string SaleId)
         {
             txtTotalAmount.Text = _sale.SelectHeaderRow(SaleId).TotalAmount.ToString();
+            txtPaymentNo.Text = _generate.GetGenerateNo("Payment");
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

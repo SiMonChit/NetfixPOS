@@ -103,7 +103,7 @@ namespace NetfixPOS.DataAccess
         public DataTable GetIncome_ListByDate(DateTime fromDate, DateTime toDate)
         {
             Command = new SqlCommand(query.SelectByDate(), Connection);
-            Command.CommandType = CommandType.StoredProcedure;
+            Command.CommandType = CommandType.Text;
             DataTable dt = new DataTable();
             try
             {

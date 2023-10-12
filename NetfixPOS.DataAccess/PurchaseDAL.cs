@@ -123,5 +123,30 @@ namespace NetfixPOS.DataAccess
             }
             return dt;
         }
+
+        public DataTable GetPurchaseList(DateTime fromDate, DateTime toDate)
+        {
+            Command = new SqlCommand(query.SelectByDate(), Connection);
+            Command.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("fromDate", fromDate);
+                Command.Parameters.AddWithValue("toDate", toDate);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
     }
 }

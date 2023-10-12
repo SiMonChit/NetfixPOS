@@ -11,6 +11,7 @@ using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
 using NetfixPOS.Common;
 using NetfixPOS.Controller;
+using NetfixPOS.Models;
 using NetfixPOS.rtp_File;
 
 namespace NetfixPOS.Admin
@@ -45,7 +46,32 @@ namespace NetfixPOS.Admin
 
         private void btnDayEnd_Click(object sender, EventArgs e)
         {
-            GlobalFunction.WriteLog("EndOfDay " + " End Of Day Button Click to day end" + GlobalFunction.LoginUser.UserName);
+            //GlobalFunction.WriteLog("EndOfDay " + " End Of Day Button Click to day end " + GlobalFunction.LoginUser.UserName);
+            GlobalFunction.WriteLog("EndOfDay " + " End Of Day Button Click to day end " + "Test CKK");
+            if (_endofday.CheckEndOfDay(dtp_eod_detail.Value))
+            {
+                MessageBox.Show("Already end for this day ....");
+            }
+            else
+            {
+                EndOfDayModel endofday;
+                foreach (DataGridViewRow row in dgvEndOfDay_Audit.Rows)
+                {
+                    endofday = new EndOfDayModel();
+                    endofday.UserID = 1;
+                    endofday.eod_desc = row.Cells["coleod_desc"].Value.ToString();
+                    endofday.VoucherQty = Convert.ToInt32(row.Cells["colVoucherQty"].Value);
+                    endofday.VoucherAmount = Convert.ToDecimal(row.Cells["colVoucherAmount"].Value);
+                    endofday.eod_Date = dtp_eod_detail.Value;
+                    _endofday.Insert(endofday);
+                }
+                MessageBox.Show("Day end successful ...");
+            }
+        }
+
+        private void dgvEndOfDay_Audit_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GlobalFunction.GridView_DataBindingComplete(sender, e);
         }
     }
 }

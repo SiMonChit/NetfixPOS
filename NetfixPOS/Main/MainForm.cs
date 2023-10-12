@@ -204,7 +204,7 @@ namespace NetfixPOS.Main
 
         private void rbo_purchase_report_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new frm_PurchaseReport());
         }
 
         private void rbo_saleInvoice_report_Click(object sender, EventArgs e)
