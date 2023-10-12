@@ -76,67 +76,6 @@ namespace NetfixPOS.Database
         private string constr;
 
 
-        public void GetServerConnection()
-        {
-            string[] tmpserver;
-            string[] tmpDatabase1;
-            string[] tmpDatabase2;
-            string[] tmpUser1;
-            string[] tmpUser2;
-            string[] tmpPassword1;
-            string[] tmpPassword2;
-            string DBType = "";
-
-            DBType = AppConfiguration.ReadProviderName();
-            constr = AppConfiguration.ReadConnectionString();
-
-            if (DBType == "System.Data.SqlClient")
-            {
-                
-                txtUserName.Enabled = true;
-                txtPassword.Enabled = true;
-                txtPassword.Visible = true;
-
-                tmpserver = constr.Split("Data Source=");
-                txtServerName.Enabled = true;
-                txtServerName.Text = tmpserver[1];
-
-                tmpDatabase1 = constr.Split("Initial Catalog=");
-                tmpDatabase2 = tmpDatabase1[1].Split(";");
-                cboDatabase.Items.Add(tmpDatabase2[0]);
-                cboDatabase.SelectedIndex = 0;
-
-                tmpUser1 = constr.Split("User ID=");
-                if (tmpUser1.Length > 1)
-                {
-                    tmpUser2 = tmpUser1[1].Split(";");
-                    if (!string.IsNullOrEmpty(tmpUser2[0]))
-                    {
-                        string str = tmpUser2[0];
-                        txtUserName.Enabled = true;
-                        txtUserName.ReadOnly = false;
-                        txtUserName.Text = str;
-                        rbtSQL.Checked = true;
-                        rbtWindow.Checked = false;
-                    }
-                    else
-                    {
-                        rbtSQL.Checked = false;
-                        rbtWindow.Checked = true;
-                    }
-                }
-
-                tmpPassword1 = constr.Split("Password=");
-                if (tmpPassword1.Length > 1)
-                {
-                    tmpPassword2 = tmpPassword1[1].Split(";");
-                    if (!string.IsNullOrEmpty(tmpPassword2[0]))
-                    {
-                        txtPassword.Text = tmpPassword2[0];
-                    }
-                }
-            }
-        }
     }
 
 }

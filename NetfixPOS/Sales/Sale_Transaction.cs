@@ -15,6 +15,7 @@ namespace NetfixPOS.Sales
 {
     public partial class Sale_Transaction : Form, IFormBase
     {
+        #region constructor
         public Sale_Transaction()
         {
             InitializeComponent();
@@ -25,17 +26,19 @@ namespace NetfixPOS.Sales
             _generate = new AutoGenerateController();
             _employee = new EmployeeController();
             _sale = new SaleController();
+            _customer = new CustomerController();
 
             sale_detail = new dsSaleSetup.SaleDetailDataTable();
             sale_header = new dsSaleSetup.SaleHeaderDataTable();
 
             trvCategory.AfterSelect += trvCategory_AfterSelect;
-
+            CustomerDataBind();
             PopulateCategoryTreeView();
             SaleTypedataBind();
             UserdataBind();
             GetSaleInformation();
             WaiterDataBind();
+            ShowForRoomSession(true);
         }
 
         //For Update Voucher
@@ -49,6 +52,7 @@ namespace NetfixPOS.Sales
             _generate = new AutoGenerateController();
             _employee = new EmployeeController();
             _sale = new SaleController();
+            _customer = new CustomerController();
 
             sale_detail = new dsSaleSetup.SaleDetailDataTable();
             sale_header = new dsSaleSetup.SaleHeaderDataTable();
@@ -58,9 +62,11 @@ namespace NetfixPOS.Sales
             PopulateCategoryTreeView();
             SaleTypedataBind();
             UserdataBind();
-            //GetSaleInformation();
+            CustomerDataBind();
             WaiterDataBind();
             HeaderDataBind(SaleId);
+            ShowForRoomSession(true);
+            btnPendding.Text = "Pending Update";
             btnSave.Text = "Update";
         }
 
@@ -75,6 +81,7 @@ namespace NetfixPOS.Sales
             _generate = new AutoGenerateController();
             _employee = new EmployeeController();
             _sale = new SaleController();
+            _customer = new CustomerController();
 
             sale_detail = new dsSaleSetup.SaleDetailDataTable();
             sale_header = new dsSaleSetup.SaleHeaderDataTable();
@@ -88,11 +95,15 @@ namespace NetfixPOS.Sales
             WaiterDataBind();
             txtTableOrRoom.Text = TableOrRoomNo;
             this.IsTable = IsTable;
-            ShowForRoomSession(IsTable);
+            //ShowForRoomSession(IsTable);
+            ShowForRoomSession(true);
+            CustomerDataBind();
         }
+        #endregion
 
-        string sale_id="";
+        string sale_id ="";
         bool IsTable = false;
+        CustomerController _customer;
         SaleTypeController _saletype;
         SaleController _sale;
         UsersController _users;
@@ -104,6 +115,12 @@ namespace NetfixPOS.Sales
         dsSaleSetup.SaleHeaderDataTable sale_header;
         decimal TotalAmount = 0;
 
+        public void CustomerDataBind()
+        {
+            cboCustomer.DataSource = _customer.GetCustomer(0);
+            cboCustomer.DisplayMember = "CustomerName";
+            cboCustomer.ValueMember = "CustomerId";
+        }
         private void ShowForRoomSession(bool IsTable)
         {
             if (IsTable)
@@ -116,6 +133,8 @@ namespace NetfixPOS.Sales
                 cboSession.Visible = false;
                 dtp_StartTime.Visible = false;
                 dtp_EndTime.Visible = false;
+                btnAddSession.Visible = false;
+                btnAddSinger.Visible = false;
             }
         }
         private void SaleTypedataBind()
@@ -131,10 +150,10 @@ namespace NetfixPOS.Sales
                 GlobalFunction.appInfo = _generate.GetAppInfo();
 
                 txtInvoiceNo.Text = _generate.GetGenerateNo("Invoice");
-                txtSerPercent.Text = GlobalFunction.appInfo.Rows[0][3].ToString();
+                txtTaxPercent.Text = GlobalFunction.appInfo.Rows[0][3].ToString();
                 txtDiscount.Text = GlobalFunction.appInfo.Rows[0][6].ToString();
                 dtpInvoiceDate.Value = Convert.ToDateTime(GlobalFunction.appInfo.Rows[0][1]);
-                txtRoomService.Text = GlobalFunction.appInfo.Rows[0][7].ToString();
+                txtServicePercent.Text = GlobalFunction.appInfo.Rows[0][7].ToString();
             }
             catch (Exception ex)
             {
@@ -211,7 +230,7 @@ namespace NetfixPOS.Sales
             else TotalAmount += tempItemRow.Amount;
 
             txtTotalAmount.Text = TotalAmount.ToString();
-            txtNetAmount.Text = Convert.ToString(TotalAmount + Convert.ToDecimal(txtServiceAmt.Text));
+            txtNetAmount.Text = Convert.ToString(TotalAmount + Convert.ToDecimal(txtTaxAmount.Text));
             sale_detail.AddSaleDetailRow(tempItemRow);
             AddToSaleItemView(sale_detail);
         }
@@ -226,11 +245,11 @@ namespace NetfixPOS.Sales
             dsSaleSetup.SaleHeaderRow headerRow = sale_header.NewSaleHeaderRow();
             try
             {
+                headerRow.SaleId = sale_id;
                 headerRow.InvNo = txtInvoiceNo.Text;
-                headerRow.InvDate = dtpInvoiceDate.Value;//_generate.GetAuditDate(0);
+                headerRow.InvDate = dtpInvoiceDate.Value;
                 headerRow.UserID = Convert.ToInt32(cboSalePerson.SelectedValue);
-                headerRow.CustomerId = 1;
-                //Convert.ToInt32(cboCustomer.SelectedValue);
+                headerRow.CustomerId = Convert.ToInt32(cboCustomer.SelectedValue);
                 headerRow.SaleTypeId = Convert.ToInt32(cboSaleType.SelectedValue);
                 if (IsTable) { headerRow.TableNo = txtTableOrRoom.Text; headerRow.RoomNo = ""; }
                 else { headerRow.RoomNo = txtTableOrRoom.Text; headerRow.TableNo = ""; }
@@ -238,14 +257,15 @@ namespace NetfixPOS.Sales
                 headerRow.IsFOC = chkFOC.Checked;
                 headerRow.DiscountAmount = Convert.ToDecimal(txtDiscount.Text);
                 headerRow.DeliveryFee = Convert.ToDecimal(txtDeliveryFee.Text);
-                headerRow.TotalAmount = Convert.ToDecimal(txtTotalAmount.Text);// Convert.ToDecimal(txtTotal.Text.Trim());
+                headerRow.TotalAmount = Convert.ToDecimal(txtTotalAmount.Text);
                 headerRow.NetAmount = Convert.ToDecimal(txtNetAmount.Text);
 
                 headerRow.WaiterName = cboWaiter.Text;
                 headerRow.PrintDate = DateTime.Now;
-                headerRow.Singer = cboSinger.Text;
+                headerRow.Singer = "";//cboSinger.Text;
                 headerRow.BalanceAmount = Convert.ToDecimal(Convert.ToDecimal(txtTotalAmount.Text) - Convert.ToDecimal(txtPaidAmount.Text));
-                headerRow.C_tax = Convert.ToDecimal(txtSerPercent.Text);
+                headerRow.C_tax = Convert.ToDecimal(txtTaxPercent.Text);
+                headerRow.ServiceCharges = Convert.ToDecimal(txtServicePercent.Text);
                 headerRow.AdvanceAmount = Convert.ToDecimal(txtPaidAmount.Text);
                 headerRow.DueAmount = 0;
                 headerRow.InvoiceStatus = InvoiceStatus;
@@ -367,7 +387,7 @@ namespace NetfixPOS.Sales
             if (e.RowIndex >= 0)
             {
                 TotalAmount = 0;
-                string SerTax = txtServiceAmt.Text;
+                string SerTax = txtTaxAmount.Text;
                 TotalAmount = (TotalAmount * Convert.ToDecimal(SerTax)) + TotalAmount;
 
                 foreach (DataGridViewRow row in dgvSaleItem.Rows)
@@ -375,10 +395,12 @@ namespace NetfixPOS.Sales
                     TotalAmount += Convert.ToDecimal(row.Cells["colAmount"].Value);
                 }
 
-
-                txtTotalAmount.Text = TotalAmount.ToString();
                 txtNetAmount.Text = TotalAmount.ToString();
 
+                txtTotalAmount.Text = TotalAmount.ToString();
+
+                txtTaxAmount.Text = ((Convert.ToDecimal(txtTaxPercent.Text) * TotalAmount) / 100).ToString();
+                txtServiceAmount.Text = ((Convert.ToDecimal(txtServicePercent.Text) * TotalAmount) / 100).ToString();
             }
         }
 
@@ -422,7 +444,17 @@ namespace NetfixPOS.Sales
 
         private void btnPendding_Click(object sender, EventArgs e)
         {
-            SaveHeaderDetail("Pending");
+            switch (btnPendding.Text)
+            {
+                case "Pending Save":
+                    SaveHeaderDetail("Pending");
+                    break;
+
+                case "Pending Update":
+                    UpdateHeaderDetail("Pending");
+                    break;
+            }
+            
         }
         private bool CheckRequireFill()
         {
@@ -462,7 +494,17 @@ namespace NetfixPOS.Sales
             }
 
         }
+        private void UpdateHeaderDetail(string InvoiceStatus)
+        {
+            dsSaleSetup.SaleHeaderRow headerRow = GetSaleHeaders(InvoiceStatus);
+            dsSaleSetup.SaleDetailDataTable detail_dt = GetSaleItems();
 
+            _sale.Update(headerRow, detail_dt);
+
+            MessageBox.Show("Save Successfully");
+            ClearControl();
+            _generate.AutoCodeGenerate("INV");
+        }
         public void ClearControl()
         {
             txtTableOrRoom.Clear();
@@ -495,8 +537,8 @@ namespace NetfixPOS.Sales
             txtRemark.Text = headerRow.Remark;
             txtDiscount.Text = headerRow.DiscountAmount.ToString();
             txtDeliveryFee.Text = headerRow.DeliveryFee.ToString();
-            txtSerPercent.Text = headerRow.C_tax.ToString();
-            txtServiceAmt.Text = ((headerRow.C_tax / 100) * headerRow.TotalAmount).ToString();
+            txtTaxPercent.Text = headerRow.C_tax.ToString();
+            txtTaxAmount.Text = ((headerRow.C_tax / 100) * headerRow.TotalAmount).ToString();
             chkFOC.Checked = headerRow.IsFOC;
             ItemDataBind(SaleId);
         }

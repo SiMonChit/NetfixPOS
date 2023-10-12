@@ -14,5 +14,6 @@ namespace NetfixPOS.Models
         public string ActivateKey { get; set; }
         public decimal ServiceTax { get; set; }
         public bool IsActive { get; set; }
+        public decimal ServiceCharges { get; set; }
     }
 }

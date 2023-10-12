@@ -30,8 +30,11 @@ namespace NetfixPOS.Sales
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtServiceAmt = new System.Windows.Forms.TextBox();
-            this.txtSerPercent = new System.Windows.Forms.TextBox();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtServiceAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtTaxAmount = new System.Windows.Forms.TextBox();
+            this.txtServicePercent = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtTaxPercent = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.btnPendding = new System.Windows.Forms.Button();
@@ -69,8 +72,6 @@ namespace NetfixPOS.Sales
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtRoomService = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnAddSinger = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAddSession = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblEndTime = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -96,7 +97,6 @@ namespace NetfixPOS.Sales
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsFOC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
@@ -111,10 +111,10 @@ namespace NetfixPOS.Sales
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.kryptonLabel2);
-            this.panel1.Controls.Add(this.kryptonTextBox1);
-            this.panel1.Controls.Add(this.txtServiceAmt);
-            this.panel1.Controls.Add(this.txtRoomService);
-            this.panel1.Controls.Add(this.txtSerPercent);
+            this.panel1.Controls.Add(this.txtServiceAmount);
+            this.panel1.Controls.Add(this.txtTaxAmount);
+            this.panel1.Controls.Add(this.txtServicePercent);
+            this.panel1.Controls.Add(this.txtTaxPercent);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cboCustomer);
             this.panel1.Controls.Add(this.btnPendding);
@@ -142,23 +142,47 @@ namespace NetfixPOS.Sales
             this.panel1.Size = new System.Drawing.Size(1761, 164);
             this.panel1.TabIndex = 0;
             // 
-            // txtServiceAmt
+            // kryptonLabel2
             // 
-            this.txtServiceAmt.Location = new System.Drawing.Point(1310, 89);
-            this.txtServiceAmt.Name = "txtServiceAmt";
-            this.txtServiceAmt.ReadOnly = true;
-            this.txtServiceAmt.Size = new System.Drawing.Size(121, 26);
-            this.txtServiceAmt.TabIndex = 29;
-            this.txtServiceAmt.Text = "0";
+            this.kryptonLabel2.Location = new System.Drawing.Point(1098, 123);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(142, 29);
+            this.kryptonLabel2.TabIndex = 60;
+            this.kryptonLabel2.Values.Text = "Service Charges";
             // 
-            // txtSerPercent
+            // txtServiceAmount
             // 
-            this.txtSerPercent.Location = new System.Drawing.Point(1246, 89);
-            this.txtSerPercent.Name = "txtSerPercent";
-            this.txtSerPercent.ReadOnly = true;
-            this.txtSerPercent.Size = new System.Drawing.Size(56, 26);
-            this.txtSerPercent.TabIndex = 28;
-            this.txtSerPercent.Text = "0";
+            this.txtServiceAmount.Location = new System.Drawing.Point(1310, 121);
+            this.txtServiceAmount.Name = "txtServiceAmount";
+            this.txtServiceAmount.ReadOnly = true;
+            this.txtServiceAmount.Size = new System.Drawing.Size(121, 31);
+            this.txtServiceAmount.TabIndex = 60;
+            // 
+            // txtTaxAmount
+            // 
+            this.txtTaxAmount.Location = new System.Drawing.Point(1310, 89);
+            this.txtTaxAmount.Name = "txtTaxAmount";
+            this.txtTaxAmount.ReadOnly = true;
+            this.txtTaxAmount.Size = new System.Drawing.Size(121, 26);
+            this.txtTaxAmount.TabIndex = 29;
+            this.txtTaxAmount.Text = "0";
+            // 
+            // txtServicePercent
+            // 
+            this.txtServicePercent.Location = new System.Drawing.Point(1246, 121);
+            this.txtServicePercent.Name = "txtServicePercent";
+            this.txtServicePercent.ReadOnly = true;
+            this.txtServicePercent.Size = new System.Drawing.Size(56, 31);
+            this.txtServicePercent.TabIndex = 59;
+            // 
+            // txtTaxPercent
+            // 
+            this.txtTaxPercent.Location = new System.Drawing.Point(1246, 89);
+            this.txtTaxPercent.Name = "txtTaxPercent";
+            this.txtTaxPercent.ReadOnly = true;
+            this.txtTaxPercent.Size = new System.Drawing.Size(56, 26);
+            this.txtTaxPercent.TabIndex = 28;
+            this.txtTaxPercent.Text = "0";
             // 
             // label11
             // 
@@ -179,12 +203,13 @@ namespace NetfixPOS.Sales
             // 
             // btnPendding
             // 
-            this.btnPendding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnPendding.Location = new System.Drawing.Point(1659, 14);
+            this.btnPendding.BackColor = System.Drawing.Color.Aqua;
+            this.btnPendding.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPendding.Location = new System.Drawing.Point(1594, 14);
             this.btnPendding.Name = "btnPendding";
-            this.btnPendding.Size = new System.Drawing.Size(88, 42);
+            this.btnPendding.Size = new System.Drawing.Size(153, 42);
             this.btnPendding.TabIndex = 25;
-            this.btnPendding.Text = "Pending";
+            this.btnPendding.Text = "Pending Save";
             this.btnPendding.UseVisualStyleBackColor = false;
             this.btnPendding.Click += new System.EventHandler(this.btnPendding_Click);
             // 
@@ -209,9 +234,10 @@ namespace NetfixPOS.Sales
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1659, 65);
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(1594, 65);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 42);
+            this.btnSave.Size = new System.Drawing.Size(153, 42);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -265,6 +291,7 @@ namespace NetfixPOS.Sales
             // 
             // cboSalePerson
             // 
+            this.cboSalePerson.Enabled = false;
             this.cboSalePerson.FormattingEnabled = true;
             this.cboSalePerson.Location = new System.Drawing.Point(172, 89);
             this.cboSalePerson.Name = "cboSalePerson";
@@ -529,22 +556,6 @@ namespace NetfixPOS.Sales
             this.kryptonPanel1.Size = new System.Drawing.Size(340, 557);
             this.kryptonPanel1.TabIndex = 5;
             // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(1098, 123);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(142, 29);
-            this.kryptonLabel2.TabIndex = 60;
-            this.kryptonLabel2.Values.Text = "Service Charges";
-            // 
-            // txtRoomService
-            // 
-            this.txtRoomService.Location = new System.Drawing.Point(1246, 121);
-            this.txtRoomService.Name = "txtRoomService";
-            this.txtRoomService.ReadOnly = true;
-            this.txtRoomService.Size = new System.Drawing.Size(56, 31);
-            this.txtRoomService.TabIndex = 59;
-            // 
             // btnAddSinger
             // 
             this.btnAddSinger.Location = new System.Drawing.Point(101, 141);
@@ -679,6 +690,8 @@ namespace NetfixPOS.Sales
             this.dgvSaleItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvSaleItem.Size = new System.Drawing.Size(813, 557);
             this.dgvSaleItem.TabIndex = 6;
+            this.dgvSaleItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellContentClick);
+            this.dgvSaleItem.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleItem_CellValidated);
             // 
             // colSaleDetailId
             // 
@@ -793,14 +806,6 @@ namespace NetfixPOS.Sales
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(1310, 121);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.ReadOnly = true;
-            this.kryptonTextBox1.Size = new System.Drawing.Size(121, 31);
-            this.kryptonTextBox1.TabIndex = 60;
-            // 
             // Sale_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -865,9 +870,9 @@ namespace NetfixPOS.Sales
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPendding;
         private System.Windows.Forms.ComboBox cboCustomer;
-        private System.Windows.Forms.TextBox txtSerPercent;
+        private System.Windows.Forms.TextBox txtTaxPercent;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtServiceAmt;
+        private System.Windows.Forms.TextBox txtTaxAmount;
         private System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBalanceAmount;
@@ -899,7 +904,7 @@ namespace NetfixPOS.Sales
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddSession;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddSinger;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomService;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtServicePercent;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtServiceAmount;
     }
 }

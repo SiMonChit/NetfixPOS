@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:Conversion" ZOrder="4" X="520" Y="210" Height="307" Width="181" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="303" />
     <Shape ID="DesignTable:SelectConversion" ZOrder="3" X="748" Y="210" Height="361" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="357" />
     <Shape ID="DesignTable:StockMaster" ZOrder="2" X="1105" Y="224" Height="424" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="420" />
-    <Shape ID="DesignTable:tbl_GE_AppInfo" ZOrder="1" X="252" Y="277" Height="172" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
+    <Shape ID="DesignTable:tbl_GE_AppInfo" ZOrder="1" X="252" Y="277" Height="227" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

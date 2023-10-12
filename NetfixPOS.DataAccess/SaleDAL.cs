@@ -49,14 +49,12 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("DueAmount", headerRow.DueAmount);
             Command.Parameters.AddWithValue("DeliveryFee", headerRow.DeliveryFee);
             Command.Parameters.AddWithValue("C_tax", headerRow.C_tax);
+            Command.Parameters.AddWithValue("ServiceCharges", headerRow.ServiceCharges);
             Command.Parameters.AddWithValue("IsFOC", headerRow.IsFOC);
             Command.Parameters.AddWithValue("InvoiceStatus", headerRow.InvoiceStatus);
             Command.Parameters.AddWithValue("WaiterName", headerRow.WaiterName);
             Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
             Command.Parameters.AddWithValue("Singer", headerRow.Singer);
-
-           
-            
 
             try
             {
@@ -90,12 +88,6 @@ namespace NetfixPOS.DataAccess
                 }
             }
         }
-
-        public void HeaderUpdate(dsSaleSetup.SaleHeaderRow headerRow)
-        {
-            throw new NotImplementedException();
-        }
-
 
 
         public DataTable Table_ForSale()
@@ -146,7 +138,68 @@ namespace NetfixPOS.DataAccess
 
         public void HeaderUpdate(dsSaleSetup.SaleHeaderRow headerRow, dsSaleSetup.SaleDetailDataTable detail_dt)
         {
-            throw new NotImplementedException();
+            if (Connection.State == ConnectionState.Closed) Connection.Open();
+
+            Transaction = Connection.BeginTransaction();
+
+            Command = new SqlCommand("SaleHeader_Update", Connection, Transaction);
+            Command.CommandType = CommandType.StoredProcedure;
+
+            Command.Parameters.AddWithValue("SaleId", headerRow.SaleId);
+            Command.Parameters.AddWithValue("TableNo", headerRow.TableNo);
+            Command.Parameters.AddWithValue("RoomNo", headerRow.RoomNo);
+            Command.Parameters.AddWithValue("CustomerId", headerRow.CustomerId);
+            Command.Parameters.AddWithValue("UserID", headerRow.UserID);
+            Command.Parameters.AddWithValue("SaleTypeId", headerRow.SaleTypeId);
+            Command.Parameters.AddWithValue("InvNo", headerRow.InvNo);
+            Command.Parameters.AddWithValue("InvDate", headerRow.InvDate);
+            Command.Parameters.AddWithValue("Remark", headerRow.Remark);
+            Command.Parameters.AddWithValue("NetAmount", headerRow.NetAmount);
+            Command.Parameters.AddWithValue("TotalAmount", headerRow.TotalAmount);
+            Command.Parameters.AddWithValue("DiscountAmount", headerRow.DiscountAmount);
+            Command.Parameters.AddWithValue("AdvanceAmount", headerRow.AdvanceAmount);
+            Command.Parameters.AddWithValue("BalanceAmount", headerRow.BalanceAmount);
+            Command.Parameters.AddWithValue("DueAmount", headerRow.DueAmount);
+            Command.Parameters.AddWithValue("DeliveryFee", headerRow.DeliveryFee);
+            Command.Parameters.AddWithValue("C_tax", headerRow.C_tax);
+            Command.Parameters.AddWithValue("ServiceCharges", headerRow.ServiceCharges);
+            Command.Parameters.AddWithValue("IsFOC", headerRow.IsFOC);
+            Command.Parameters.AddWithValue("InvoiceStatus", headerRow.InvoiceStatus);
+            Command.Parameters.AddWithValue("WaiterName", headerRow.WaiterName);
+            Command.Parameters.AddWithValue("PrintDate", headerRow.PrintDate);
+            Command.Parameters.AddWithValue("Singer", headerRow.Singer);
+
+            try
+            {
+                string key = Command.ExecuteScalar().ToString();
+
+                //Room session start
+                if (!string.IsNullOrEmpty(headerRow.RoomNo))
+                {
+                    RoomDAL _rool = new RoomDAL();
+                    _rool.RoomSessionStart(headerRow.RoomNo);
+                }
+
+                //Insert Sale Items
+                if (detail_dt.Rows.Count > 0)
+                {
+                    ItemInsert(key, detail_dt, Connection, Transaction);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open)
+                {
+                    Transaction.Commit();
+                    Connection.Close();
+                }
+            }
         }
 
         public void ItemInsert(string headerKey, dsSaleSetup.SaleDetailDataTable detail_dt, SqlConnection connection, SqlTransaction transaction)

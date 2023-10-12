@@ -1719,6 +1719,8 @@ namespace NetfixPOS.Models {
             
             private global::System.Data.DataColumn columnInvDiscount;
             
+            private global::System.Data.DataColumn columnServiceCharges;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbl_GE_AppInfoDataTable() {
@@ -1810,6 +1812,14 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ServiceChargesColumn {
+                get {
+                    return this.columnServiceCharges;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1845,7 +1855,7 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbl_GE_AppInfoRow Addtbl_GE_AppInfoRow(int General_Id, System.DateTime SaleDate, string ActivateKey, decimal ServiceTax, bool IsActive, int ShopId, decimal InvDiscount) {
+            public tbl_GE_AppInfoRow Addtbl_GE_AppInfoRow(int General_Id, System.DateTime SaleDate, string ActivateKey, decimal ServiceTax, bool IsActive, int ShopId, decimal InvDiscount, decimal ServiceCharges) {
                 tbl_GE_AppInfoRow rowtbl_GE_AppInfoRow = ((tbl_GE_AppInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         General_Id,
@@ -1854,7 +1864,8 @@ namespace NetfixPOS.Models {
                         ServiceTax,
                         IsActive,
                         ShopId,
-                        InvDiscount};
+                        InvDiscount,
+                        ServiceCharges};
                 rowtbl_GE_AppInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbl_GE_AppInfoRow);
                 return rowtbl_GE_AppInfoRow;
@@ -1891,6 +1902,7 @@ namespace NetfixPOS.Models {
                 this.columnIsActive = base.Columns["IsActive"];
                 this.columnShopId = base.Columns["ShopId"];
                 this.columnInvDiscount = base.Columns["InvDiscount"];
+                this.columnServiceCharges = base.Columns["ServiceCharges"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1910,6 +1922,8 @@ namespace NetfixPOS.Models {
                 base.Columns.Add(this.columnShopId);
                 this.columnInvDiscount = new global::System.Data.DataColumn("InvDiscount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInvDiscount);
+                this.columnServiceCharges = new global::System.Data.DataColumn("ServiceCharges", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnServiceCharges);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnGeneral_Id}, true));
                 this.columnGeneral_Id.AllowDBNull = false;
@@ -2842,6 +2856,22 @@ namespace NetfixPOS.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ServiceCharges {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletbl_GE_AppInfo.ServiceChargesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ServiceCharges\' in table \'tbl_GE_AppInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_GE_AppInfo.ServiceChargesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSaleDateNull() {
                 return this.IsNull(this.tabletbl_GE_AppInfo.SaleDateColumn);
             }
@@ -2910,6 +2940,18 @@ namespace NetfixPOS.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetInvDiscountNull() {
                 this[this.tabletbl_GE_AppInfo.InvDiscountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsServiceChargesNull() {
+                return this.IsNull(this.tabletbl_GE_AppInfo.ServiceChargesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetServiceChargesNull() {
+                this[this.tabletbl_GE_AppInfo.ServiceChargesColumn] = global::System.Convert.DBNull;
             }
         }
         
