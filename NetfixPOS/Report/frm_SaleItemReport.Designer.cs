@@ -120,7 +120,7 @@ namespace NetfixPOS.Report
             this.Controls.Add(this.rpv_SaleItem);
             this.Controls.Add(this.panel1);
             this.Name = "frm_SaleItemReport";
-            this.Text = "frm_SaleItemReport";
+            this.Text = "SaleItem Report";
             this.Load += new System.EventHandler(this.frm_SaleItemReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

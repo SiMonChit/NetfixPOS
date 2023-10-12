@@ -78,19 +78,26 @@ namespace NetfixPOS.Sales
 
         private void btnNewVoucher_Click(object sender, EventArgs e)
         {
-            int columnIndex = 2;
-            string TableOrRoomNo = "";
-            if (isTable)
+            try
             {
-                TableOrRoomNo = dgvTable.CurrentRow.Cells[columnIndex].Value.ToString();
-            }
-            else
+                int columnIndex = 2;
+                string TableOrRoomNo = "";
+                if (isTable)
+                {
+                    TableOrRoomNo = dgvTable.CurrentRow.Cells[columnIndex].Value.ToString();
+                }
+                else
+                {
+                    TableOrRoomNo = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
+                }
+                GlobalFunction.WriteLog("Sale POS : NewVoucher Click " + TableOrRoomNo + " Open Voucher");
+                Sale_Transaction sale_Transaction = new Sale_Transaction(TableOrRoomNo, isTable);
+                sale_Transaction.ShowDialog();
+            }catch(Exception ex)
             {
-                TableOrRoomNo = dgvRoom.CurrentRow.Cells[columnIndex].Value.ToString();
+                return;
             }
-            GlobalFunction.WriteLog("Sale POS : NewVoucher Click " + TableOrRoomNo + " Open Voucher");
-            Sale_Transaction sale_Transaction = new Sale_Transaction(TableOrRoomNo, isTable);
-            sale_Transaction.ShowDialog();
+            
         }
 
         private void dgvTable_Click(object sender, EventArgs e)

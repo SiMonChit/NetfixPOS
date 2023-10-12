@@ -29,62 +29,55 @@ namespace NetfixPOS.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.dgvDepartment = new System.Windows.Forms.DataGridView();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtDepartment = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.dgvDepartment = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.colDepartmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel1.SuspendLayout();
+            this.colEdit = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.colDel = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // kryptonPanel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtDepartment);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(757, 93);
-            this.panel1.TabIndex = 2;
-            // 
-            // txtDepartment
-            // 
-            this.txtDepartment.Location = new System.Drawing.Point(180, 36);
-            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(273, 26);
-            this.txtDepartment.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Department Name";
+            this.kryptonPanel1.Controls.Add(this.btnSave);
+            this.kryptonPanel1.Controls.Add(this.txtDepartment);
+            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(3, 24);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Size = new System.Drawing.Size(553, 64);
+            this.kryptonPanel1.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(517, 31);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(332, 22);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 37);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Size = new System.Drawing.Size(90, 25);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Values.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(138, 22);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(161, 23);
+            this.txtDepartment.TabIndex = 1;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(23, 22);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(112, 20);
+            this.kryptonLabel1.TabIndex = 0;
+            this.kryptonLabel1.Values.Text = "Department Name";
             // 
             // dgvDepartment
             // 
@@ -97,75 +90,71 @@ namespace NetfixPOS.Admin
             this.colEdit,
             this.colDel});
             this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDepartment.Location = new System.Drawing.Point(0, 93);
-            this.dgvDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDepartment.Location = new System.Drawing.Point(3, 88);
             this.dgvDepartment.Name = "dgvDepartment";
-            this.dgvDepartment.RowHeadersWidth = 62;
-            this.dgvDepartment.RowTemplate.Height = 28;
-            this.dgvDepartment.Size = new System.Drawing.Size(757, 545);
-            this.dgvDepartment.TabIndex = 4;
+            this.dgvDepartment.Size = new System.Drawing.Size(553, 455);
+            this.dgvDepartment.TabIndex = 1;
             this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
-            this.dgvDepartment.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDepartment_DataBindingComplete);
             // 
             // colDepartmentId
             // 
             this.colDepartmentId.DataPropertyName = "DepartmentId";
-            this.colDepartmentId.HeaderText = "Department";
-            this.colDepartmentId.MinimumWidth = 8;
+            this.colDepartmentId.HeaderText = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
             this.colDepartmentId.Visible = false;
-            this.colDepartmentId.Width = 150;
             // 
             // colDepartmentName
             // 
             this.colDepartmentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDepartmentName.DataPropertyName = "DepartmentName";
-            this.colDepartmentName.HeaderText = "Department";
-            this.colDepartmentName.MinimumWidth = 8;
+            this.colDepartmentName.HeaderText = "Department Name";
             this.colDepartmentName.Name = "colDepartmentName";
+            this.colDepartmentName.ReadOnly = true;
             // 
             // colIsActive
             // 
             this.colIsActive.DataPropertyName = "IsActive";
             this.colIsActive.HeaderText = "IsActive";
-            this.colIsActive.MinimumWidth = 8;
             this.colIsActive.Name = "colIsActive";
             this.colIsActive.Visible = false;
-            this.colIsActive.Width = 150;
             // 
             // colEdit
             // 
             this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEdit.FillWeight = 30F;
+            this.colEdit.FillWeight = 40F;
             this.colEdit.HeaderText = "Edit";
-            this.colEdit.MinimumWidth = 8;
             this.colEdit.Name = "colEdit";
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colEdit.Text = "Edit";
             this.colEdit.UseColumnTextForButtonValue = true;
             // 
             // colDel
             // 
             this.colDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDel.FillWeight = 30F;
+            this.colDel.FillWeight = 40F;
             this.colDel.HeaderText = "Delete";
-            this.colDel.MinimumWidth = 8;
             this.colDel.Name = "colDel";
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             // 
             // Department
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 638);
+            this.ClientSize = new System.Drawing.Size(558, 545);
             this.Controls.Add(this.dgvDepartment);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Controls.Add(this.kryptonPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Department";
+            this.Padding = new System.Windows.Forms.Padding(3, 24, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Department";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,15 +162,15 @@ namespace NetfixPOS.Admin
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtDepartment;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dgvDepartment;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtDepartment;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
-        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEdit;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colDel;
     }
 }

@@ -223,6 +223,7 @@ namespace NetfixPOS.Sales
             tempItemRow.StockId = dgvStock.CurrentRow.Cells["colStockId"].Value.ToString();
             tempItemRow.StockName = dgvStock.CurrentRow.Cells["colStockName"].Value.ToString();
             tempItemRow.SalePrice = Convert.ToDecimal(dgvStock.CurrentRow.Cells["colSellingPrice"].Value);
+            tempItemRow.Discount = 0;
             tempItemRow.Qty = 1;
             tempItemRow.Amount = Convert.ToDecimal(tempItemRow.SalePrice * Convert.ToDecimal(tempItemRow.Qty));
 
@@ -234,12 +235,13 @@ namespace NetfixPOS.Sales
             sale_detail.AddSaleDetailRow(tempItemRow);
             AddToSaleItemView(sale_detail);
         }
+
+
         /// <summary>
         /// // Add Customer Id in combobox correctly
         /// </summary>
         /// <param name="InvoiceStatus"></param>
         /// <returns></returns>
-
         private dsSaleSetup.SaleHeaderRow GetSaleHeaders(string InvoiceStatus)
         {
             dsSaleSetup.SaleHeaderRow headerRow = sale_header.NewSaleHeaderRow();
@@ -302,7 +304,7 @@ namespace NetfixPOS.Sales
                     detail_row.Amount = Convert.ToInt32(row.Cells["colAmount"].Value);
                     detail_row.IsFOC = false;//Convert.ToBoolean(row.Cells["colIsFOC"].Value);
 
-                    detail_row.Discount = 0;
+                    detail_row.Discount = Convert.ToDecimal(row.Cells["colDiscount"].Value);
                     detail_row.CategoryID = 0;
                     detail_row.Serial = 0;
                     detail_row.ConvensionId = "";
@@ -399,8 +401,8 @@ namespace NetfixPOS.Sales
 
                 txtTotalAmount.Text = TotalAmount.ToString();
 
-                txtTaxAmount.Text = ((Convert.ToDecimal(txtTaxPercent.Text) * TotalAmount) / 100).ToString();
-                txtServiceAmount.Text = ((Convert.ToDecimal(txtServicePercent.Text) * TotalAmount) / 100).ToString();
+                txtTaxAmount.Text = ((Convert.ToDecimal(txtTaxPercent.Text) * TotalAmount) / 100).ToString("0.##");
+                txtServiceAmount.Text = ((Convert.ToDecimal(txtServicePercent.Text) * TotalAmount) / 100).ToString("0.##");
             }
         }
 

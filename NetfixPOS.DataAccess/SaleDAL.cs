@@ -61,11 +61,11 @@ namespace NetfixPOS.DataAccess
                 string key = Command.ExecuteScalar().ToString();
 
                 //Room session start
-                if (!string.IsNullOrEmpty(headerRow.RoomNo))
-                {
-                    RoomDAL _rool = new RoomDAL();
-                    _rool.RoomSessionStart(headerRow.RoomNo);
-                }
+                //if (!string.IsNullOrEmpty(headerRow.RoomNo))
+                //{
+                //    RoomDAL _rool = new RoomDAL();
+                //    _rool.RoomSessionStart(headerRow.RoomNo,DateTime.Now, DateTime.Now);
+                //}
 
                 //Insert Sale Items
                 if (detail_dt.Rows.Count > 0)
@@ -174,11 +174,11 @@ namespace NetfixPOS.DataAccess
                 string key = Command.ExecuteScalar().ToString();
 
                 //Room session start
-                if (!string.IsNullOrEmpty(headerRow.RoomNo))
-                {
-                    RoomDAL _rool = new RoomDAL();
-                    _rool.RoomSessionStart(headerRow.RoomNo);
-                }
+                //if (!string.IsNullOrEmpty(headerRow.RoomNo))
+                //{
+                //    RoomDAL _rool = new RoomDAL();
+                //    _rool.RoomSessionStart(headerRow.RoomNo, DateTime.Now, DateTime.Now);
+                //}
 
                 //Insert Sale Items
                 if (detail_dt.Rows.Count > 0)
@@ -211,6 +211,7 @@ namespace NetfixPOS.DataAccess
                 Command.CommandType = CommandType.StoredProcedure;
                 Command.Parameters.AddWithValue("SaleId", detail_row.SaleId);
                 Command.Parameters.AddWithValue("StockId", detail_row.StockId);
+                Command.Parameters.AddWithValue("StockName", detail_row.StockName);
                 Command.Parameters.AddWithValue("CategoryID", detail_row.CategoryID);
                 Command.Parameters.AddWithValue("ConvensionId", detail_row.ConvensionId);
                 Command.Parameters.AddWithValue("Serial", detail_row.Serial);

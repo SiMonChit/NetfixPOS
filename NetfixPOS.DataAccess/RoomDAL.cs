@@ -119,13 +119,17 @@ namespace NetfixPOS.DataAccess
             }
             return dt;
         }
-        public int RoomSessionStart(string RoomNo)
+        public int RoomSessionStart(string RoomNo, DateTime StartTime, DateTime EndTime)
         {
             Command = new SqlCommand(query.RoomSessionStart(), Connection);
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue("RoomNo", RoomNo);
+            Command.Parameters.AddWithValue("IsAvailable", false);
+            Command.Parameters.AddWithValue("StartTime", StartTime);
+            Command.Parameters.AddWithValue("EndTime", EndTime);
             try
             {
+                Connection.Open();
                 return Command.ExecuteNonQuery();
             }
             catch (Exception ex)

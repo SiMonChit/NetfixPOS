@@ -11,10 +11,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace NetfixPOS.Admin
 {
-    public partial class ShopInfo : Form
+    public partial class ShopInfo : MaterialForm
     {
         public ShopInfo()
         {
@@ -134,7 +136,7 @@ namespace NetfixPOS.Admin
                 txtKey.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colActivateKey"].Value.ToString();
                 txtService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceTax"].Value.ToString();
                 txtDiscount.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colInvDiscount"].Value.ToString();
-                txtRoomService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colRoomService"].Value.ToString();
+                txtRoomService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceCharges"].Value.ToString();
                 GlobalFunction.WriteLog("Shop Info " + " Edit Button Click ShopInfo GridView");
                 btnSave.Text = "Update";
             }

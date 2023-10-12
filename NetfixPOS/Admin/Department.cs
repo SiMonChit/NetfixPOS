@@ -10,14 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace NetfixPOS.Admin
 {
-    public partial class Department : Form, IFormBase
+    public partial class Department : MaterialForm, IFormBase
     {
         public Department()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
             _department = new DepartmentController();
             department = new DepartmentModel();
 
@@ -87,5 +94,6 @@ namespace NetfixPOS.Admin
         {
             GlobalFunction.GridView_DataBindingComplete(sender, e);
         }
+
     }
 }

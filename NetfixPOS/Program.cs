@@ -21,7 +21,7 @@ namespace NetfixPOS
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new POS_MainForm());
             Application.Run(new MainForm());
-
+            //Application.Run(new MainFormSkin());
             //Application.Run(new NetfixSplash());
 
             //Application.Run(new SaleDashboard());
