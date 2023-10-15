@@ -1,6 +1,7 @@
 ﻿using NetfixPOS.Controller.Interface;
 using NetfixPOS.DataAccess;
 using NetfixPOS.Models;
+using NetfixPOS.Models.DataSetFile;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -68,6 +69,10 @@ namespace NetfixPOS.Controller
         public DataTable GetStockByCateoryId(int id)
         {
             return _stock.GetStockByCategoryId(id);
+        }
+        public ds_StockMaster.tbl_StockMasterDataTable GetAllStock()
+        {
+            return _stock.GetAllStock();
         }
     }
 }

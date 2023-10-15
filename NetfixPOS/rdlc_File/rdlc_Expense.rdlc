@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ex Description</Value>
+                              <Value>Expense Description</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -88,7 +88,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ex Date</Value>
+                              <Value>Expense Date</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -124,7 +124,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Ex_Description.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -154,7 +156,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Ex_Amount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -184,7 +188,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Ex_Date.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -227,7 +233,7 @@
         </TablixRowHierarchy>
         <DataSetName>dt_Expense</DataSetName>
         <Height>0.5in</Height>
-        <Width>5.84375in</Width>
+        <Width>5.84376in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -238,7 +244,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>5.84375in</Width>
+  <Width>5.84376in</Width>
   <Page>
     <PageHeight>11.69in</PageHeight>
     <PageWidth>8.27in</PageWidth>

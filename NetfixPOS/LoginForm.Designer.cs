@@ -54,18 +54,18 @@ namespace NetfixPOS
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.YellowGreen;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 43);
+            this.panel2.Size = new System.Drawing.Size(513, 66);
             this.panel2.TabIndex = 3;
             // 
             // picNetfix
             // 
             this.picNetfix.Image = ((System.Drawing.Image)(resources.GetObject("picNetfix.Image")));
             this.picNetfix.Location = new System.Drawing.Point(0, 0);
-            this.picNetfix.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picNetfix.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.picNetfix.Name = "picNetfix";
-            this.picNetfix.Size = new System.Drawing.Size(50, 43);
+            this.picNetfix.Size = new System.Drawing.Size(75, 66);
             this.picNetfix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNetfix.TabIndex = 5;
             this.picNetfix.TabStop = false;
@@ -76,10 +76,10 @@ namespace NetfixPOS
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Algerian", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(93, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(140, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 22);
+            this.label3.Size = new System.Drawing.Size(297, 34);
             this.label3.TabIndex = 4;
             this.label3.Text = "Netfix POS System";
             // 
@@ -88,10 +88,10 @@ namespace NetfixPOS
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Pyidaungsu", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(30, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(45, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 24);
+            this.label2.Size = new System.Drawing.Size(96, 35);
             this.label2.TabIndex = 8;
             this.label2.Text = "Password";
             // 
@@ -100,38 +100,38 @@ namespace NetfixPOS
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Pyidaungsu", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(30, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(45, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 24);
+            this.label1.Size = new System.Drawing.Size(108, 35);
             this.label1.TabIndex = 7;
             this.label1.Text = "User Name";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(114, 56);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.txtUserName.Location = new System.Drawing.Point(171, 86);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(6, 12, 6, 12);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(209, 20);
+            this.txtUserName.Size = new System.Drawing.Size(312, 26);
             this.txtUserName.TabIndex = 5;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(114, 80);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.txtPassword.Location = new System.Drawing.Point(171, 123);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 12, 6, 12);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(209, 20);
+            this.txtPassword.Size = new System.Drawing.Size(312, 26);
             this.txtPassword.TabIndex = 6;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Gray;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Location = new System.Drawing.Point(232, 113);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(348, 174);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(91, 34);
+            this.btnClose.Size = new System.Drawing.Size(136, 52);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -141,22 +141,23 @@ namespace NetfixPOS
             // 
             this.btnLogout.BackColor = System.Drawing.Color.LightCoral;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogout.Location = new System.Drawing.Point(133, 113);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogout.Location = new System.Drawing.Point(200, 174);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(91, 34);
+            this.btnLogout.Size = new System.Drawing.Size(136, 52);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Location = new System.Drawing.Point(34, 113);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogin.Location = new System.Drawing.Point(51, 174);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(91, 34);
+            this.btnLogin.Size = new System.Drawing.Size(136, 52);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -168,19 +169,19 @@ namespace NetfixPOS
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Pyidaungsu", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Honeydew;
-            this.label4.Location = new System.Drawing.Point(110, 152);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(165, 234);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 19);
+            this.label4.Size = new System.Drawing.Size(220, 27);
             this.label4.TabIndex = 12;
             this.label4.Text = "Copyright © Netfix Technology";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(342, 176);
+            this.ClientSize = new System.Drawing.Size(513, 271);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogout);
@@ -194,7 +195,7 @@ namespace NetfixPOS
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

@@ -108,7 +108,7 @@ namespace NetfixPOS.Admin
             general.ShopId = id;
             general.SaleDate = dtpSaleDate.Value;
             general.ServiceTax = Convert.ToDecimal(txtService.Text);
-            general.RoomService = Convert.ToDecimal(txtRoomService.Text);
+            general.ServiceCharges = Convert.ToDecimal(txtServiceCharges.Text);
             general.InvDiscount = Convert.ToDecimal(txtDiscount.Text);
 
             switch (btnSave.Text)
@@ -136,7 +136,7 @@ namespace NetfixPOS.Admin
                 txtKey.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colActivateKey"].Value.ToString();
                 txtService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceTax"].Value.ToString();
                 txtDiscount.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colInvDiscount"].Value.ToString();
-                txtRoomService.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceCharges"].Value.ToString();
+                txtServiceCharges.Text = dgvSoftwareInfo.Rows[e.RowIndex].Cells["colServiceCharges"].Value.ToString();
                 GlobalFunction.WriteLog("Shop Info " + " Edit Button Click ShopInfo GridView");
                 btnSave.Text = "Update";
             }

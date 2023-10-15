@@ -19,5 +19,10 @@ namespace NetfixPOS.Query
             query = "UPDATE StockMaster SET Discontinue = 1 WHERE StockId = @StockId";
             return query;
         }
+        public string GetStock()
+        {
+            query = "UPDATE StockMaster SET Discontinue = 1 WHERE StockId = @StockId";
+            return query;
+        }
     }
 }

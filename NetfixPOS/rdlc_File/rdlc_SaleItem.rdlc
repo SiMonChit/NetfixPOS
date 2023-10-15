@@ -256,7 +256,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CategoryName.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -286,7 +288,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!StockName.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -316,7 +320,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Qty.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -346,7 +352,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SalePrice.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -376,7 +384,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Discount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -406,7 +416,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!IsFOC.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -436,7 +448,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Amount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />

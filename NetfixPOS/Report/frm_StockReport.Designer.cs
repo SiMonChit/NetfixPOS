@@ -1,7 +1,7 @@
 ﻿
 namespace NetfixPOS.Report
 {
-    partial class frmDailyAuditReport
+    partial class frm_StockReport
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace NetfixPOS.Report
             this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.rpv_dailyaudit = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rpv_StockReport = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboFilter)).BeginInit();
@@ -54,15 +54,16 @@ namespace NetfixPOS.Report
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderPrimary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(1316, 78);
-            this.kryptonPanel1.TabIndex = 0;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1340, 78);
+            this.kryptonPanel1.TabIndex = 1;
             // 
             // cboFilter
             // 
             this.cboFilter.DropDownWidth = 149;
             this.cboFilter.Items.AddRange(new object[] {
-            "Top 10 Selling Item",
-            "Daily Audit"});
+            "Minimum Balance Stock - 10",
+            "Top 10 selling stock",
+            "All Stock List"});
             this.cboFilter.Location = new System.Drawing.Point(612, 20);
             this.cboFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboFilter.Name = "cboFilter";
@@ -71,7 +72,7 @@ namespace NetfixPOS.Report
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(874, 20);
+            this.btnRefresh.Location = new System.Drawing.Point(874, 18);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(118, 38);
             this.btnRefresh.TabIndex = 4;
@@ -110,25 +111,24 @@ namespace NetfixPOS.Report
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "From Date :";
             // 
-            // rpv_dailyaudit
+            // rpv_StockReport
             // 
-            this.rpv_dailyaudit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rpv_dailyaudit.Location = new System.Drawing.Point(0, 78);
-            this.rpv_dailyaudit.Name = "rpv_dailyaudit";
-            this.rpv_dailyaudit.ServerReport.BearerToken = null;
-            this.rpv_dailyaudit.Size = new System.Drawing.Size(1316, 642);
-            this.rpv_dailyaudit.TabIndex = 1;
+            this.rpv_StockReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rpv_StockReport.Location = new System.Drawing.Point(0, 78);
+            this.rpv_StockReport.Name = "rpv_StockReport";
+            this.rpv_StockReport.ServerReport.BearerToken = null;
+            this.rpv_StockReport.Size = new System.Drawing.Size(1340, 609);
+            this.rpv_StockReport.TabIndex = 2;
             // 
-            // frmDailyAuditReport
+            // frm_StockReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 720);
-            this.Controls.Add(this.rpv_dailyaudit);
+            this.ClientSize = new System.Drawing.Size(1340, 687);
+            this.Controls.Add(this.rpv_StockReport);
             this.Controls.Add(this.kryptonPanel1);
-            this.Name = "frmDailyAuditReport";
-            this.Text = "DailyAuditReport";
-            this.Load += new System.EventHandler(this.frmDailyAuditReport_Load);
+            this.Name = "frm_StockReport";
+            this.Text = "Stock Report";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
@@ -140,12 +140,12 @@ namespace NetfixPOS.Report
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboFilter;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker2;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnRefresh;
-        private Microsoft.Reporting.WinForms.ReportViewer rpv_dailyaudit;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboFilter;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Microsoft.Reporting.WinForms.ReportViewer rpv_StockReport;
     }
 }

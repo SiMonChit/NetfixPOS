@@ -95,6 +95,7 @@ namespace NetfixPOS.Sales
             WaiterDataBind();
             txtTableOrRoom.Text = TableOrRoomNo;
             this.IsTable = IsTable;
+            if (IsTable == false) AddRoomCharges(TableOrRoomNo);
             //ShowForRoomSession(IsTable);
             ShowForRoomSession(true);
             CustomerDataBind();
@@ -216,7 +217,28 @@ namespace NetfixPOS.Sales
                 dgvStock.DataSource = stocks;
             }
         }
+        private void AddRoomCharges(string RoomNo)
+        {
+            RoomController _room = new RoomController();
 
+            dsSaleSetup.SaleDetailRow tempItemRow = sale_detail.NewSaleDetailRow();
+            tempItemRow.SaleDetailId = 0;
+            tempItemRow.StockId = "";
+            tempItemRow.StockName = RoomNo;
+            tempItemRow.SalePrice = _room.GetRoomRow(RoomNo).RoomCharges;
+            tempItemRow.Discount = 0;
+            tempItemRow.Qty = 1;
+            tempItemRow.IsFOC = false;
+            tempItemRow.Amount = _room.GetRoomRow(RoomNo).RoomCharges;
+
+            if (txtTotalAmount.Text == "0") TotalAmount = tempItemRow.Amount;
+            else TotalAmount += tempItemRow.Amount;
+
+            txtTotalAmount.Text = TotalAmount.ToString();
+            txtNetAmount.Text = Convert.ToString(TotalAmount + Convert.ToDecimal(txtTaxAmount.Text));
+            sale_detail.AddSaleDetailRow(tempItemRow);
+            AddToSaleItemView(sale_detail);
+        }
         private void dgvStock_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             dsSaleSetup.SaleDetailRow tempItemRow = sale_detail.NewSaleDetailRow();

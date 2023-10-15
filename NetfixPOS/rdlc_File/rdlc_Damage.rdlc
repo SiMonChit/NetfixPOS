@@ -159,7 +159,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Dmg_Description.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -189,7 +191,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Dmg_Charges.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -220,6 +224,7 @@
                             <TextRun>
                               <Value>=Fields!Dmg_Date.Value</Value>
                               <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
                                 <Format>MM/dd/yyyy</Format>
                               </Style>
                             </TextRun>

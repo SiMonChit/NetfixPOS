@@ -522,6 +522,12 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\LodingPOS.cs" />
+    <Compile Include="Main\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -674,6 +680,12 @@
     <Compile Include="Report\frm_IncomeReport.Designer.cs">
       <DependentUpon>frm_IncomeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\frm_PaymentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_PaymentReport.Designer.cs">
+      <DependentUpon>frm_PaymentReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frm_PurchaseReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -697,6 +709,12 @@
     </Compile>
     <Compile Include="Report\frm_SlipVoucher.Designer.cs">
       <DependentUpon>frm_SlipVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_StockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_StockReport.Designer.cs">
+      <DependentUpon>frm_StockReport.cs</DependentUpon>
     </Compile>
     <Compile Include="rtp_File\rtp_EndOfDay.cs">
       <AutoGen>True</AutoGen>
@@ -795,6 +813,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -881,6 +902,7 @@
     <EmbeddedResource Include="rdlc_File\rdlc_Purchase.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleHeader.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleItem.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_StockMasterReport.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Top10SellingItem.rdlc" />
     <EmbeddedResource Include="rdlc_File\Slip_SaleVoucher.rdlc" />
     <EmbeddedResource Include="Report\frmDailyAuditReport.resx">
@@ -895,6 +917,9 @@
     <EmbeddedResource Include="Report\frm_IncomeReport.resx">
       <DependentUpon>frm_IncomeReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_PaymentReport.resx">
+      <DependentUpon>frm_PaymentReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_PurchaseReport.resx">
       <DependentUpon>frm_PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -906,6 +931,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_SlipVoucher.resx">
       <DependentUpon>frm_SlipVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_StockReport.resx">
+      <DependentUpon>frm_StockReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rtp_File\rtp_EndOfDay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -939,6 +967,7 @@
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleInvoice.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleItem.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_SaleSlip.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_StockMaster.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

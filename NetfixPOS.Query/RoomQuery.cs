@@ -29,13 +29,17 @@ namespace NetfixPOS.Query
         {
             if (id == 0)
             {
-                query = "SELECT * FROM dbo.tbl_Room ORDER BY RoomId";
+                query = "SELECT * FROM dbo.tbl_Room WHERE IsDeleted = 0 ORDER BY RoomId";
             }
             else
             {
-                query = "SELECT * FROM   dbo.tbl_Room WHERE (RoomId = @RoomId) ORDER BY RoomId";
+                query = "SELECT * FROM   dbo.tbl_Room WHERE (RoomId = @RoomId) AND IsDeleted = 0 ORDER BY RoomId";
             }
             return query;
+        }
+        public string SelectByRoomNo()
+        {
+            return query = "SELECT * FROM   dbo.tbl_Room WHERE RoomNo = @RoomNo AND IsDeleted = 0";
         }
         public string RoomSessionStart()
         {

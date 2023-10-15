@@ -63,7 +63,8 @@ namespace NetfixPOS.Admin
                     endofday.VoucherQty = Convert.ToInt32(row.Cells["colVoucherQty"].Value);
                     endofday.VoucherAmount = Convert.ToDecimal(row.Cells["colVoucherAmount"].Value);
                     endofday.eod_Date = dtp_eod_detail.Value;
-                    _endofday.Insert(endofday);
+
+                    _endofday.Insert(endofday,1);
                 }
                 MessageBox.Show("Day end successful ...");
             }

@@ -1,6 +1,7 @@
 ﻿using NetfixPOS.Controller.Interface;
 using NetfixPOS.DataAccess;
 using NetfixPOS.Models;
+using NetfixPOS.Models.DataSetFile;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -62,6 +63,10 @@ namespace NetfixPOS.Controller
         public DataTable GetRoom(int id)
         {
             return _room.GetRoom(id);
+        }
+        public ds_Rooms.tbl_RoomRow GetRoomRow(string RoomNo)
+        {
+            return _room.GetRoomRow(RoomNo);
         }
     }
 }

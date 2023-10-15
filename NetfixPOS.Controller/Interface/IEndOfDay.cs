@@ -9,6 +9,6 @@ namespace NetfixPOS.Controller.Interface
 {
     interface IEndOfDay
     {
-        int Insert(EndOfDayModel emdOfDay);
+        int Insert(EndOfDayModel emdOfDay, int ShopId);
     }
 }

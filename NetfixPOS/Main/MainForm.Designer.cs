@@ -76,6 +76,8 @@ namespace NetfixPOS.Main
             this.rbo_dailysale_report = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_payment_report = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_eod_report = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupTriple15 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnStockReport = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbo_System_utilities = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup4 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple4 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -153,7 +155,7 @@ namespace NetfixPOS.Main
             // 
             // kryptonRibbon1
             // 
-            this.kryptonRibbon1.InDesignHelperMode = false;
+            this.kryptonRibbon1.InDesignHelperMode = true;
             this.kryptonRibbon1.Name = "kryptonRibbon1";
             this.kryptonRibbon1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.kryptonRibbon1.RibbonTabs.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab[] {
@@ -325,7 +327,8 @@ namespace NetfixPOS.Main
             this.kryptonRibbonGroup3.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple3,
             this.kryptonRibbonGroupTriple11,
-            this.kryptonRibbonGroupTriple12});
+            this.kryptonRibbonGroupTriple12,
+            this.kryptonRibbonGroupTriple15});
             this.kryptonRibbonGroup3.TextLine1 = "Report Action";
             // 
             // kryptonRibbonGroupTriple3
@@ -382,14 +385,26 @@ namespace NetfixPOS.Main
             // rbo_dailysale_report
             // 
             this.rbo_dailysale_report.TextLine1 = "Daily Sale";
+            this.rbo_dailysale_report.Click += new System.EventHandler(this.rbo_dailysale_report_Click);
             // 
             // rbo_payment_report
             // 
             this.rbo_payment_report.TextLine1 = "Payment";
+            this.rbo_payment_report.Click += new System.EventHandler(this.rbo_payment_report_Click);
             // 
             // rbo_eod_report
             // 
             this.rbo_eod_report.TextLine1 = "EndOfDay";
+            // 
+            // kryptonRibbonGroupTriple15
+            // 
+            this.kryptonRibbonGroupTriple15.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnStockReport});
+            // 
+            // btnStockReport
+            // 
+            this.btnStockReport.TextLine1 = "Stock";
+            this.btnStockReport.Click += new System.EventHandler(this.btnStockReport_Click);
             // 
             // rbo_System_utilities
             // 
@@ -538,6 +553,7 @@ namespace NetfixPOS.Main
             this.StateActive.Header.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
             this.Text = "Netfix POS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kto_botton_panel)).EndInit();
             this.kto_botton_panel.ResumeLayout(false);
@@ -619,5 +635,7 @@ namespace NetfixPOS.Main
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple14;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton rbo_Singer;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btn_SaleList;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple15;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btnStockReport;
     }
 }

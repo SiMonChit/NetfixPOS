@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Models.DataSetFile;
 using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
@@ -118,6 +119,29 @@ namespace NetfixPOS.DataAccess
                 Connection.Close();
             }
             return dt;
+        }
+        public ds_Rooms.tbl_RoomRow GetRoomRow(string RoomNo)
+        {
+            Command = new SqlCommand(query.SelectByRoomNo(), Connection);
+            Command.CommandType = CommandType.Text;
+            ds_Rooms.tbl_RoomDataTable dt = new ds_Rooms.tbl_RoomDataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("RoomNo", RoomNo);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt[0];
         }
         public int RoomSessionStart(string RoomNo, DateTime StartTime, DateTime EndTime)
         {

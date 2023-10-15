@@ -1,5 +1,6 @@
 ﻿using NetfixPOS.DataAccess.Interface;
 using NetfixPOS.Models;
+using NetfixPOS.Models.DataSetFile;
 using NetfixPOS.Query;
 using System;
 using System.Collections.Generic;
@@ -188,6 +189,35 @@ namespace NetfixPOS.DataAccess
 			}
 
 			return dataTable[0];
+		}
+		public ds_StockMaster.tbl_StockMasterDataTable GetAllStock()
+        {
+			string sqlcmd = "Stock_SelectbyId";
+
+			ds_StockMaster.tbl_StockMasterDataTable dataTable = new ds_StockMaster.tbl_StockMasterDataTable();
+
+			Command = new SqlCommand(sqlcmd, Connection);
+			Command.CommandType = CommandType.StoredProcedure;
+
+			Command.Parameters.AddWithValue("StockId", "");
+
+			try
+			{
+				if (Connection.State == ConnectionState.Closed) Connection.Open();
+				SqlDataAdapter adapter = new SqlDataAdapter(Command);
+
+				adapter.Fill(dataTable);
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				if (Connection.State == ConnectionState.Open) Connection.Close();
+			}
+
+			return dataTable;
 		}
 
 		public dsNewSetup.StockMasterDataTable GetStockList(string stockId)

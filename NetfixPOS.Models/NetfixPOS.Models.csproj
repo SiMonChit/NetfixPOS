@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_Purchase.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetFile\ds_Rooms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_Rooms.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetFile\ds_SaleInvoice.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +108,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_ShopInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFile\ds_StockMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_StockMaster.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetFile\ds_Users.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -227,6 +237,17 @@
     <None Include="DataSetFile\ds_Purchase.xss">
       <DependentUpon>ds_Purchase.xsd</DependentUpon>
     </None>
+    <None Include="DataSetFile\ds_Rooms.xsc">
+      <DependentUpon>ds_Rooms.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFile\ds_Rooms.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_Rooms.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetFile\ds_Rooms.xss">
+      <DependentUpon>ds_Rooms.xsd</DependentUpon>
+    </None>
     <None Include="DataSetFile\ds_SaleInvoice.xsc">
       <DependentUpon>ds_SaleInvoice.xsd</DependentUpon>
     </None>
@@ -270,6 +291,17 @@
     </None>
     <None Include="DataSetFile\ds_ShopInfo.xss">
       <DependentUpon>ds_ShopInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFile\ds_StockMaster.xsc">
+      <DependentUpon>ds_StockMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFile\ds_StockMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_StockMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetFile\ds_StockMaster.xss">
+      <DependentUpon>ds_StockMaster.xsd</DependentUpon>
     </None>
     <None Include="DataSetFile\ds_Users.xsc">
       <DependentUpon>ds_Users.xsd</DependentUpon>

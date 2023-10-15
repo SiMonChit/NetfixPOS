@@ -47,7 +47,18 @@ namespace NetfixPOS.Controller
             }
             return isSuccess;
         }
-
+        public void InsertFromExcel(ds_Purchase.tbl_PurchaseRow purchaseRow)
+        {
+            try
+            {
+                isSuccess = _purchase.InsertFromExcel(purchaseRow);
+                _eventLogs.AddLog("Insert", DateTime.Now, "Purchase Form", "Insert From Excel " + purchaseRow.StockName, "Insert Success");
+            }
+            catch (Exception ex)
+            {
+                _eventLogs.AddLog("Insert", DateTime.Now, "Purchase Form", "Insert From Excel Purchase", ex.Message);
+            }
+        }
         public int Update(ds_Purchase.tbl_PurchaseRow purchaseRow)
         {
             try

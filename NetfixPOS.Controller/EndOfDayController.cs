@@ -19,12 +19,12 @@ namespace NetfixPOS.Controller
             _endofday = new EndOfDayDAL();
             _eventLogs = new EventLogsController();
         }
-        public int Insert(EndOfDayModel emdOfDay)
+        public int Insert(EndOfDayModel emdOfDay, int ShopId)
         {
             int isSuccess = 0;
             try
             {
-                isSuccess = _endofday.Insert(emdOfDay);
+                isSuccess = _endofday.Insert(emdOfDay, ShopId);
                 _eventLogs.AddLog("Insert", DateTime.Now, "EndOfDay Form", "Insert " + emdOfDay.VoucherAmount.ToString() +" User : " + emdOfDay.UserID, " Insert Success");
                 return isSuccess;
             }

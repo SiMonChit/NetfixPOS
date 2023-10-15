@@ -20,11 +20,11 @@ namespace NetfixPOS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new POS_MainForm());
-            Application.Run(new MainForm());
+            //Application.Run(new MainForm());
             //Application.Run(new MainFormSkin());
             //Application.Run(new NetfixSplash());
 
-            //Application.Run(new SaleDashboard());
+            Application.Run(new LoginPage());
         }
     }
 }

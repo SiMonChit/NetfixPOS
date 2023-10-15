@@ -14,6 +14,11 @@ namespace NetfixPOS.Query
             query = "INSERT tbl_Purchase VALUES(@StockId, @StockName, @PurchasePrice, @Qty, @Amount, @Pur_Date, @UserID, 1)";
             return query;
         }
+        public string InsertFromExcel()
+        {
+            query = "INSERT tbl_Purchase VALUES(NULL, @StockName, @PurchasePrice, @Qty, @Amount, @Pur_Date, @UserID, 1)";
+            return query;
+        }
         public string Update()
         {
             query = "UPDATE tbl_Purchase SET StockId = @StockId, StockName = @StockName, PurchasePrice = @PurchasePrice,";

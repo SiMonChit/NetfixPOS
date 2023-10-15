@@ -36,6 +36,7 @@ namespace NetfixPOS.Purchase
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNew = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.trvCategory = new ComponentFactory.Krypton.Toolkit.KryptonTreeView();
             this.dgvStock = new System.Windows.Forms.DataGridView();
@@ -53,7 +54,6 @@ namespace NetfixPOS.Purchase
             this.colUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -137,6 +137,17 @@ namespace NetfixPOS.Purchase
             this.kryptonPanel2.Size = new System.Drawing.Size(1478, 74);
             this.kryptonPanel2.TabIndex = 4;
             // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonLabel1.Location = new System.Drawing.Point(642, 14);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(192, 43);
+            this.kryptonLabel1.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.TabIndex = 1;
+            this.kryptonLabel1.Values.Text = "အဝယ်စာရင်း";
+            // 
             // kryptonDateTimePicker1
             // 
             this.kryptonDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -151,6 +162,7 @@ namespace NetfixPOS.Purchase
             this.trvCategory.Location = new System.Drawing.Point(0, 74);
             this.trvCategory.Name = "trvCategory";
             this.trvCategory.Padding = new System.Windows.Forms.Padding(2);
+            this.trvCategory.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleOrange;
             this.trvCategory.Size = new System.Drawing.Size(166, 549);
             this.trvCategory.TabIndex = 5;
             this.trvCategory.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvCategory_AfterSelect);
@@ -158,6 +170,7 @@ namespace NetfixPOS.Purchase
             // dgvStock
             // 
             this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colStock_Id,
@@ -218,8 +231,10 @@ namespace NetfixPOS.Purchase
             this.dgv_PurchaseItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_PurchaseItem.Location = new System.Drawing.Point(422, 74);
             this.dgv_PurchaseItem.Name = "dgv_PurchaseItem";
+            this.dgv_PurchaseItem.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.dgv_PurchaseItem.RowHeadersWidth = 62;
             this.dgv_PurchaseItem.RowTemplate.Height = 28;
+            this.dgv_PurchaseItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_PurchaseItem.Size = new System.Drawing.Size(1056, 549);
             this.dgv_PurchaseItem.TabIndex = 7;
             this.dgv_PurchaseItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PurchaseItem_CellContentClick);
@@ -316,17 +331,6 @@ namespace NetfixPOS.Purchase
             this.colRemove.Name = "colRemove";
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
-            // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonLabel1.Location = new System.Drawing.Point(642, 14);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(192, 43);
-            this.kryptonLabel1.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.TabIndex = 1;
-            this.kryptonLabel1.Values.Text = "အဝယ်စာရင်း";
             // 
             // frm_Purchase
             // 

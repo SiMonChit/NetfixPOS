@@ -44,6 +44,7 @@ namespace NetfixPOS.Sales
                 //GetShop Name
                 ds_ShopInfo.ShopInfoRow shopinfo = _shop.GetShopName();
                 lblShopName.Text = shopinfo.ShopName;
+                lblUser.Text = GlobalFunction.LoginUser.UserName;
             }
             catch (Exception ex)
             {

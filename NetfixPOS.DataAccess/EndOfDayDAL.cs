@@ -18,7 +18,7 @@ namespace NetfixPOS.DataAccess
         {
             query = new EndOfDayQuery();
         }
-        public int Insert(EndOfDayModel emdOfDay)
+        public int Insert(EndOfDayModel emdOfDay, int ShopId)
         {
             Command = new SqlCommand(query.Insert(), Connection);
             Command.CommandType = CommandType.Text;
@@ -31,6 +31,7 @@ namespace NetfixPOS.DataAccess
                 Command.Parameters.AddWithValue("VoucherQty", emdOfDay.VoucherQty);
                 Command.Parameters.AddWithValue("VoucherAmount", emdOfDay.VoucherAmount);
                 Command.Parameters.AddWithValue("eod_Date", emdOfDay.eod_Date);
+                Command.Parameters.AddWithValue("ShopId", ShopId);
 
                 Connection.Open();
                 returnvalue = Command.ExecuteNonQuery();

@@ -147,7 +147,7 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("General_Id", general.General_Id);
             Command.Parameters.AddWithValue("SaleDate", general.SaleDate);
             Command.Parameters.AddWithValue("ServiceTax", general.ServiceTax);
-            Command.Parameters.AddWithValue("RoomService", general.RoomService);
+            Command.Parameters.AddWithValue("ServiceCharges", general.ServiceCharges);
             Command.Parameters.AddWithValue("InvDiscount", general.InvDiscount);
             try
             {
@@ -176,7 +176,7 @@ namespace NetfixPOS.DataAccess
             Command.Parameters.AddWithValue("ShopId", general.ShopId);
             Command.Parameters.AddWithValue("SaleDate", general.SaleDate);
             Command.Parameters.AddWithValue("ServiceTax", general.ServiceTax);
-            Command.Parameters.AddWithValue("RoomService", general.RoomService);
+            Command.Parameters.AddWithValue("ServiceCharges", general.ServiceCharges);
             Command.Parameters.AddWithValue("InvDiscount", general.InvDiscount);
             try
             {

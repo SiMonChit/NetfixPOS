@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using NetfixPOS.Common;
+using NetfixPOS.Controller;
 using NetfixPOS.Models;
+using NetfixPOS.Models.DataSetFile;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using OfficeOpenXml;
@@ -25,23 +27,20 @@ namespace NetfixPOS.Purchase
         public frm_ImportPurchase()
         {
             InitializeComponent();
+            _purchase = new PurchaseController();
+            purchasetb = new ds_Purchase.tbl_PurchaseDataTable();
         }
         string selectedFolderPath = "";
+        PurchaseController _purchase;
+        ds_Purchase.tbl_PurchaseDataTable purchasetb;
         private List<PurchaseModel> GetPurchaseItems()
         {
-            // Replace this with your data retrieval logic
-            // Return a list of StockItem objects
             List<PurchaseModel> purchaseItems = new List<PurchaseModel>
             {
                 new PurchaseModel { StockName = "ItemName", PurchasePrice = 10.0m, Qty = 5, Amount = 50.0m },
             };
 
             return purchaseItems;
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnCreateExcelFile_Click(object sender, EventArgs e)
@@ -174,10 +173,19 @@ namespace NetfixPOS.Purchase
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            if (dgvPurchaseItem.Rows.Count > 0)
+            foreach (DataGridViewRow row in dgvPurchaseItem.Rows)
             {
-
+                ds_Purchase.tbl_PurchaseRow purchaseRow = purchasetb.Newtbl_PurchaseRow();
+                purchaseRow.StockName = row.Cells[0].Value.ToString();
+                purchaseRow.PurchasePrice = Convert.ToDecimal(row.Cells[1].Value);
+                purchaseRow.Qty = Convert.ToInt32(row.Cells[2].Value);
+                purchaseRow.Amount = Convert.ToDecimal(row.Cells[3].Value);
+                purchaseRow.Pur_Date = DateTime.Now;
+                purchaseRow.UserID = 1;
+                _purchase.InsertFromExcel(purchaseRow);
             }
+            dgvPurchaseItem.DataSource = null;
+            MessageBox.Show("Insert successful", "Purchase ImportExcel", MessageBoxButtons.OK);
         }
         private void CheckValidate()
         {

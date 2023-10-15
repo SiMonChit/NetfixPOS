@@ -9,6 +9,6 @@ namespace NetfixPOS.DataAccess.Interface
 {
     interface IEndOfDay
     {
-        int Insert(EndOfDayModel emdOfDay);
+        int Insert(EndOfDayModel emdOfDay, int ShopId);
     }
 }

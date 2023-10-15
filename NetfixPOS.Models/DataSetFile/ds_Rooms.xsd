@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_Rooms" targetNamespace="http://tempuri.org/ds_Rooms.xsd" xmlns:mstns="http://tempuri.org/ds_Rooms.xsd" xmlns="http://tempuri.org/ds_Rooms.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NetfixPOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NetfixPOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NetfixPOS.Models.Properties.Settings.GlobalReference.Default.NetfixPOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_Rooms" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_Rooms" msprop:Generator_UserDSName="ds_Rooms">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_Room" msprop:Generator_TableClassName="tbl_RoomDataTable" msprop:Generator_TableVarName="tabletbl_Room" msprop:Generator_TablePropName="tbl_Room" msprop:Generator_RowDeletingName="tbl_RoomRowDeleting" msprop:Generator_RowChangingName="tbl_RoomRowChanging" msprop:Generator_RowEvHandlerName="tbl_RoomRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_RoomRowDeleted" msprop:Generator_UserTableName="tbl_Room" msprop:Generator_RowChangedName="tbl_RoomRowChanged" msprop:Generator_RowEvArgName="tbl_RoomRowChangeEvent" msprop:Generator_RowClassName="tbl_RoomRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoomId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRoomId" msprop:Generator_ColumnPropNameInRow="RoomId" msprop:Generator_ColumnPropNameInTable="RoomIdColumn" msprop:Generator_UserColumnName="RoomId" type="xs:int" />
+              <xs:element name="RoomNo" msprop:Generator_ColumnVarNameInTable="columnRoomNo" msprop:Generator_ColumnPropNameInRow="RoomNo" msprop:Generator_ColumnPropNameInTable="RoomNoColumn" msprop:Generator_UserColumnName="RoomNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoomName" msprop:Generator_ColumnVarNameInTable="columnRoomName" msprop:Generator_ColumnPropNameInRow="RoomName" msprop:Generator_ColumnPropNameInTable="RoomNameColumn" msprop:Generator_UserColumnName="RoomName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyId" msprop:Generator_ColumnVarNameInTable="columnCompanyId" msprop:Generator_ColumnPropNameInRow="CompanyId" msprop:Generator_ColumnPropNameInTable="CompanyIdColumn" msprop:Generator_UserColumnName="CompanyId" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsAvailable" msprop:Generator_ColumnVarNameInTable="columnIsAvailable" msprop:Generator_ColumnPropNameInRow="IsAvailable" msprop:Generator_ColumnPropNameInTable="IsAvailableColumn" msprop:Generator_UserColumnName="IsAvailable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsDefault" msprop:Generator_ColumnVarNameInTable="columnIsDefault" msprop:Generator_ColumnPropNameInRow="IsDefault" msprop:Generator_ColumnPropNameInTable="IsDefaultColumn" msprop:Generator_UserColumnName="IsDefault" type="xs:boolean" minOccurs="0" />
+              <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndTime" msprop:Generator_ColumnVarNameInTable="columnEndTime" msprop:Generator_ColumnPropNameInRow="EndTime" msprop:Generator_ColumnPropNameInTable="EndTimeColumn" msprop:Generator_UserColumnName="EndTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RoomCharges" msprop:Generator_ColumnVarNameInTable="columnRoomCharges" msprop:Generator_ColumnPropNameInRow="RoomCharges" msprop:Generator_ColumnPropNameInTable="RoomChargesColumn" msprop:Generator_UserColumnName="RoomCharges" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Room" />
+      <xs:field xpath="mstns:RoomId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

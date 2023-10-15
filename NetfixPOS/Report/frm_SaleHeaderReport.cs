@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace NetfixPOS.Report
 {
-    public partial class frm_SaleHeaderReport : Form
+    public partial class frm_SaleHeaderReport : KryptonForm
     {
         public frm_SaleHeaderReport()
         {

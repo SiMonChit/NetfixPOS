@@ -1,4 +1,5 @@
-﻿using NetfixPOS.Controller;
+﻿using NetfixPOS.Common;
+using NetfixPOS.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,16 @@ namespace NetfixPOS.Main
         public LodingPOS()
         {
             _shop = new ShopController();
+            IsLogin();
         }
         ShopController _shop;
+        private void IsLogin()
+        {
+            if(GlobalFunction.LoginUser == null)
+            {
+                LoginPage loginPage = new LoginPage();
+                loginPage.Show();
+            }
+        }
     }
 }

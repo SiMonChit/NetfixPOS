@@ -231,5 +231,29 @@ namespace NetfixPOS.Main
         {
             openChildForm(new frm_SaleList());
         }
+
+        private void rbo_dailysale_report_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDailyAuditReport());
+        }
+
+        private void btnStockReport_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_StockReport());
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (GlobalFunction.LoginUser != null)
+            {
+                _user.UsersLogout(GlobalFunction.LoginUser.UserID);
+            }
+            Application.Exit();
+        }
+
+        private void rbo_payment_report_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_PaymentReport());
+        }
     }
 }

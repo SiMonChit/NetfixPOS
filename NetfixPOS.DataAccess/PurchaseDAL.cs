@@ -71,6 +71,32 @@ namespace NetfixPOS.DataAccess
             }
         }
 
+        public int InsertFromExcel(ds_Purchase.tbl_PurchaseRow purchaseRow)
+        {
+            Command = new SqlCommand(query.InsertFromExcel(), Connection);
+            Command.CommandType = CommandType.Text;
+
+            try
+            {
+                Command.Parameters.AddWithValue("StockName", purchaseRow.StockName);
+                Command.Parameters.AddWithValue("PurchasePrice", purchaseRow.PurchasePrice);
+                Command.Parameters.AddWithValue("Qty", purchaseRow.Qty);
+                Command.Parameters.AddWithValue("Amount", purchaseRow.Amount);
+                Command.Parameters.AddWithValue("Pur_Date", purchaseRow.Pur_Date);
+                Command.Parameters.AddWithValue("UserID", purchaseRow.UserID);
+                Connection.Open();
+                return Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open)
+                    Connection.Close();
+            }
+        }
         public int Update(ds_Purchase.tbl_PurchaseRow purchaseRow)
         {
             Command = new SqlCommand(query.Update(), Connection);

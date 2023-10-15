@@ -178,6 +178,7 @@
                             <TextRun>
                               <Value>=Fields!ShopName.Value</Value>
                               <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -215,6 +216,7 @@
                             <TextRun>
                               <Value>=Fields!SalePrice.Value</Value>
                               <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -254,6 +256,7 @@
                             <TextRun>
                               <Value>=Fields!Qty.Value</Value>
                               <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -293,6 +296,7 @@
                             <TextRun>
                               <Value>=Fields!Amount.Value</Value>
                               <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>

@@ -12,6 +12,7 @@ namespace NetfixPOS.Query
         public string Insert()
         {
             query = "INSERT tbl_GE_EndOfDate VALUES(@UserID, @eod_desc, @VoucherQty, @VoucherAmount, @eod_Date, 1)";
+            query += "UPDATE tbl_GE_AppInfo SET SaleDate = GETDATE() WHERE ShopId = @ShopId";
             return query;
         }
         public string IsEndOfDay()

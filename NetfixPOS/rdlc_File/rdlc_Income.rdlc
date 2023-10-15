@@ -167,7 +167,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!In_Description.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -197,7 +199,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!In_Amount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -229,7 +233,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!In_Date.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -261,7 +267,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!UserName.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>

@@ -421,7 +421,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!InvNo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -451,7 +453,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TableNo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -481,7 +485,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!RoomNo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -511,7 +517,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Remark.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -541,7 +549,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TotalAmount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -571,7 +581,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DiscountAmount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -601,7 +613,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DeliveryFee.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -631,7 +645,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!C_tax.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -661,7 +677,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!IsFOC.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -691,7 +709,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!AdvanceAmount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -721,7 +741,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!InvDate.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -751,7 +773,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!PrintDate.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />

@@ -241,7 +241,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!LogType.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -271,7 +273,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!LogDateTime.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -303,7 +307,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Source.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -333,7 +339,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!LogMessage.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -363,7 +371,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ErrMessage.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -393,7 +403,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!LocalIP.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>pyidaungsu</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>

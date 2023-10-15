@@ -31,6 +31,7 @@ namespace NetfixPOS.Report
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ds_PurchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnRefresh = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -38,11 +39,15 @@ namespace NetfixPOS.Report
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.rpv_Purchase = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ds_PurchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ds_PurchaseBindingSource
+            // 
+            this.ds_PurchaseBindingSource.DataMember = "tbl_Purchase";
+            this.ds_PurchaseBindingSource.DataSource = typeof(NetfixPOS.Models.DataSetFile.ds_Purchase);
             // 
             // kryptonPanel1
             // 
@@ -60,9 +65,9 @@ namespace NetfixPOS.Report
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(596, 29);
+            this.btnRefresh.Location = new System.Drawing.Point(596, 27);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(114, 33);
+            this.btnRefresh.Size = new System.Drawing.Size(114, 37);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Values.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -112,11 +117,6 @@ namespace NetfixPOS.Report
             this.rpv_Purchase.Size = new System.Drawing.Size(1239, 585);
             this.rpv_Purchase.TabIndex = 5;
             // 
-            // ds_PurchaseBindingSource
-            // 
-            this.ds_PurchaseBindingSource.DataMember = "tbl_Purchase";
-            this.ds_PurchaseBindingSource.DataSource = typeof(NetfixPOS.Models.DataSetFile.ds_Purchase);
-            // 
             // frm_PurchaseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -127,10 +127,10 @@ namespace NetfixPOS.Report
             this.Name = "frm_PurchaseReport";
             this.Text = "Purchase Report";
             this.Load += new System.EventHandler(this.frm_PurchaseReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_PurchaseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
