@@ -29,11 +29,14 @@ namespace NetfixPOS.DataAccess
         public DataControllerBase()
         {
             // Create DbConnection object
-            this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MainDB"].ConnectionString);
+            //LocalDB
+            this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MainServerDB"].ConnectionString);
+            //this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalDB"].ConnectionString);
+
         }
 
         //Transaction Method
-        
+
         #region Protected Properties
 
         protected SqlCommand Command

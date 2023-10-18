@@ -30,7 +30,7 @@ namespace NetfixPOS.Sales
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgvSaleHeaderList.AutoGenerateColumns = false;
-            dgvSaleHeaderList.DataSource = _sale.SaleHeaderSelectByDate(dtp_FromDate.Value, dtp_ToDate.Value);
+            dgvSaleHeaderList.DataSource = _sale.SaleHeaderSelectByDate(dtp_FromDate.Value, dtp_ToDate.Value,"ByDate");
         }
 
         private void dgvSaleHeaderList_CellClick(object sender, DataGridViewCellEventArgs e)

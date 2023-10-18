@@ -17,7 +17,7 @@ namespace NetfixPOS.Query
         public string SaleHeaderSelectByDate()
         {
             query = "SELECT SaleHeader.*, UserName FROM SaleHeader INNER JOIN Users ON Users.UserID = SaleHeader.UserID";
-            query += "WHERE CAST(InvDate AS DATE) BETWEEN CAST(@fromDate AS DATE) AND  CAST(@toDate AS DATE) AND SaleHeader.IsActive = 1";
+            query += " WHERE CAST(InvDate AS DATE) BETWEEN CAST(@fromDate AS DATE) AND  CAST(@toDate AS DATE) AND SaleHeader.IsActive = 1";
             return query;
         }
 
