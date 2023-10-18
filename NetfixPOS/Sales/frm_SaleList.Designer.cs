@@ -74,7 +74,7 @@ namespace NetfixPOS.Sales
             // btnRefresh
             // 
             this.btnRefresh.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Cluster;
-            this.btnRefresh.Location = new System.Drawing.Point(619, 28);
+            this.btnRefresh.Location = new System.Drawing.Point(619, 26);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(112, 41);
             this.btnRefresh.TabIndex = 4;

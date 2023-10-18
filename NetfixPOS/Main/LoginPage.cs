@@ -51,7 +51,7 @@ namespace NetfixPOS.Main
                 {
                     GlobalFunction.LoginUser = _user.UsersLogin(cboUsers.Text, txtPassword.Text);
                     GlobalFunction.LoginUser_Permission = _permission.GetPermission(GlobalFunction.LoginUser.UserID);
-                    app_check.Check_IsRegister();
+                    //app_check.Check_IsRegister();
                     GlobalFunction.appInfo = _generate.GetAppInfo();
                     MainForm mainForm = new MainForm();
                     MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK);
@@ -65,6 +65,11 @@ namespace NetfixPOS.Main
                 }
 
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

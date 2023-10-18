@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsWeeklySale" targetNamespace="http://tempuri.org/dsWeeklySale.xsd" xmlns:mstns="http://tempuri.org/dsWeeklySale.xsd" xmlns="http://tempuri.org/dsWeeklySale.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsWeeklySale" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsWeeklySale" msprop:Generator_UserDSName="dsWeeklySale">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_Weekly" msprop:Generator_TableClassName="dt_WeeklyDataTable" msprop:Generator_TableVarName="tabledt_Weekly" msprop:Generator_TablePropName="dt_Weekly" msprop:Generator_RowDeletingName="dt_WeeklyRowDeleting" msprop:Generator_RowChangingName="dt_WeeklyRowChanging" msprop:Generator_RowEvHandlerName="dt_WeeklyRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_WeeklyRowDeleted" msprop:Generator_UserTableName="dt_Weekly" msprop:Generator_RowChangedName="dt_WeeklyRowChanged" msprop:Generator_RowEvArgName="dt_WeeklyRowChangeEvent" msprop:Generator_RowClassName="dt_WeeklyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DName" msprop:Generator_ColumnVarNameInTable="columnDName" msprop:Generator_ColumnPropNameInRow="DName" msprop:Generator_ColumnPropNameInTable="DNameColumn" msprop:Generator_UserColumnName="DName" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmount" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" msprop:Generator_UserColumnName="NetAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TransactionCount" msprop:Generator_ColumnVarNameInTable="columnTransactionCount" msprop:Generator_ColumnPropNameInRow="TransactionCount" msprop:Generator_ColumnPropNameInTable="TransactionCountColumn" msprop:Generator_UserColumnName="TransactionCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

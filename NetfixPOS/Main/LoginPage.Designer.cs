@@ -39,6 +39,7 @@ namespace NetfixPOS.Main
             this.txtPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.chkShowPassword = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.btnClose = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -133,12 +134,22 @@ namespace NetfixPOS.Main
             this.chkShowPassword.TabIndex = 7;
             this.chkShowPassword.Values.Text = "Show Password";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(548, 181);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(103, 43);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Values.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(706, 283);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.chkShowPassword);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -147,7 +158,7 @@ namespace NetfixPOS.Main
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.TabOneNote;
             this.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonAlternate;
             this.HeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
@@ -179,5 +190,6 @@ namespace NetfixPOS.Main
         private ComponentFactory.Krypton.Toolkit.KryptonCheckBox chkShowPassword;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnClose;
     }
 }
