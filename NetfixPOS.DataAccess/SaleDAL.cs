@@ -392,7 +392,36 @@ namespace NetfixPOS.DataAccess
             return dt;
         }
 
-        public DataTable SaleHeaderSelectByDate(DateTime fromDate, DateTime toDate)
+        #region SaleHeader Select
+        public DataTable SaleHeaderSelectByDate(DateTime fromDate, DateTime toDate, string reportby)
+        {
+            if (reportby == "ByDate")
+            {
+                Command = new SqlCommand(query.SaleHeaderSelectByDate(), Connection);
+            }
+            
+            Command.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("fromDate", fromDate);
+                Command.Parameters.AddWithValue("toDate", toDate);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+        public DataTable SaleHeaderSelectByWeelky(DateTime fromDate, DateTime toDate)
         {
             Command = new SqlCommand("SaleHeader_SelectByDate", Connection);
             Command.CommandType = CommandType.StoredProcedure;
@@ -416,6 +445,55 @@ namespace NetfixPOS.DataAccess
             }
             return dt;
         }
+        public DataTable SaleHeaderSelectByMonthly(DateTime fromDate, DateTime toDate)
+        {
+            Command = new SqlCommand("SaleHeader_SelectByDate", Connection);
+            Command.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("fromDate", fromDate);
+                Command.Parameters.AddWithValue("toDate", toDate);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+        public DataTable SaleHeaderSelectByYearly(DateTime fromDate, DateTime toDate)
+        {
+            Command = new SqlCommand("SaleHeader_SelectByDate", Connection);
+            Command.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            try
+            {
+                Command.Parameters.AddWithValue("fromDate", fromDate);
+                Command.Parameters.AddWithValue("toDate", toDate);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+        #endregion
 
         public ds_SaleSlip.tbl_SaleSlipDataTable GetSaleSlip(string saleid)
         {

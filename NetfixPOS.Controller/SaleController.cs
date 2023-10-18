@@ -97,9 +97,9 @@ namespace NetfixPOS.Controller
             return _sale.SaleDetailSelectByHeaderId(headerId);
         }
 
-        public DataTable SaleHeaderSelectByDate(DateTime fromDate, DateTime toDate)
+        public DataTable SaleHeaderSelectByDate(DateTime fromDate, DateTime toDate, string byreport)
         {
-            return _sale.SaleHeaderSelectByDate(fromDate, toDate);
+            return _sale.SaleHeaderSelectByDate(fromDate, toDate, byreport);
         }
         /// <summary>
         /// Add By Nay to get Sale Invoice Detail for Slip

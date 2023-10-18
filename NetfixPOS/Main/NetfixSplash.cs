@@ -32,8 +32,21 @@ namespace NetfixPOS.Main
                     progress.Report(progressReport);
                     Thread.Sleep(10);
                 }
+                // When the progress reaches 100%, hide ProcessPage and show LoginPage
+                if (progressReport.PercentComplete >= 100)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        // Hide the ProcessPage (assuming ProcessPage is a control on your form)
+                        this.Hide();
+
+                        // Show the LoginPage (assuming LoginPage is a control on your form)
+                        //LoginPage.Show();
+                    }));
+                }
 
             });
+            
         }
 
         private async void NetfixSplash_Load(object sender, EventArgs e)

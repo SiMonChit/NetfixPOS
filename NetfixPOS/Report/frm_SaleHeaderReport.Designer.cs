@@ -36,12 +36,17 @@ namespace NetfixPOS.Report
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.rpv_SaleHeader = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cboFilter = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboFilter)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.kryptonLabel1);
+            this.panel1.Controls.Add(this.cboFilter);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -51,23 +56,22 @@ namespace NetfixPOS.Report
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderPrimary;
-            this.panel1.Size = new System.Drawing.Size(1200, 74);
+            this.panel1.Size = new System.Drawing.Size(1419, 74);
             this.panel1.TabIndex = 3;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(602, 23);
+            this.btnRefresh.Location = new System.Drawing.Point(872, 22);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(116, 37);
             this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Refresh";
-            //this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Values.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(298, 24);
+            this.label2.Location = new System.Drawing.Point(621, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 29);
             this.label2.TabIndex = 3;
@@ -75,7 +79,7 @@ namespace NetfixPOS.Report
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(20, 22);
+            this.label1.Location = new System.Drawing.Point(343, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 2;
@@ -84,7 +88,7 @@ namespace NetfixPOS.Report
             // dtpToDate
             // 
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToDate.Location = new System.Drawing.Point(375, 26);
+            this.dtpToDate.Location = new System.Drawing.Point(698, 26);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(148, 26);
             this.dtpToDate.TabIndex = 1;
@@ -92,7 +96,7 @@ namespace NetfixPOS.Report
             // dtpFromDate
             // 
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(125, 24);
+            this.dtpFromDate.Location = new System.Drawing.Point(448, 26);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(148, 26);
             this.dtpFromDate.TabIndex = 0;
@@ -104,14 +108,35 @@ namespace NetfixPOS.Report
             this.rpv_SaleHeader.Location = new System.Drawing.Point(0, 74);
             this.rpv_SaleHeader.Name = "rpv_SaleHeader";
             this.rpv_SaleHeader.ServerReport.BearerToken = null;
-            this.rpv_SaleHeader.Size = new System.Drawing.Size(1200, 618);
+            this.rpv_SaleHeader.Size = new System.Drawing.Size(1419, 618);
             this.rpv_SaleHeader.TabIndex = 4;
+            // 
+            // cboFilter
+            // 
+            this.cboFilter.DropDownWidth = 220;
+            this.cboFilter.Items.AddRange(new object[] {
+            "All SaleInvoice (By Date)",
+            "Weekly SaleInvoice",
+            "Monthly SaleInvoice",
+            "Yearly SaleInvoice"});
+            this.cboFilter.Location = new System.Drawing.Point(110, 26);
+            this.cboFilter.Name = "cboFilter";
+            this.cboFilter.Size = new System.Drawing.Size(220, 29);
+            this.cboFilter.TabIndex = 5;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(55, 26);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(53, 29);
+            this.kryptonLabel1.TabIndex = 6;
+            this.kryptonLabel1.Values.Text = "Filter";
             // 
             // frm_SaleHeaderReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1419, 692);
             this.Controls.Add(this.rpv_SaleHeader);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -121,6 +146,7 @@ namespace NetfixPOS.Report
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboFilter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +160,7 @@ namespace NetfixPOS.Report
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private Microsoft.Reporting.WinForms.ReportViewer rpv_SaleHeader;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboFilter;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }

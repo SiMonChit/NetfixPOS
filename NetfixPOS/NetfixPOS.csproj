@@ -12,6 +12,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,11 +31,8 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -904,6 +904,7 @@
     <EmbeddedResource Include="rdlc_File\rdlc_SaleItem.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_StockMasterReport.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Top10SellingItem.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_WeeklySaleInvoice.rdlc" />
     <EmbeddedResource Include="rdlc_File\Slip_SaleVoucher.rdlc" />
     <EmbeddedResource Include="Report\frmDailyAuditReport.resx">
       <DependentUpon>frmDailyAuditReport.cs</DependentUpon>
@@ -1018,6 +1019,13 @@
     <Content Include="ImageFile\unit.ico" />
     <Content Include="ImageFile\user.ico" />
     <Content Include="KeyFile\NetfixKeyFile.txt" />
+    <Content Include="POSDB\NetfixPOS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="POSDB\NetfixPOS_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>NetfixPOS.mdf</DependentUpon>
+    </Content>
     <Content Include="pos_logo_icon.ico" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />

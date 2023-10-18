@@ -14,6 +14,29 @@ namespace NetfixPOS.Query
             query = "SELECT * FROM SaleHeader WHERE SaleId = @SaleId AND IsActive=1";
             return query;
         }
+        public string SaleHeaderSelectByDate()
+        {
+            query = "SELECT SaleHeader.*, UserName FROM SaleHeader INNER JOIN Users ON Users.UserID = SaleHeader.UserID";
+            query += "WHERE CAST(InvDate AS DATE) BETWEEN CAST(@fromDate AS DATE) AND  CAST(@toDate AS DATE) AND SaleHeader.IsActive = 1";
+            return query;
+        }
+
+        //column SHours, NetAmount, TransactionCount
+        public string SaleHeaderSelectByHours()
+        {
+            query = "SELECT  RIGHT('00' + CONVERT(VARCHAR, DATEPART(HOUR, InvDate)), 2) + ':00' AS SHours, SUM(NetAmount) AS NetAmount,COUNT(*) AS TransactionCount";
+            query += " FROM SaleHeader A WHERE CAST(A.InvDate AS DATETIME) BETWEEN CAST(@FromDate AS DATE) AND CAST(@ToDate AS DATE)";
+            query += " GROUP BY DATEPART(HOUR, InvDate)";
+            return query;
+        }
+        public string SaleHeaderSelectByWeelky()
+        {
+            query = "SET DATEFIRST 7;";
+            query += "SELECT CASE DATEPART(WEEKDAY,InvDate) WHEN 2 THEN 'Monday' WHEN 3 THEN 'Tuesday' WHEN 4 THEN 'Wednesday' WHEN 5 THEN 'Thursday' WHEN 6 THEN 'Friday' WHEN 7 THEN 'Saturday' WHEN 1 THEN 'Sunday' END as DName,";
+            query += "SUM(NetAmount) AS NetAmount, COUNT(*) AS TransactionCount FROM SaleHeader S WHERE CAST(InvDate AS DATE) BETWEEN CAST(@FromDate AS DATE) AND CAST(@ToDate AS DATE) AND IsActive = 1 ";
+            query += "GROUP BY  DATEPART(WEEKDAY, InvDate) ORDER BY DATEPART(WEEKDAY, InvDate) ASC;";
+            return query;
+        }
         public string SelectSaleItem()
         {
             query = "SELECT * FROM SaleDetail WHERE SaleId = @SaleId AND IsActive=1";
