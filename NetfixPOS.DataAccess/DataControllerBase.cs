@@ -30,8 +30,8 @@ namespace NetfixPOS.DataAccess
         {
             // Create DbConnection object
             //LocalDB
-            this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MainServerDB"].ConnectionString);
-            //this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalDB"].ConnectionString);
+            //this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MainServerDB"].ConnectionString);
+            this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalDB"].ConnectionString);
 
         }
 

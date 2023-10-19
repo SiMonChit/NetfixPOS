@@ -899,6 +899,7 @@
     <EmbeddedResource Include="rdlc_File\rdlc_EventLogs.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Expense.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Income.rdlc" />
+    <EmbeddedResource Include="rdlc_File\rdlc_MonthlySaleInvoice.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_Purchase.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleHeader.rdlc" />
     <EmbeddedResource Include="rdlc_File\rdlc_SaleItem.rdlc" />
@@ -959,6 +960,8 @@
       <DependentUpon>TouchPOS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.dsMonthlySale.datasource" />
+    <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.dsWeeklySale.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_Damage.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EndOfDayDetail.datasource" />
     <None Include="Properties\DataSources\NetfixPOS.Models.DataSetFile.ds_EventLogs.datasource" />

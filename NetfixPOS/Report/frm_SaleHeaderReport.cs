@@ -36,13 +36,29 @@ namespace NetfixPOS.Report
             }
             else if(cboFilter.SelectedIndex == 1)//Weekly SaleInvoice
             {
-                DataTable dt = _sale.SaleHeaderSelectByDate(dtpFromDate.Value, dtpToDate.Value, "ByDate");
+                DataTable dt = _sale.SaleHeaderSelectByDate(dtpFromDate.Value, dtpToDate.Value,"ByWeekly");
+                ReportDataSource rds = new ReportDataSource("dsWeekly", dt);
+                string path = Path.GetDirectoryName(Application.ExecutablePath);
+                reportPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\rdlc_File\rdlc_WeeklySaleInvoice.rdlc";
+                BindToReport(rds, reportPath);
+            }
+            else if (cboFilter.SelectedIndex == 2)//Monthly SaleInvoice
+            {
+                DataTable dt = _sale.SaleHeaderSelectByDate(dtpFromDate.Value, dtpToDate.Value, "ByMonthly");
+                ReportDataSource rds = new ReportDataSource("dsMonthly", dt);
+                string path = Path.GetDirectoryName(Application.ExecutablePath);
+                reportPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\rdlc_File\rdlc_MonthlySaleInvoice.rdlc";
+                BindToReport(rds, reportPath);
+            }
+            else if (cboFilter.SelectedIndex == 3)//Yearly SaleInvoice
+            {
+                DataTable dt = _sale.SaleHeaderSelectByDate(dtpFromDate.Value, dtpToDate.Value, "ByYearly");
                 ReportDataSource rds = new ReportDataSource("dt_saleheader", dt);
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 reportPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\rdlc_File\rdlc_WeeklySaleInvoice.rdlc";
                 BindToReport(rds, reportPath);
             }
-            
+
 
         }
         private void BindToReport(ReportDataSource rds, string reportPath)

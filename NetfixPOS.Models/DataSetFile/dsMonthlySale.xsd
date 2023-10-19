@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMonthlySale" targetNamespace="http://tempuri.org/dsMonthlySale.xsd" xmlns:mstns="http://tempuri.org/dsMonthlySale.xsd" xmlns="http://tempuri.org/dsMonthlySale.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMonthlySale" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMonthlySale" msprop:Generator_UserDSName="dsMonthlySale">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_Monthly" msprop:Generator_TableClassName="dt_MonthlyDataTable" msprop:Generator_TableVarName="tabledt_Monthly" msprop:Generator_TablePropName="dt_Monthly" msprop:Generator_RowDeletingName="dt_MonthlyRowDeleting" msprop:Generator_RowChangingName="dt_MonthlyRowChanging" msprop:Generator_RowEvHandlerName="dt_MonthlyRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_MonthlyRowDeleted" msprop:Generator_UserTableName="dt_Monthly" msprop:Generator_RowChangedName="dt_MonthlyRowChanged" msprop:Generator_RowEvArgName="dt_MonthlyRowChangeEvent" msprop:Generator_RowClassName="dt_MonthlyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DName" msprop:Generator_ColumnVarNameInTable="columnDName" msprop:Generator_ColumnPropNameInRow="DName" msprop:Generator_ColumnPropNameInTable="DNameColumn" msprop:Generator_UserColumnName="DName" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmount" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" msprop:Generator_UserColumnName="NetAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TransactionCount" msprop:Generator_ColumnVarNameInTable="columnTransactionCount" msprop:Generator_ColumnPropNameInRow="TransactionCount" msprop:Generator_ColumnPropNameInTable="TransactionCountColumn" msprop:Generator_UserColumnName="TransactionCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

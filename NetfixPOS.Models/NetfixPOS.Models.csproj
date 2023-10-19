@@ -49,6 +49,11 @@
     <Compile Include="CurrencyModel.cs" />
     <Compile Include="CustomerModel.cs" />
     <Compile Include="DamageModel.cs" />
+    <Compile Include="DataSetFile\dsMonthlySale.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMonthlySale.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetFile\dsWeeklySale.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +170,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSetFile\dsMonthlySale.xsc">
+      <DependentUpon>dsMonthlySale.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFile\dsMonthlySale.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMonthlySale.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetFile\dsMonthlySale.xss">
+      <DependentUpon>dsMonthlySale.xsd</DependentUpon>
+    </None>
     <None Include="DataSetFile\dsWeeklySale.xsc">
       <DependentUpon>dsWeeklySale.xsd</DependentUpon>
     </None>

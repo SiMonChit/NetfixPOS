@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.64583in</Width>
+              <Width>1.45833in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.70833in</Width>
+              <Width>1.59722in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.54167in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -28,8 +28,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Day Name</Value>
-                              <Style />
+                              <Value>Month</Value>
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -59,10 +61,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Net Amount</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -89,10 +95,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Total Voucher</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -124,7 +134,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DName.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                                <Format>MMMM yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -154,10 +167,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!NetAmount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NetAmount</rd:DefaultName>
@@ -184,10 +201,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TransactionCount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>tahoma</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TransactionCount</rd:DefaultName>
@@ -225,9 +246,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>dsWeekly</DataSetName>
+        <DataSetName>dsMonthly</DataSetName>
         <Height>0.5in</Height>
-        <Width>4.35417in</Width>
+        <Width>4.59722in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -235,10 +256,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.59028in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>4.35417in</Width>
+  <Width>4.59722in</Width>
   <Page>
     <PageHeight>8.27in</PageHeight>
     <PageWidth>5.83in</PageWidth>
@@ -255,11 +276,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>58cd1648-adf7-42fc-b1bc-990997cf9f0a</rd:DataSourceID>
+      <rd:DataSourceID>50138c45-e4ea-476d-bef8-03b8c5021dc8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsWeekly">
+    <DataSet Name="dsMonthly">
       <Query>
         <DataSourceName>NetfixPOSModelsDataSetFile</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -280,12 +301,12 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>NetfixPOS.Models.DataSetFile</rd:DataSetName>
-        <rd:TableName>dsWeeklySale</rd:TableName>
-        <rd:ObjectDataSourceSelectMethod>dt_Weekly</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>NetfixPOS.Models.DataSetFile.dsWeeklySale, NetfixPOS.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>dsMonthlySale</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>dt_Monthly</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceType>NetfixPOS.Models.DataSetFile.dsMonthlySale, NetfixPOS.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>0ef677c2-d9e6-433c-a165-759e52264d77</rd:ReportID>
+  <rd:ReportID>a3079829-f12e-40ef-8fed-745c59506f28</rd:ReportID>
 </Report>

@@ -399,13 +399,17 @@ namespace NetfixPOS.DataAccess
             {
                 Command = new SqlCommand(query.SaleHeaderSelectByDate(), Connection);
             }
+            else if (reportby == "ByWeekly")
+            {
+                Command = new SqlCommand(query.SaleHeaderSelectByWeelky(), Connection);
+            }
             
             Command.CommandType = CommandType.Text;
             DataTable dt = new DataTable();
             try
             {
-                Command.Parameters.AddWithValue("fromDate", fromDate);
-                Command.Parameters.AddWithValue("toDate", toDate);
+                Command.Parameters.AddWithValue("FromDate", fromDate);
+                Command.Parameters.AddWithValue("ToDate", toDate);
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = Command;
@@ -421,30 +425,7 @@ namespace NetfixPOS.DataAccess
             }
             return dt;
         }
-        public DataTable SaleHeaderSelectByWeelky(DateTime fromDate, DateTime toDate)
-        {
-            Command = new SqlCommand("SaleHeader_SelectByDate", Connection);
-            Command.CommandType = CommandType.StoredProcedure;
-            DataTable dt = new DataTable();
-            try
-            {
-                Command.Parameters.AddWithValue("fromDate", fromDate);
-                Command.Parameters.AddWithValue("toDate", toDate);
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                dataAdapter.SelectCommand = Command;
-                dataAdapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Connection.Close();
-            }
-            return dt;
-        }
+        
         public DataTable SaleHeaderSelectByMonthly(DateTime fromDate, DateTime toDate)
         {
             Command = new SqlCommand("SaleHeader_SelectByDate", Connection);
